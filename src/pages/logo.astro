@@ -9,27 +9,49 @@ const t = useTranslations("nl");
   <h1>{t("logo.h1")}</h1>
   <p class="brand-intro">{t("logo.intro")}</p>
 
-  <div class="placeholder-notice">
-    <p>{t("logo.placeholder")}</p>
-  </div>
-
   <h2>{t("logo.variants.title")}</h2>
   <p>{t("logo.variants.desc")}</p>
+
+  <h3>{t("logo.primary.title")}</h3>
+  <p>{t("logo.primary.desc")}</p>
   <div class="logo-grid">
+    <div class="logo-card" style="background-color: #ffffff;">
+      <img src="/images/logo/logo-primary.png" alt="Pantalytics primair logo (blauw + goud) op witte achtergrond" />
+      <span class="logo-card-label" style="color: var(--color-text-inverse-secondary);">Primair — wit</span>
+    </div>
     <div class="logo-card" style="background-color: var(--color-bg-primary);">
-      <span class="placeholder-badge">Placeholder</span>
-      <img src="/images/logo.png" alt="Pantalytics logo op donkere achtergrond" />
-      <span class="logo-card-label" style="color: var(--color-text-secondary);">#001d21</span>
+      <img src="/images/logo/logo-primary.png" alt="Pantalytics primair logo op donkere achtergrond" />
+      <span class="logo-card-label" style="color: var(--color-text-secondary);">Primair — donker</span>
+    </div>
+  </div>
+
+  <h3>{t("logo.monochrome.title")}</h3>
+  <p>{t("logo.monochrome.desc")}</p>
+  <div class="logo-grid">
+    <div class="logo-card" style="background-color: #ffffff;">
+      <img src="/images/logo/logo-blue.png" alt="Pantalytics monochroom blauw logo" />
+      <span class="logo-card-label" style="color: var(--color-text-inverse-secondary);">Monochroom blauw</span>
     </div>
     <div class="logo-card" style="background-color: #ffffff;">
-      <span class="placeholder-badge">Placeholder</span>
-      <img src="/images/logo.png" alt="Pantalytics logo op witte achtergrond" />
-      <span class="logo-card-label" style="color: var(--color-text-inverse-secondary);">#ffffff</span>
+      <img src="/images/logo/logo-gold.png" alt="Pantalytics monochroom goud logo" />
+      <span class="logo-card-label" style="color: var(--color-text-inverse-secondary);">Monochroom goud</span>
     </div>
-    <div class="logo-card" style="background-color: var(--color-accent);">
-      <span class="placeholder-badge">Placeholder</span>
-      <img src="/images/logo.png" alt="Pantalytics logo op accent achtergrond" />
-      <span class="logo-card-label" style="color: rgba(0,0,0,0.5);">#9b99ff</span>
+  </div>
+
+  <h3>{t("logo.icon.title")}</h3>
+  <p>{t("logo.icon.desc")}</p>
+  <div class="logo-grid">
+    <div class="logo-card logo-card-icon" style="background-color: #ffffff;">
+      <img src="/images/logo/icon-blue.png" alt="Pantalytics icon mark blauw" />
+      <span class="logo-card-label" style="color: var(--color-text-inverse-secondary);">Icon — blauw</span>
+    </div>
+    <div class="logo-card logo-card-icon" style="background-color: #ffffff;">
+      <img src="/images/logo/icon-gold.png" alt="Pantalytics icon mark goud" />
+      <span class="logo-card-label" style="color: var(--color-text-inverse-secondary);">Icon — goud</span>
+    </div>
+    <div class="logo-card logo-card-icon" style="background-color: var(--color-bg-primary);">
+      <img src="/images/logo/icon-blue.png" alt="Pantalytics icon mark blauw op donker" />
+      <span class="logo-card-label" style="color: var(--color-text-secondary);">Icon — blauw/donker</span>
     </div>
   </div>
 
@@ -64,17 +86,7 @@ const t = useTranslations("nl");
 </BrandLayout>
 
 <style>
-  .placeholder-notice {
-    background-color: rgba(245, 158, 11, 0.1);
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    border-radius: var(--radius-md);
-    padding: var(--space-sm);
-    margin-block: var(--space-sm);
-  }
-
-  .placeholder-notice p {
-    color: #f59e0b;
-    font-size: 0.88rem;
-    margin: 0;
+  .logo-card-icon img {
+    max-height: 120px;
   }
 </style>
