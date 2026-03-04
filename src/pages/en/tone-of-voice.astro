@@ -1,0 +1,115 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("en");
+---
+
+<BrandLayout title={t("voice.title")} lang="en" description={t("voice.intro")} activeSection="voice">
+  <h1>{t("voice.h1")}</h1>
+  <p class="brand-intro">{t("voice.intro")}</p>
+
+  <h2>{t("voice.personality.title")}</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <h4>{t("voice.personality.professional")}</h4>
+      <p>{t("voice.personality.professional.desc")}</p>
+    </div>
+    <div class="value-card">
+      <h4>{t("voice.personality.practical")}</h4>
+      <p>{t("voice.personality.practical.desc")}</p>
+    </div>
+    <div class="value-card">
+      <h4>{t("voice.personality.human")}</h4>
+      <p>{t("voice.personality.human.desc")}</p>
+    </div>
+    <div class="value-card">
+      <h4>{t("voice.personality.honest")}</h4>
+      <p>{t("voice.personality.honest.desc")}</p>
+    </div>
+  </div>
+
+  <h2>{t("voice.attributes.title")}</h2>
+  <table class="voice-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="col-positive">{t("voice.weare")}</th>
+        <th class="col-negative">{t("voice.werenot")}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{t("voice.attr.tone")}</td>
+        <td class="col-positive">{t("voice.attr.tone.positive")}</td>
+        <td class="col-negative">{t("voice.attr.tone.negative")}</td>
+      </tr>
+      <tr>
+        <td>{t("voice.attr.complexity")}</td>
+        <td class="col-positive">{t("voice.attr.complexity.positive")}</td>
+        <td class="col-negative">{t("voice.attr.complexity.negative")}</td>
+      </tr>
+      <tr>
+        <td>{t("voice.attr.perspective")}</td>
+        <td class="col-positive">{t("voice.attr.perspective.positive")}</td>
+        <td class="col-negative">{t("voice.attr.perspective.negative")}</td>
+      </tr>
+      <tr>
+        <td>{t("voice.attr.claims")}</td>
+        <td class="col-positive">{t("voice.attr.claims.positive")}</td>
+        <td class="col-negative">{t("voice.attr.claims.negative")}</td>
+      </tr>
+      <tr>
+        <td>{t("voice.attr.vocabulary")}</td>
+        <td class="col-positive">{t("voice.attr.vocabulary.positive")}</td>
+        <td class="col-negative">{t("voice.attr.vocabulary.negative")}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>{t("voice.dos.title")}</h2>
+  <div class="dos-donts">
+    <div class="dos-list">
+      <h4>{t("voice.dos.title")}</h4>
+      <ul>
+        <li>{t("voice.do.1")}</li>
+        <li>{t("voice.do.2")}</li>
+        <li>{t("voice.do.3")}</li>
+        <li>{t("voice.do.4")}</li>
+        <li>{t("voice.do.5")}</li>
+      </ul>
+    </div>
+    <div class="donts-list">
+      <h4>{t("voice.donts.title")}</h4>
+      <ul>
+        <li>{t("voice.dont.1")}</li>
+        <li>{t("voice.dont.2")}</li>
+        <li>{t("voice.dont.3")}</li>
+        <li>{t("voice.dont.4")}</li>
+        <li>{t("voice.dont.5")}</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>{t("voice.examples.title")}</h2>
+  <div class="example-block">
+    <div class="example-before">
+      <span class="example-label">{t("voice.example.before.label")}</span>
+      {t("voice.example.1.before")}
+    </div>
+    <div class="example-after">
+      <span class="example-label">{t("voice.example.after.label")}</span>
+      {t("voice.example.1.after")}
+    </div>
+  </div>
+  <div class="example-block">
+    <div class="example-before">
+      <span class="example-label">{t("voice.example.before.label")}</span>
+      {t("voice.example.2.before")}
+    </div>
+    <div class="example-after">
+      <span class="example-label">{t("voice.example.after.label")}</span>
+      {t("voice.example.2.after")}
+    </div>
+  </div>
+</BrandLayout>

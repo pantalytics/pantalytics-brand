@@ -1,0 +1,100 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("en");
+---
+
+<BrandLayout title={t("typography.title")} lang="en" description={t("typography.intro")} activeSection="typography">
+  <h1>{t("typography.h1")}</h1>
+  <p class="brand-intro">{t("typography.intro")}</p>
+
+  <h2>{t("typography.heading.title")}</h2>
+  <p>{t("typography.heading.desc")}</p>
+  <div class="specimen">
+    <div class="specimen-label">Lexend Medium 500</div>
+    <div style="font-family: var(--font-heading); font-weight: 500;">
+      <div style="font-size: 4.21rem; line-height: 1.04; letter-spacing: -0.01em;">{t("typography.sample")}</div>
+    </div>
+    <div class="specimen-meta">font-family: "Lexend", sans-serif · font-weight: 500 · OFL Licensed</div>
+  </div>
+
+  <h2>{t("typography.body.title")}</h2>
+  <p>{t("typography.body.desc")}</p>
+  <div class="specimen">
+    <div class="specimen-label">Instrument Sans Regular 400</div>
+    <div style="font-family: var(--font-body); font-weight: 400; font-size: 1rem; line-height: 1.6;">
+      {t("typography.body.sample")}
+    </div>
+    <div class="specimen-meta">font-family: "Instrument Sans", sans-serif · font-weight: 400</div>
+  </div>
+  <div class="specimen">
+    <div class="specimen-label">Instrument Sans Medium 500</div>
+    <div style="font-family: var(--font-body); font-weight: 500; font-size: 1rem; line-height: 1.6;">
+      {t("typography.body.sample")}
+    </div>
+    <div class="specimen-meta">font-family: "Instrument Sans", sans-serif · font-weight: 500</div>
+  </div>
+  <div class="specimen">
+    <div class="specimen-label">Instrument Sans Bold 700</div>
+    <div style="font-family: var(--font-body); font-weight: 700; font-size: 1rem; line-height: 1.6;">
+      {t("typography.body.sample")}
+    </div>
+    <div class="specimen-meta">font-family: "Instrument Sans", sans-serif · font-weight: 700</div>
+  </div>
+
+  <h2>{t("typography.scale.title")}</h2>
+  <p>{t("typography.scale.desc")}</p>
+  <table class="type-scale-table">
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Font</th>
+        <th>Desktop</th>
+        <th>Tablet</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>h1</td><td>Lexend 500</td><td>4.21rem</td><td>3.37rem</td><td>2.15rem</td></tr>
+      <tr><td>h2</td><td>Lexend 500</td><td>2.37rem</td><td>1.89rem</td><td>1.21rem</td></tr>
+      <tr><td>h3</td><td>Lexend 500</td><td>1.78rem</td><td>1.42rem</td><td>0.91rem</td></tr>
+      <tr><td>h4</td><td>Lexend 500</td><td>1.33rem</td><td>—</td><td>—</td></tr>
+      <tr><td>h5</td><td>Lexend 500</td><td>1rem</td><td>—</td><td>—</td></tr>
+      <tr><td>h6 (eyebrow)</td><td>Lexend 500</td><td>0.75rem</td><td>—</td><td>—</td></tr>
+      <tr><td>Body</td><td>Instrument Sans 400</td><td>1rem</td><td>—</td><td>—</td></tr>
+      <tr><td>Small</td><td>Instrument Sans 400</td><td>0.88rem</td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>{t("typography.rules.title")}</h2>
+  <ul class="rules-list">
+    <li>{t("typography.rule.1")}</li>
+    <li>{t("typography.rule.2")}</li>
+    <li>{t("typography.rule.3")}</li>
+    <li>{t("typography.rule.4")}</li>
+    <li>{t("typography.rule.5")}</li>
+  </ul>
+</BrandLayout>
+
+<style>
+  .rules-list {
+    list-style: none;
+    margin-top: var(--space-sm);
+  }
+
+  .rules-list li {
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    padding: 0.5em 0;
+    padding-left: 1.5em;
+    position: relative;
+  }
+
+  .rules-list li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+</style>

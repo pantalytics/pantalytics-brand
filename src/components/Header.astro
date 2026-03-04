@@ -1,0 +1,107 @@
+---
+import type { Locale } from "@/i18n/config";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "nl" } = Astro.props;
+const prefix = lang === "nl" ? "" : "/en";
+---
+
+<header class="header">
+  <nav class="nav container">
+    <a href={prefix ? prefix + "/" : "/"} class="nav-logo" aria-label="Pantalytics Brand">
+      <img src="/images/logo.png" alt="" class="logo-img" width="32" height="32" />
+      <span class="logo-text">Pantalytics</span>
+      <span class="logo-badge">Brand</span>
+    </a>
+
+    <div class="nav-actions">
+      <LanguageSwitcher lang={lang} />
+      <a href="https://www.pantalytics.com" class="nav-link" target="_blank" rel="noopener">
+        pantalytics.com
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M3.5 2.5h6v6M9.5 2.5L2.5 9.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: var(--nav-height);
+    background-color: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-border-primary);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+
+  .logo-img {
+    height: 28px;
+    width: 28px;
+    border-radius: var(--radius-sm);
+  }
+
+  .logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+
+  .logo-badge {
+    font-size: 0.69rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    padding: 0.1em 0.4em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.81rem;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 479px) {
+    .nav-link {
+      display: none;
+    }
+  }
+</style>

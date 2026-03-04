@@ -1,0 +1,226 @@
+/* === Fonts (self-hosted, no Google CDN) === */
+@font-face {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/lexend-500-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/lexend-500-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+    U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/instrument-sans-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/instrument-sans-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+    U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+/* === Design Tokens === */
+:root {
+  /* Colors - Core */
+  --color-accent: #9b99ff;
+  --color-accent-hover: #7370ff;
+  --color-bg-primary: #001d21;
+  --color-bg-secondary: #002328;
+  --color-bg-inverse: #fff;
+  --color-text-primary: #fff;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-inverse: #001d21;
+  --color-text-inverse-secondary: rgba(0, 29, 33, 0.6);
+  --color-border-primary: rgba(255, 255, 255, 0.1);
+  --color-border-secondary: rgba(255, 255, 255, 0.2);
+  --color-border-inverse: rgba(0, 29, 33, 0.2);
+
+  /* Typography */
+  --font-heading: "Lexend", sans-serif;
+  --font-body: "Instrument Sans", sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-round: 100rem;
+
+  /* Layout */
+  --container-width: 1280px;
+  --container-sm: 1000px;
+  --container-lg: 1440px;
+  --nav-height: 4rem;
+  --sidebar-width: 260px;
+}
+
+/* === Reset === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 4.21rem; margin-bottom: 0.3em; }
+h2 { font-size: 2.37rem; margin-bottom: 0.35em; }
+h3 { font-size: 1.78rem; margin-bottom: 0.5em; }
+h4 { font-size: 1.33rem; margin-bottom: 0.35em; }
+h5 { font-size: 1rem; letter-spacing: 0; margin-bottom: 0.5em; }
+h6 { font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 0.5em; }
+
+p { margin-bottom: 0.7em; }
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+/* === Utilities === */
+.container {
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--space-sm);
+}
+
+.container-sm {
+  max-width: var(--container-sm);
+  margin-inline: auto;
+  padding-inline: var(--space-sm);
+}
+
+.section {
+  padding-block: var(--space-3xl);
+}
+
+.section-inverse {
+  background-color: var(--color-bg-inverse);
+  color: var(--color-text-inverse);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 1em 1.5em;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-bg-primary);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-secondary);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text-primary);
+}
+
+/* === Responsive === */
+@media (max-width: 991px) {
+  h1 { font-size: 3.37rem; }
+  h2 { font-size: 1.89rem; }
+  h3 { font-size: 1.42rem; }
+  .section { padding-block: var(--space-2xl); }
+}
+
+@media (max-width: 767px) {
+  h1 { font-size: 2.69rem; }
+  h2 { font-size: 1.52rem; }
+  h3 { font-size: 1.14rem; }
+  .section { padding-block: var(--space-xl); }
+}
+
+@media (max-width: 479px) {
+  h1 { font-size: 2.15rem; }
+  h2 { font-size: 1.21rem; }
+  h3 { font-size: 0.91rem; }
+}

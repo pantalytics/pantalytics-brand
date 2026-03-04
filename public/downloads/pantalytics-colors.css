@@ -1,0 +1,26 @@
+/* Pantalytics Brand Colors
+ * https://brand.pantalytics.com/kleuren
+ * License: MIT (LICENSE-CODE)
+ */
+
+:root {
+  /* Primary */
+  --color-accent: #9b99ff;
+  --color-accent-hover: #7370ff;
+
+  /* Backgrounds */
+  --color-bg-primary: #001d21;
+  --color-bg-secondary: #002328;
+  --color-bg-inverse: #ffffff;
+
+  /* Text */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-inverse: #001d21;
+  --color-text-inverse-secondary: rgba(0, 29, 33, 0.6);
+
+  /* Borders */
+  --color-border-primary: rgba(255, 255, 255, 0.1);
+  --color-border-secondary: rgba(255, 255, 255, 0.2);
+  --color-border-inverse: rgba(0, 29, 33, 0.2);
+}

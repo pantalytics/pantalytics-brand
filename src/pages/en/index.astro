@@ -1,0 +1,40 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("en");
+---
+
+<BrandLayout title={t("overview.title")} lang="en" description={t("site.description")} activeSection="overview">
+  <h1>{t("overview.h1")}</h1>
+  <p class="brand-intro">{t("overview.intro")}</p>
+
+  <h2>{t("overview.mission.title")}</h2>
+  <p class="brand-intro">{t("overview.mission")}</p>
+
+  <h2>{t("overview.values.title")}</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <h4>{t("overview.value.reliable")}</h4>
+      <p>{t("overview.value.reliable.desc")}</p>
+    </div>
+    <div class="value-card">
+      <h4>{t("overview.value.open")}</h4>
+      <p>{t("overview.value.open.desc")}</p>
+    </div>
+    <div class="value-card">
+      <h4>{t("overview.value.practical")}</h4>
+      <p>{t("overview.value.practical.desc")}</p>
+    </div>
+    <div class="value-card">
+      <h4>{t("overview.value.smart")}</h4>
+      <p>{t("overview.value.smart.desc")}</p>
+    </div>
+  </div>
+
+  <h2>{t("overview.audience.title")}</h2>
+  <p>{t("overview.audience")}</p>
+
+  <h2>{t("overview.opensource.title")}</h2>
+  <p>{t("overview.opensource")}</p>
+</BrandLayout>

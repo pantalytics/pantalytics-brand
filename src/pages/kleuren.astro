@@ -1,0 +1,164 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("nl");
+---
+
+<BrandLayout title={t("colors.title")} lang="nl" description={t("colors.intro")} activeSection="colors">
+  <h1>{t("colors.h1")}</h1>
+  <p class="brand-intro">{t("colors.intro")}</p>
+
+  <h2>{t("colors.primary.title")}</h2>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background-color: #9b99ff;">
+        <span style="color: #001d21; font-size: 0.75rem; font-weight: 500;">Aa</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Accent Purple</div>
+        <div class="swatch-value">#9b99ff · rgb(155, 153, 255)</div>
+        <div class="swatch-token">--color-accent</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background-color: #7370ff;">
+        <span style="color: #001d21; font-size: 0.75rem; font-weight: 500;">Aa</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Accent Hover</div>
+        <div class="swatch-value">#7370ff · rgb(115, 112, 255)</div>
+        <div class="swatch-token">--color-accent-hover</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background-color: #001d21;">
+        <span style="color: #fff; font-size: 0.75rem; font-weight: 500;">Aa</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Dark Teal</div>
+        <div class="swatch-value">#001d21 · rgb(0, 29, 33)</div>
+        <div class="swatch-token">--color-bg-primary</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background-color: #002328;">
+        <span style="color: #fff; font-size: 0.75rem; font-weight: 500;">Aa</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Dark Teal Light</div>
+        <div class="swatch-value">#002328 · rgb(0, 35, 40)</div>
+        <div class="swatch-token">--color-bg-secondary</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>{t("colors.neutral.title")}</h2>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background-color: #ffffff; border-bottom: 1px solid var(--color-border-primary);">
+        <span style="color: #001d21; font-size: 0.75rem; font-weight: 500;">Aa</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">White</div>
+        <div class="swatch-value">#ffffff</div>
+        <div class="swatch-token">--color-text-primary / --color-bg-inverse</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background-color: #001d21;">
+        <span style="color: rgba(255,255,255,0.6); font-size: 0.75rem; font-weight: 500;">Aa</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">White 60%</div>
+        <div class="swatch-value">rgba(255, 255, 255, 0.6)</div>
+        <div class="swatch-token">--color-text-secondary</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background-color: #fff;">
+        <span style="color: #001d21; font-size: 0.75rem; font-weight: 500;">Aa</span>
+      </div>
+      <div class="swatch-info">
+        <div class="swatch-name">Dark Teal (op wit)</div>
+        <div class="swatch-value">#001d21</div>
+        <div class="swatch-token">--color-text-inverse</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>{t("colors.contrast.title")}</h2>
+  <p>{t("colors.contrast.desc")}</p>
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>{t("colors.contrast.combination")}</th>
+        <th>{t("colors.contrast.ratio")}</th>
+        <th>{t("colors.contrast.aa")}</th>
+        <th>{t("colors.contrast.aaa")}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#ffffff op #001d21</td>
+        <td>17.65:1</td>
+        <td class="contrast-pass">Pass</td>
+        <td class="contrast-pass">Pass</td>
+      </tr>
+      <tr>
+        <td>rgba(255,255,255,0.6) op #001d21</td>
+        <td>7.06:1</td>
+        <td class="contrast-pass">Pass</td>
+        <td class="contrast-pass">Pass (groot)</td>
+      </tr>
+      <tr>
+        <td>#9b99ff op #001d21</td>
+        <td>5.84:1</td>
+        <td class="contrast-pass">Pass</td>
+        <td class="contrast-pass">Pass (groot)</td>
+      </tr>
+      <tr>
+        <td>#001d21 op #ffffff</td>
+        <td>17.65:1</td>
+        <td class="contrast-pass">Pass</td>
+        <td class="contrast-pass">Pass</td>
+      </tr>
+      <tr>
+        <td>#9b99ff op #ffffff</td>
+        <td>3.02:1</td>
+        <td class="contrast-fail">Fail (normaal)</td>
+        <td class="contrast-fail">Fail</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>{t("colors.guidelines.title")}</h2>
+  <ul class="guidelines-list">
+    <li>{t("colors.guideline.1")}</li>
+    <li>{t("colors.guideline.2")}</li>
+    <li>{t("colors.guideline.3")}</li>
+    <li>{t("colors.guideline.4")}</li>
+  </ul>
+</BrandLayout>
+
+<style>
+  .guidelines-list {
+    list-style: none;
+    margin-top: var(--space-sm);
+  }
+
+  .guidelines-list li {
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    padding: 0.5em 0;
+    padding-left: 1.5em;
+    position: relative;
+  }
+
+  .guidelines-list li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+</style>

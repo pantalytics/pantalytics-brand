@@ -1,0 +1,58 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("nl");
+---
+
+<BrandLayout title={t("downloads.title")} lang="nl" description={t("downloads.intro")} activeSection="downloads">
+  <h1>{t("downloads.h1")}</h1>
+  <p class="brand-intro">{t("downloads.intro")}</p>
+
+  <div class="download-grid">
+    <div class="download-card">
+      <h4>{t("downloads.logo.title")}</h4>
+      <p>{t("downloads.logo.desc")}</p>
+      <a href="/images/logo.png" download class="btn btn-secondary">{t("downloads.download")} PNG</a>
+    </div>
+
+    <div class="download-card">
+      <h4>{t("downloads.colors.title")}</h4>
+      <p>{t("downloads.colors.desc")}</p>
+      <a href="/downloads/pantalytics-colors.css" download class="btn btn-secondary">{t("downloads.download")} CSS</a>
+    </div>
+
+    <div class="download-card">
+      <h4>{t("downloads.fonts.title")}</h4>
+      <p>{t("downloads.fonts.desc")}</p>
+      <div class="download-font-links">
+        <a href="/fonts/lexend-500-latin.woff2" download class="btn btn-secondary">Lexend</a>
+        <a href="/fonts/instrument-sans-latin.woff2" download class="btn btn-secondary">Instrument Sans</a>
+      </div>
+    </div>
+
+    <div class="download-card download-card-disabled">
+      <h4>{t("downloads.pdf.title")}</h4>
+      <p>{t("downloads.pdf.desc")}</p>
+      <span class="coming-soon">{t("downloads.coming_soon")}</span>
+    </div>
+  </div>
+</BrandLayout>
+
+<style>
+  .download-font-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .download-card-disabled {
+    opacity: 0.6;
+  }
+
+  .coming-soon {
+    font-size: 0.81rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+</style>

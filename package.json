@@ -1,0 +1,17 @@
+{
+  "name": "pantalytics-brand",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.17.3",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,80 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("nl");
+---
+
+<BrandLayout title={t("logo.title")} lang="nl" description={t("logo.intro")} activeSection="logo">
+  <h1>{t("logo.h1")}</h1>
+  <p class="brand-intro">{t("logo.intro")}</p>
+
+  <div class="placeholder-notice">
+    <p>{t("logo.placeholder")}</p>
+  </div>
+
+  <h2>{t("logo.variants.title")}</h2>
+  <p>{t("logo.variants.desc")}</p>
+  <div class="logo-grid">
+    <div class="logo-card" style="background-color: var(--color-bg-primary);">
+      <span class="placeholder-badge">Placeholder</span>
+      <img src="/images/logo.png" alt="Pantalytics logo op donkere achtergrond" />
+      <span class="logo-card-label" style="color: var(--color-text-secondary);">#001d21</span>
+    </div>
+    <div class="logo-card" style="background-color: #ffffff;">
+      <span class="placeholder-badge">Placeholder</span>
+      <img src="/images/logo.png" alt="Pantalytics logo op witte achtergrond" />
+      <span class="logo-card-label" style="color: var(--color-text-inverse-secondary);">#ffffff</span>
+    </div>
+    <div class="logo-card" style="background-color: var(--color-accent);">
+      <span class="placeholder-badge">Placeholder</span>
+      <img src="/images/logo.png" alt="Pantalytics logo op accent achtergrond" />
+      <span class="logo-card-label" style="color: rgba(0,0,0,0.5);">#9b99ff</span>
+    </div>
+  </div>
+
+  <h2>{t("logo.clearspace.title")}</h2>
+  <p>{t("logo.clearspace")}</p>
+
+  <h2>{t("logo.minsize.title")}</h2>
+  <p>{t("logo.minsize")}</p>
+
+  <h2>{t("logo.dos.title")} & {t("logo.donts.title")}</h2>
+  <div class="dos-donts">
+    <div class="dos-list">
+      <h4>{t("logo.dos.title")}</h4>
+      <ul>
+        <li>{t("logo.dos.1")}</li>
+        <li>{t("logo.dos.2")}</li>
+        <li>{t("logo.dos.3")}</li>
+        <li>{t("logo.dos.4")}</li>
+      </ul>
+    </div>
+    <div class="donts-list">
+      <h4>{t("logo.donts.title")}</h4>
+      <ul>
+        <li>{t("logo.donts.1")}</li>
+        <li>{t("logo.donts.2")}</li>
+        <li>{t("logo.donts.3")}</li>
+        <li>{t("logo.donts.4")}</li>
+        <li>{t("logo.donts.5")}</li>
+      </ul>
+    </div>
+  </div>
+</BrandLayout>
+
+<style>
+  .placeholder-notice {
+    background-color: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+    margin-block: var(--space-sm);
+  }
+
+  .placeholder-notice p {
+    color: #f59e0b;
+    font-size: 0.88rem;
+    margin: 0;
+  }
+</style>

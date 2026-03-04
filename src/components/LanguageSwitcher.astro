@@ -1,0 +1,43 @@
+---
+import type { Locale } from "@/i18n/config";
+import { getAlternateUrl } from "@/i18n/config";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const currentPath = Astro.url.pathname;
+const alternateUrl = getAlternateUrl(currentPath);
+const otherLang = lang === "nl" ? "en" : "nl";
+---
+
+<a href={alternateUrl} class="lang-switch" aria-label={otherLang === "en" ? "Switch to English" : "Naar Nederlands"}>
+  <span class="lang-flag">{otherLang.toUpperCase()}</span>
+</a>
+
+<style>
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.81rem;
+    font-weight: var(--font-weight-medium);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .lang-switch:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .lang-flag {
+    font-size: 0.81rem;
+    letter-spacing: 0.05em;
+  }
+</style>
