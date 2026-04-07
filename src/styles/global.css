@@ -47,7 +47,7 @@
 
 /* === Design Tokens === */
 :root {
-  /* Colors - Core */
+  /* Colors - Dark mode (default / primary brand environment) */
   --color-accent: #9b99ff;
   --color-accent-hover: #7370ff;
   --color-bg-primary: #001d21;
@@ -60,6 +60,20 @@
   --color-border-primary: rgba(255, 255, 255, 0.1);
   --color-border-secondary: rgba(255, 255, 255, 0.2);
   --color-border-inverse: rgba(0, 29, 33, 0.2);
+
+  /* Colors - Light mode (app reference tokens) */
+  --color-light-accent: #5b58d8;
+  --color-light-accent-hover: #4a47c4;
+  --color-light-bg-primary: #ffffff;
+  --color-light-bg-secondary: #f4f5f7;
+  --color-light-bg-inverse: #001d21;
+  --color-light-text-primary: #001d21;
+  --color-light-text-secondary: rgba(0, 29, 33, 0.6);
+  --color-light-text-inverse: #fff;
+  --color-light-text-inverse-secondary: rgba(255, 255, 255, 0.6);
+  --color-light-border-primary: rgba(0, 29, 33, 0.1);
+  --color-light-border-secondary: rgba(0, 29, 33, 0.2);
+  --color-light-border-inverse: rgba(255, 255, 255, 0.2);
 
   /* Typography */
   --font-heading: "Lexend", sans-serif;
