@@ -1,0 +1,130 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("nl");
+
+const P = "Abstract on heavy cream watercolor paper with beautiful visible texture, navy (#1b3a5c) ink lines and soft purple (#9b99ff) watercolor blooms, wabi-sabi imperfection, fine art print quality, no objects no figures no text no letters";
+
+const assets = [
+  { file: "01-hero-converging.png", title: "Website hero", size: "1440 × 810", type: "Convergerende lijnen", prompt: `${P}, two thin ink lines one navy one lighter purple curving gently toward each other meeting in a soft watercolor bloom at center right, vast empty paper space on left for text overlay, landscape format` },
+  { file: "02-footer-line.png", title: "Footer", size: "1440 × 400", type: "Lijn + bloom", prompt: `${P}, single thin navy ink line drawing a long gentle curve from left to right across lower third of page, tiny purple watercolor bloom where line ends, vast empty cream paper above, subtle and quiet, landscape format` },
+  { file: "03-about-duo.png", title: "Over ons hero", size: "1440 × 810", type: "Convergerende lijnen + goud", prompt: `${P}, two thin navy ink lines approaching from opposite sides of the page meeting in a warm purple and gold (#e8a317) watercolor bloom in the center, suggesting partnership and collaboration, vast textured paper space, landscape format` },
+  { file: "04-404-broken.png", title: "404 pagina", size: "1280 × 1280", type: "Afgebroken lijn", prompt: `${P}, single thin navy ink line starting confidently from left then stopping abruptly in the middle of the page, small confused purple watercolor splash where it ends, vast empty cream paper around it, a gentle visual joke, square format` },
+  { file: "05-blog-parallel.png", title: "Blog hero — flow", size: "1920 × 1080", type: "Parallelle lijnen", prompt: `${P}, three thin parallel navy ink lines flowing gently across the page with slight waves, one line ends in a soft purple watercolor bloom, the other two fade into paper grain, vast cream space above for title text, landscape format` },
+  { file: "06-blog-tech.png", title: "Blog hero — tech", size: "1920 × 1080", type: "Lijn + blueprint grid", prompt: `${P}, single ascending navy ink line with faint geometric grid pattern barely visible underneath like ghost of graph paper, purple watercolor bloom at the peak, technical yet poetic, vast cream paper space, landscape format` },
+  { file: "07-blog-growth.png", title: "Blog hero — groei", size: "1920 × 1080", type: "Datapunten", prompt: `${P}, thin navy ink line gently ascending from bottom left to upper right, four small purple watercolor blooms at intervals along the line like data points on a growth chart, each bloom slightly larger than the last, vast empty textured cream paper, elegant and optimistic, landscape format` },
+  { file: "08-linkedin-network.png", title: "LinkedIn post", size: "1200 × 1200", type: "Netwerk constellation", prompt: `${P}, delicate navy ink dots connected by hairline lines forming a loose network constellation on rough handmade paper, soft purple watercolor halos around three key nodes, visible paper texture and fibers, like a star map painted by hand, generous empty space in upper half for text, square format` },
+  { file: "09-linkedin-banner.png", title: "LinkedIn banner", size: "1584 × 396", type: "Lijn + bloom", prompt: `${P}, single thin navy ink line flowing gently from left across the page, ending in a soft purple bloom on the right third, very wide and narrow format, vast empty cream paper, subtle and elegant` },
+  { file: "10-og-datapoints.png", title: "OG image", size: "1200 × 630", type: "Datapunten", prompt: `${P}, thin navy ink line ascending gently from lower left to upper right, three small purple watercolor blooms as data points along the line, each slightly different size, vast empty textured cream paper with space on right for text, landscape format` },
+  { file: "11-youtube-thumb.png", title: "YouTube thumbnail", size: "1280 × 720", type: "Bold bloom", prompt: `${P}, bold purple watercolor bloom in the left third with navy ink lines radiating outward from it like a data burst, slightly more saturated than usual, vast cream paper on right two thirds for text, impactful yet elegant, landscape format` },
+  { file: "12-video-intro.png", title: "Video intro still", size: "1920 × 1080", type: "Centraal bloom", prompt: `${P}, single soft purple watercolor bloom exactly in the center of the page, three thin navy ink lines extending outward from it in different directions like compass points, vast cream paper around it, centered and balanced, cinematic landscape format` },
+  { file: "13-texture-wash.png", title: "Textuur — wash", size: "1440 × 1440", type: "Pure aquarel", prompt: `${P}, soft purple and navy watercolor washes flowing organically in one corner, beautiful ink diffusion edges where colors meet paper, 70 percent empty cream paper, pure texture with no lines, minimal and meditative, square format` },
+  { file: "14-texture-blueprint.png", title: "Textuur — blueprint", size: "1440 × 1440", type: "Blueprint + aquarel", prompt: `${P}, soft purple watercolor wash with precise navy geometric blueprint lines drawn through it, technical grid pattern fading into organic ink diffusion, where engineering meets art, visible paper fiber texture, torn edge at bottom, square format` },
+  { file: "14b-blueprint-corner.png", title: "Blueprint — hoek", size: "1440 × 1440", type: "Blueprint + aquarel", prompt: `${P}, soft purple watercolor wash concentrated in upper left corner with precise navy geometric blueprint grid lines showing through the wash, lines extend beyond the watercolor into bare paper, torn deckled edge visible, 60 percent empty cream paper, square format` },
+  { file: "14c-blueprint-wide.png", title: "Blueprint — breed", size: "1920 × 1080", type: "Blueprint + aquarel", prompt: `${P}, soft purple watercolor wash spreading from left side with precise navy blueprint grid lines and geometric technical drawing visible through the wash, lines fade into bare textured paper on the right, torn paper edge at bottom, generous cream space on right for text, landscape format` },
+  { file: "14d-blueprint-fractal.png", title: "Blueprint — fractal", size: "1440 × 1440", type: "Fractal + aquarel", prompt: `${P}, rich purple watercolor blooms with navy blueprint technical lines creating fractal-like geometric patterns through the wash, architectural precision dissolving into organic ink diffusion, multiple bloom clusters connected by hairline grid, visible paper fiber texture, torn edge, square format` },
+  { file: "14e-blueprint-subtle.png", title: "Blueprint — subtiel", size: "1200 × 1200", type: "Subtiel blueprint", prompt: `${P}, very subtle purple watercolor wash in lower right with faint navy blueprint grid lines barely visible underneath, most of the page is beautiful empty cream textured paper, extremely minimal, the blueprint is almost a ghost, quiet and sophisticated, square format` },
+  { file: "15-story-vertical.png", title: "Story / mobiel", size: "1080 × 1920", type: "Verticale lijn + goud", prompt: `${P}, single thin navy ink line dropping vertically with a gentle wave, ending in a soft purple watercolor bloom near the bottom, tiny gold (#e8a317) accent dot along the line, vast empty textured paper above, tall portrait format` },
+];
+---
+
+<BrandLayout title="Assets — Pantalytics" lang="nl" description="Alle merkvisuals met bijbehorende Flux prompts." activeSection="assets">
+  <h1>Assets</h1>
+  <p class="brand-intro">Alle gegenereerde merkvisuals in de minimale lijn + wash stijl. Klik op een prompt om te kopiëren.</p>
+
+  <div class="assets-grid">
+    {assets.map((a) => (
+      <div class="asset-card">
+        <div class="asset-image">
+          <img src={`/images/brand-assets/${a.file}`} alt={a.title} loading="lazy" />
+        </div>
+        <div class="asset-info">
+          <h4>{a.title}</h4>
+          <div class="asset-meta">{a.size} · {a.type}</div>
+          <details class="asset-prompt">
+            <summary>Prompt</summary>
+            <pre><code>{a.prompt}</code></pre>
+          </details>
+        </div>
+      </div>
+    ))}
+  </div>
+</BrandLayout>
+
+<style>
+  .assets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-sm);
+    margin-block: var(--space-md);
+  }
+
+  .asset-card {
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background-color: var(--color-bg-secondary);
+  }
+
+  .asset-image {
+    background-color: #f5f0ea;
+    padding: var(--space-xs);
+  }
+
+  .asset-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+  }
+
+  .asset-info {
+    padding: var(--space-sm);
+  }
+
+  .asset-info h4 {
+    font-size: 0.88rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .asset-meta {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    font-family: monospace;
+    margin-bottom: var(--space-xs);
+  }
+
+  .asset-prompt {
+    margin-top: var(--space-xs);
+  }
+
+  .asset-prompt summary {
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    cursor: pointer;
+    font-weight: var(--font-weight-medium);
+  }
+
+  .asset-prompt pre {
+    margin-top: var(--space-xs);
+    padding: var(--space-xs);
+    background-color: var(--color-bg-primary);
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+  }
+
+  .asset-prompt code {
+    font-size: 0.69rem;
+    color: var(--color-text-secondary);
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 767px) {
+    .assets-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

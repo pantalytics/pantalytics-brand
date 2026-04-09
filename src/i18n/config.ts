@@ -11,6 +11,7 @@ const nlToEn: Record<string, string> = {
   "/tone-of-voice": "/en/tone-of-voice",
   "/design-filosofie": "/en/design-philosophy",
   "/toolkit": "/en/toolkit",
+  "/assets": "/en/assets",
   "/downloads": "/en/downloads",
 };
 
