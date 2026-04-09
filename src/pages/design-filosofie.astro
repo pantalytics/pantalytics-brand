@@ -70,59 +70,65 @@ const blogFormats = [
     <div class="data-metaphor"><span class="metaphor-arrow">6</span>{t("design.visual.principle.6")}</div>
   </div>
 
-  <h3>{t("design.visual.tech.title")}</h3>
-  <p>{t("design.visual.tech.desc")}</p>
-  <div class="data-metaphors">
-    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.tech.1")}</div>
-    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.tech.2")}</div>
-    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.tech.3")}</div>
-    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.tech.4")}</div>
+  <h3>{t("design.visual.materials.title")}</h3>
+  <p>{t("design.visual.materials.desc")}</p>
+  <div class="material-grid">
+    <div class="material-card">
+      <div class="material-swatch" style="background: linear-gradient(145deg, #b8b5b0 0%, #a8a5a0 50%, #c2bfba 100%);"></div>
+      <p>Beton</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch" style="background: linear-gradient(145deg, #1a5c2a 0%, #2d7a3e 50%, #1a5c2a 100%);"></div>
+      <p>PCB</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch" style="background: linear-gradient(145deg, #d4b896 0%, #c4a87a 50%, #dcc8a6 100%);"></div>
+      <p>Eikenhout</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch" style="background: linear-gradient(145deg, #d4a853 0%, #c49a3e 50%, #e0b96a 100%);"></div>
+      <p>Messing</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch" style="background: linear-gradient(145deg, #b87a5a 0%, #c4876a 50%, #a86d4e 100%);"></div>
+      <p>Koper</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch" style="background: #f5f2ed; border: 1px dashed var(--color-border-secondary);"></div>
+      <p>Ruitjespapier</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch material-swatch--accent"></div>
+      <p>Aquarel</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch" style="background: linear-gradient(145deg, #2a2a2a 0%, #3a3a3a 50%, #222 100%);"></div>
+      <p>Zwart staal</p>
+    </div>
   </div>
 
-  <h3>{t("design.visual.scenes.title")}</h3>
+  <h3>{t("design.visual.compositions.title")}</h3>
   <div class="refs-grid">
     <div class="ref-card">
-      <h4>Sociaal</h4>
-      <p>{t("design.visual.scene.1")}</p>
+      <h4>Exploded view</h4>
+      <p>{t("design.visual.comp.1")}</p>
     </div>
     <div class="ref-card">
-      <h4>Natuur</h4>
-      <p>{t("design.visual.scene.2")}</p>
+      <h4>Materiaalgrid</h4>
+      <p>{t("design.visual.comp.2")}</p>
     </div>
     <div class="ref-card">
-      <h4>Ontspanning</h4>
-      <p>{t("design.visual.scene.3")}</p>
+      <h4>Header strip</h4>
+      <p>{t("design.visual.comp.3")}</p>
     </div>
     <div class="ref-card">
-      <h4>Avontuur</h4>
-      <p>{t("design.visual.scene.4")}</p>
+      <h4>Close-up detail</h4>
+      <p>{t("design.visual.comp.4")}</p>
     </div>
   </div>
 
   <h3>{t("design.visual.color.title")}</h3>
   <p>{t("design.visual.color.desc")}</p>
-  <div class="material-grid">
-    <div class="material-card">
-      <div class="material-swatch" style="background-color: #1b3a5c;"></div>
-      <p>Navy Blue — tech details</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch material-swatch--accent"></div>
-      <p>Paars — schermen</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch" style="background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);"></div>
-      <p>Groen — natuur</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch" style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);"></div>
-      <p>Goud — zonlicht</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch" style="background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%);"></div>
-      <p>Blauw — lucht & water</p>
-    </div>
-  </div>
 
   <h3>{t("design.visual.tone.title")}</h3>
   <p>{t("design.visual.tone.desc")}</p>
@@ -166,18 +172,18 @@ CHARTS & DATA (Economist-stijl):
 - Eén highlightkleur op een grijze basis
 - Minimale decoratie, geen 3D, bronvermelding altijd
 
-VISUELE STIJL (Subtiel Futurisme):
-- Fotorealistische scènes van mensen die genieten van het leven
-- Technologie is subtiel aanwezig: een schermpje, smart glasses, sensoren, wearables, een oortje
-- 90% menselijk geluk, 10% technologie die je bijna mist
-- Mensen centraal: lachend, ontspannen, buiten, verbonden
-- Altijd buiten: natuur, parken, stranden, bergen, Europese landschappen
-- Bright en optimistisch: zonlicht, gouden uur, blauwe lucht
-- Vermijd: robots/humanoids op de voorgrond, mensen achter schermen, koude tech, corporate stock
+VISUELE STIJL (Isometrische Materialiteit):
+- Isometrische composities van gestapelde materiaallagen op witte achtergrond
+- Materialen: beton, printplaat (PCB), eikenhout, messing, koper, ruitjespapier, aquarel, linnen, zwart staal
+- Technologie als laag: PCB met paarse traces, koperen circuits
+- Ambacht zichtbaar: zwaluwstaartverbindingen, hexbouten, klinknagels, messing schroeven
+- Blueprint + aquarel samen: technische tekeningen naast zachte waterverf
+- Compositietypes: exploded view, materiaalgrid, header strip, close-up detail
+- Vermijd: flat vector illustraties, stockfoto's, plastiek 3D, niet-isometrische perspectieven
 
 KLEUREN:
-- Navy blue (#1b3a5c): subtiel op tech-details (smart glasses frame, sensor, tablet rand)
-- Paars (#9b99ff): op schermen en digitale interfaces
+- Paars (#9b99ff): PCB traces, aquarelwashes, LED gloed
+- Navy (#1b3a5c): blueprint inkt, technische tekeningen
 - Natuurlijke kleuren domineren: groen, zonlicht-goud, hemelsblauw, zand
 - Dark mode UI: bg #001d21, accent #9b99ff
 - Light mode UI: bg #ffffff, accent #5b58d8
@@ -193,7 +199,7 @@ Meer details: brand.pantalytics.com</code></pre>
   <div class="prompt-library">
     <div class="prompt-card prompt-card--system">
       <h4>Flux Preset — kopieer voor elke prompt</h4>
-      <pre><code>Editorial photograph, bright optimistic warm natural light, navy blue (#1b3a5c) accent color, Pantalytics brand, photorealistic, no text no letters no watermark</code></pre>
+      <pre><code>Isometric product photography on white background, realistic material textures, soft natural shadows, craft meets technology, purple (#9b99ff) and navy (#1b3a5c) accent colors, fine art quality, no text no letters no watermark</code></pre>
     </div>
   </div>
 
@@ -201,28 +207,28 @@ Meer details: brand.pantalytics.com</code></pre>
   <p>{t("design.visual.prompts.desc")}</p>
   <div class="prompt-library">
     <div class="prompt-card">
-      <h4>Sociaal: terras + subtiel scherm</h4>
-      <pre><code>Friends having lunch on sunny Mediterranean terrace, one small tablet on table showing a purple dashboard among wine glasses and plates, bluetooth earpiece visible on one person, technology seamlessly integrated into a joyful social moment, golden hour</code></pre>
+      <h4>Exploded view — hero visual</h4>
+      <pre><code>Isometric exploded view on white background, six diamond layers floating with spacing between, bottom to top: raw concrete base with steel bolts, green PCB circuit board with purple (#9b99ff) glowing traces, brushed brass plate with hex screws, oak wood with navy (#1b3a5c) blueprint drawing, cream graph paper with technical schematic, torn handmade paper with soft purple watercolor wash. Brass nuts and washers between layers, realistic textures, fine art product photography</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Natuur: fietsen + smart glasses</h4>
-      <pre><code>Person cycling through Dutch countryside along canal, wearing subtle smart glasses with thin navy blue frame, small heads-up notification visible in lens, windmills in background, wildflowers, warm summer light, technology invisible yet present</code></pre>
+      <h4>Materiaalgrid — social media</h4>
+      <pre><code>Isometric diamond tiles on white background arranged in formation, each tile a different material with data visualization: copper tile with etched network diagram, concrete tile with purple (#9b99ff) watercolor bar chart, oak tile with navy (#1b3a5c) ink blueprint, black steel tile with engraved line graph, graph paper tile with hand-drawn flowchart, brass tile with data nodes. Realistic textures, soft shadows</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Natuur: tuin + sensoren</h4>
-      <pre><code>Family gardening in beautiful European garden on sunny morning, small navy blue soil sensors between the plants, subtle drip irrigation running automatically, people relaxed and enjoying the work, technology does the thinking in the background</code></pre>
+      <h4>Header strip — website banner</h4>
+      <pre><code>Wide isometric composition on white background, overlapping diamond material tiles from left to right: dark steel with white blueprint lines, raw concrete with purple (#9b99ff) watercolor stain, polished brass with hex bolts, green PCB with purple traces, oak wood with navy ink drawing, torn paper with purple wash. Generous white space above, realistic textures, fine art photography</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Avontuur: bergen + wearable</h4>
-      <pre><code>Hiker sitting on mountain summit enjoying panoramic view, small navy blue fitness tracker on wrist, tiny drone in far background carrying supplies, vast landscape, bright blue sky, technology so subtle you almost miss it</code></pre>
+      <h4>Close-up detail — achtergrond</h4>
+      <pre><code>Close-up isometric view of layered materials, raw concrete slab with purple (#9b99ff) watercolor bleeding onto its edge, green PCB partially visible underneath with purple traces, brass hex bolts and washers scattered, soft natural shadows, minimal and elegant, white background</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Ontspanning: koffie + achtergrondscherm</h4>
-      <pre><code>Person reading a book in sunny cafe terrace, laptop half-closed on table showing purple analytics dashboard, bluetooth earbuds on table, espresso cup, relaxed and unhurried, the work is handled so life can be enjoyed</code></pre>
+      <h4>Exploded view — met printplaat focus</h4>
+      <pre><code>Isometric exploded view on white background, four layers: heavy concrete base with anchor bolts, green PCB with purple (#9b99ff) LED traces glowing and copper components, brushed copper sheet with precision hex bolt pattern, torn watercolor paper with soft purple data scatter plot. Stainless steel fasteners between layers, engineering teardown aesthetic, realistic textures</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Sociaal: festival + ambient tech</h4>
-      <pre><code>Group of friends at European outdoor summer festival, fairy lights and small navy blue ambient sensors in the trees, one person checking subtle wrist display, music stage in background, golden sunset, technology woven into the atmosphere</code></pre>
+      <h4>Materialen + data — vierkant</h4>
+      <pre><code>Isometric diamond tiles on white background, four tiles in 2x2: concrete with purple (#9b99ff) watercolor bar chart painted on surface, oak wood with navy (#1b3a5c) network diagram in ink, copper with patina and engraved data nodes, graph paper with precise flowchart drawing. Hex nuts visible between tiles, where data meets craft, realistic textures, square format</code></pre>
     </div>
   </div>
 
