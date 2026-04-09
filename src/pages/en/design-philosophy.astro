@@ -70,65 +70,50 @@ const blogFormats = [
     <div class="data-metaphor"><span class="metaphor-arrow">6</span>{t("design.visual.principle.6")}</div>
   </div>
 
-  <h3>{t("design.visual.materials.title")}</h3>
-  <p>{t("design.visual.materials.desc")}</p>
-  <div class="material-grid">
-    <div class="material-card">
-      <div class="material-swatch" style="background: linear-gradient(145deg, #b8b5b0 0%, #a8a5a0 50%, #c2bfba 100%);"></div>
-      <p>Concrete</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch" style="background: linear-gradient(145deg, #1a5c2a 0%, #2d7a3e 50%, #1a5c2a 100%);"></div>
-      <p>PCB</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch" style="background: linear-gradient(145deg, #d4b896 0%, #c4a87a 50%, #dcc8a6 100%);"></div>
-      <p>Oak wood</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch" style="background: linear-gradient(145deg, #d4a853 0%, #c49a3e 50%, #e0b96a 100%);"></div>
-      <p>Brass</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch" style="background: linear-gradient(145deg, #b87a5a 0%, #c4876a 50%, #a86d4e 100%);"></div>
-      <p>Copper</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch" style="background: #f5f2ed; border: 1px dashed var(--color-border-secondary);"></div>
-      <p>Graph paper</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch material-swatch--accent"></div>
-      <p>Watercolor</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch" style="background: linear-gradient(145deg, #2a2a2a 0%, #3a3a3a 50%, #222 100%);"></div>
-      <p>Black steel</p>
-    </div>
-  </div>
-
   <h3>{t("design.visual.compositions.title")}</h3>
   <div class="refs-grid">
     <div class="ref-card">
-      <h4>Exploded view</h4>
+      <h4>Line + bloom</h4>
       <p>{t("design.visual.comp.1")}</p>
     </div>
     <div class="ref-card">
-      <h4>Material grid</h4>
+      <h4>Converging lines</h4>
       <p>{t("design.visual.comp.2")}</p>
     </div>
     <div class="ref-card">
-      <h4>Header strip</h4>
+      <h4>Line + data points</h4>
       <p>{t("design.visual.comp.3")}</p>
     </div>
     <div class="ref-card">
-      <h4>Close-up detail</h4>
+      <h4>Parallel lines</h4>
       <p>{t("design.visual.comp.4")}</p>
+    </div>
+    <div class="ref-card">
+      <h4>Network constellation</h4>
+      <p>{t("design.visual.comp.5")}</p>
     </div>
   </div>
 
   <h3>{t("design.visual.color.title")}</h3>
   <p>{t("design.visual.color.desc")}</p>
+  <div class="material-grid">
+    <div class="material-card">
+      <div class="material-swatch" style="background-color: #1b3a5c;"></div>
+      <p>Navy — lines</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch material-swatch--accent"></div>
+      <p>Purple — blooms</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch" style="background-color: #e8a317;"></div>
+      <p>Gold — warmth</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch" style="background: linear-gradient(145deg, #f5f0ea 0%, #ede6dc 100%);"></div>
+      <p>Cream paper</p>
+    </div>
+  </div>
 
   <h3>{t("design.visual.tone.title")}</h3>
   <p>{t("design.visual.tone.desc")}</p>
@@ -172,18 +157,19 @@ CHARTS & DATA (Economist style):
 - One highlight color on a grey base
 - Minimal decoration, no 3D, always attribute sources
 
-VISUAL STYLE (Isometric Materiality):
-- Isometric compositions of stacked material layers on white background
-- Materials: concrete, circuit board (PCB), oak wood, brass, copper, graph paper, watercolor, linen, black steel
-- Technology as a layer: PCB with purple traces, copper circuits
-- Craft visible: dovetail joints, hex bolts, rivets, brass screws
-- Blueprint + watercolor together: technical drawings alongside soft watercolor
-- Composition types: exploded view, material grid, header strip, close-up detail
-- Avoid: flat vector illustrations, stock photos, plastic 3D, non-isometric perspectives
+VISUAL STYLE (Minimal Line + Wash):
+- Abstract compositions on heavy cream watercolor paper with visible texture
+- Thin navy (#1b3a5c) ink lines: direction, connection, growth
+- Soft purple (#9b99ff) watercolor blooms: data, moments, outcomes
+- At least 60% untouched paper — empty space is essential
+- Wabi-sabi: imperfection desired, ink that bleeds, irregular edges
+- Composition types: line+bloom, converging lines, line+data points, parallel lines, network constellation
+- Avoid: too many elements, bright colors, photography, symmetry
 
 COLORS:
-- Purple (#9b99ff): PCB traces, watercolor washes, LED glow
-- Navy (#1b3a5c): blueprint ink, technical drawings
+- Navy (#1b3a5c): lines and structure
+- Purple (#9b99ff): watercolor blooms and accents
+- Optional gold (#e8a317): warmth accent
 - Natural colors dominate: green, sunlight gold, sky blue, sand
 - Dark mode UI: bg #001d21, accent #9b99ff
 - Light mode UI: bg #ffffff, accent #5b58d8
@@ -199,7 +185,7 @@ More details: brand.pantalytics.com</code></pre>
   <div class="prompt-library">
     <div class="prompt-card prompt-card--system">
       <h4>Flux Preset — copy before every prompt</h4>
-      <pre><code>Isometric product photography on white background, realistic material textures, soft natural shadows, craft meets technology, purple (#9b99ff) and navy (#1b3a5c) accent colors, fine art quality, no text no letters no watermark</code></pre>
+      <pre><code>Abstract on heavy cream watercolor paper with beautiful visible texture, navy (#1b3a5c) ink lines and soft purple (#9b99ff) watercolor blooms, wabi-sabi imperfection, fine art print quality, no objects no figures no text no letters</code></pre>
     </div>
   </div>
 
@@ -207,29 +193,40 @@ More details: brand.pantalytics.com</code></pre>
   <p>{t("design.visual.prompts.desc")}</p>
   <div class="prompt-library">
     <div class="prompt-card">
-      <h4>Exploded view — hero visual</h4>
-      <pre><code>Isometric exploded view on white background, six diamond layers floating with spacing between, bottom to top: raw concrete base with steel bolts, green PCB circuit board with purple (#9b99ff) glowing traces, brushed brass plate with hex screws, oak wood with navy (#1b3a5c) blueprint drawing, cream graph paper with technical schematic, torn handmade paper with soft purple watercolor wash. Brass nuts and washers between layers, realistic textures, fine art product photography</code></pre>
+      <h4>Line + bloom — header/footer</h4>
+      <pre><code>Single thin navy (#1b3a5c) ink line drawing a long gentle curve from left to right, soft purple (#9b99ff) watercolor bloom where the line ends on the right, vast empty textured paper space, landscape format</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Material grid — social media</h4>
-      <pre><code>Isometric diamond tiles on white background arranged in formation, each tile a different material with data visualization: copper tile with etched network diagram, concrete tile with purple (#9b99ff) watercolor bar chart, oak tile with navy (#1b3a5c) ink blueprint, black steel tile with engraved line graph, graph paper tile with hand-drawn flowchart, brass tile with data nodes. Realistic textures, soft shadows</code></pre>
+      <h4>Converging lines — hero</h4>
+      <pre><code>Two thin ink lines one navy (#1b3a5c) one lighter purple (#9b99ff) curving gently toward each other and meeting in a soft purple watercolor bloom at the center, vast empty paper space around them, the lines suggest connection and convergence</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Header strip — website banner</h4>
-      <pre><code>Wide isometric composition on white background, overlapping diamond material tiles from left to right: dark steel with white blueprint lines, raw concrete with purple (#9b99ff) watercolor stain, polished brass with hex bolts, green PCB with purple traces, oak wood with navy ink drawing, torn paper with purple wash. Generous white space above, realistic textures, fine art photography</code></pre>
+      <h4>Data points — OG image</h4>
+      <pre><code>Single thin navy (#1b3a5c) ink line gently ascending from bottom left to upper right, three small purple (#9b99ff) watercolor blooms at different points along the line like data points on a graph, each bloom slightly different size, vast empty textured cream paper, elegant and scientific</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Close-up detail — background</h4>
-      <pre><code>Close-up isometric view of layered materials, raw concrete slab with purple (#9b99ff) watercolor bleeding onto its edge, green PCB partially visible underneath with purple traces, brass hex bolts and washers scattered, soft natural shadows, minimal and elegant, white background</code></pre>
+      <h4>Parallel lines — blog hero</h4>
+      <pre><code>Three thin parallel navy (#1b3a5c) ink lines flowing gently across the page with slight waves like a calm river, one line ends in a soft purple (#9b99ff) watercolor bloom, the other two fade into the paper grain, vast cream white space, rhythmic and peaceful</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Exploded view — PCB focus</h4>
-      <pre><code>Isometric exploded view on white background, four layers: heavy concrete base with anchor bolts, green PCB with purple (#9b99ff) LED traces glowing and copper components, brushed copper sheet with precision hex bolt pattern, torn watercolor paper with soft purple data scatter plot. Stainless steel fasteners between layers, engineering teardown aesthetic, realistic textures</code></pre>
+      <h4>Network — social media</h4>
+      <pre><code>Delicate navy (#1b3a5c) ink dots connected by hairline lines forming a network constellation on rough handmade paper, soft purple (#9b99ff) watercolor halos around key nodes, visible paper texture and fibers, like a star map painted by hand, scientific yet poetic, square format</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Materials + data — square</h4>
-      <pre><code>Isometric diamond tiles on white background, four tiles in 2x2: concrete with purple (#9b99ff) watercolor bar chart painted on surface, oak wood with navy (#1b3a5c) network diagram in ink, copper with patina and engraved data nodes, graph paper with precise flowchart drawing. Hex nuts visible between tiles, where data meets craft, realistic textures, square format</code></pre>
+      <h4>Vertical — story/mobile</h4>
+      <pre><code>Single thin navy (#1b3a5c) ink line dropping vertically with a gentle wave, ending in a soft purple (#9b99ff) watercolor bloom near the bottom, vast empty textured paper above, like a single drop of data falling, tall portrait format</code></pre>
     </div>
+  </div>
+
+  <h2>{t("design.visual.journey.title")}</h2>
+  <p>{t("design.visual.journey.desc")}</p>
+  <div class="data-metaphors">
+    <div class="data-metaphor"><span class="metaphor-arrow">1</span><strong>{t("design.visual.journey.1.name")}</strong> — {t("design.visual.journey.1.desc")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">2</span><strong>{t("design.visual.journey.2.name")}</strong> — {t("design.visual.journey.2.desc")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">3</span><strong>{t("design.visual.journey.3.name")}</strong> — {t("design.visual.journey.3.desc")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">4</span><strong>{t("design.visual.journey.4.name")}</strong> — {t("design.visual.journey.4.desc")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">5</span><strong>{t("design.visual.journey.5.name")}</strong> — {t("design.visual.journey.5.desc")}</div>
+    <div class="data-metaphor" style="background-color: rgba(155,153,255,0.08); border-left: 2px solid var(--color-accent);"><span class="metaphor-arrow">6</span><strong>{t("design.visual.journey.6.name")}</strong> — {t("design.visual.journey.6.desc")}</div>
   </div>
 
   <h2>{t("design.photography.title")}</h2>
