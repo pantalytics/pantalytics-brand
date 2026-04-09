@@ -9,6 +9,8 @@ const nlToEn: Record<string, string> = {
   "/kleuren": "/en/colors",
   "/typografie": "/en/typography",
   "/tone-of-voice": "/en/tone-of-voice",
+  "/design-filosofie": "/en/design-philosophy",
+  "/toolkit": "/en/toolkit",
   "/downloads": "/en/downloads",
 };
 

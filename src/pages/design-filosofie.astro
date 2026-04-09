@@ -1,0 +1,718 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("nl");
+
+const principles = [
+  { key: "disclosure", icon: "◐" },
+  { key: "simplicity", icon: "◻" },
+  { key: "odoo", icon: "⚙" },
+  { key: "accessible", icon: "◉" },
+  { key: "content", icon: "▤" },
+];
+
+const socialFormats = [
+  { format: "LinkedIn post", dimensions: "1200 × 1200", usage: "Quote, statistiek, aankondiging" },
+  { format: "LinkedIn carousel", dimensions: "1080 × 1350", usage: "Slides, tips, uitleg" },
+  { format: "Instagram / Story", dimensions: "1080 × 1920", usage: "Verticale content" },
+];
+
+const videoFormats = [
+  { format: "YouTube thumbnail", dimensions: "1280 × 720", usage: "Video-voorvertoning" },
+  { format: "Video intro", dimensions: "1920 × 1080", usage: "Logo reveal, ~3 seconden" },
+  { format: "Video outro", dimensions: "1920 × 1080", usage: "CTA + logo, ~5 seconden" },
+  { format: "Lower third", dimensions: "1920 × 200", usage: "Naam + functietitel overlay" },
+];
+
+const blogFormats = [
+  { format: "Blog hero", dimensions: "1920 × 1080", usage: "Artikelkop (Directus)" },
+  { format: "OG image", dimensions: "1200 × 630", usage: "Social sharing preview" },
+  { format: "Favicon", dimensions: "32 × 32 / SVG", usage: "Browsertab" },
+];
+---
+
+<BrandLayout title={t("design.title")} lang="nl" description={t("design.intro")} activeSection="design">
+  <h1>{t("design.h1")}</h1>
+  <p class="brand-intro">{t("design.intro")}</p>
+
+  <h2>{t("design.principles.title")}</h2>
+  <div class="principles-grid">
+    {principles.map((p) => (
+      <div class="principle-card">
+        <div class="principle-icon">{p.icon}</div>
+        <h3>{t(`design.principle.${p.key}.title`)}</h3>
+        <p>{t(`design.principle.${p.key}.desc`)}</p>
+        <div class="principle-example">
+          <span class="principle-example-label">Voorbeeld</span>
+          {t(`design.principle.${p.key}.example`)}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <h2>{t("design.visual.title")}</h2>
+  <p class="brand-intro">{t("design.visual.desc")}</p>
+
+  <h3>{t("design.visual.style.title")}</h3>
+  <p>{t("design.visual.style.desc")}</p>
+
+  <h3>{t("design.visual.palette.title")}</h3>
+  <div class="material-grid">
+    <div class="material-card">
+      <div class="material-swatch material-swatch--concrete"></div>
+      <p>{t("design.visual.palette.concrete")}</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch material-swatch--wood"></div>
+      <p>{t("design.visual.palette.wood")}</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch material-swatch--accent"></div>
+      <p>{t("design.visual.palette.accent")}</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch material-swatch--light"></div>
+      <p>{t("design.visual.palette.light")}</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch material-swatch--space"></div>
+      <p>{t("design.visual.palette.space")}</p>
+    </div>
+  </div>
+
+  <h3>{t("design.visual.tone.title")}</h3>
+  <p>{t("design.visual.tone.desc")}</p>
+
+  <h3>{t("design.visual.data.title")}</h3>
+  <p>{t("design.visual.data.desc")}</p>
+  <div class="data-metaphors">
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.data.1")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.data.2")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.data.3")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.data.4")}</div>
+  </div>
+
+  <h3>{t("design.visual.donts.title")}</h3>
+  <div class="donts-list" style="margin-block: var(--space-md);">
+    <h4>{t("design.visual.donts.title")}</h4>
+    <ul>
+      <li>{t("design.visual.dont.1")}</li>
+      <li>{t("design.visual.dont.2")}</li>
+      <li>{t("design.visual.dont.3")}</li>
+      <li>{t("design.visual.dont.4")}</li>
+      <li>{t("design.visual.dont.5")}</li>
+    </ul>
+  </div>
+
+  <h3>{t("design.visual.refs.title")}</h3>
+  <div class="refs-grid">
+    <div class="ref-card">
+      <h4>{t("design.visual.ref.1.name")}</h4>
+      <p>{t("design.visual.ref.1.desc")}</p>
+    </div>
+    <div class="ref-card">
+      <h4>{t("design.visual.ref.2.name")}</h4>
+      <p>{t("design.visual.ref.2.desc")}</p>
+    </div>
+    <div class="ref-card">
+      <h4>{t("design.visual.ref.3.name")}</h4>
+      <p>{t("design.visual.ref.3.desc")}</p>
+    </div>
+    <div class="ref-card">
+      <h4>{t("design.visual.ref.4.name")}</h4>
+      <p>{t("design.visual.ref.4.desc")}</p>
+    </div>
+  </div>
+
+  <h3>{t("design.visual.prompts.title")}</h3>
+  <p>{t("design.visual.prompts.desc")}</p>
+  <div class="prompt-library">
+    <div class="prompt-card">
+      <h4>Hero / Blog header</h4>
+      <pre><code>Scandinavian Japanese minimalist photograph, raw concrete surface with natural light oak wood accent, thin purple (#9b99ff) thread forming a subtle network diagram, soft natural daylight from the left, warm grey tones, generous negative space, quiet confidence, optimistic morning light, no text no people no letters</code></pre>
+    </div>
+    <div class="prompt-card">
+      <h4>Achtergrond / textuur</h4>
+      <pre><code>Minimal abstract texture, raw poured concrete with subtle warm undertone, single delicate ink wash bloom in muted lavender purple, Japanese Scandinavian wabi-sabi aesthetic, tactile grain visible, vast white negative space, natural daylight, no objects no text no people</code></pre>
+    </div>
+    <div class="prompt-card">
+      <h4>Data-concept: netwerk</h4>
+      <pre><code>Overhead photograph of light oak table, thin purple threads and small concrete nodes forming a data network diagram, soft natural daylight, Japanese Scandinavian minimalism, warm muted palette with one purple accent, tactile materials, sense of connection and possibility, no text no people</code></pre>
+    </div>
+    <div class="prompt-card">
+      <h4>Data-concept: groei</h4>
+      <pre><code>Minimalist photograph of stacked concrete layers forming an ascending bar chart, light oak wood base, single purple element highlighting the tallest bar, soft morning light, Japanese Scandinavian aesthetic, warm optimistic mood, architectural precision, no text no people</code></pre>
+    </div>
+    <div class="prompt-card">
+      <h4>Data-concept: flow</h4>
+      <pre><code>Japanese ink wash watercolor, abstract flowing lines on raw paper suggesting data streams, muted lavender purple and warm concrete grey, Scandinavian minimalism, generous white space, gentle movement and optimism, fine art print quality, no text no people no letters</code></pre>
+    </div>
+    <div class="prompt-card">
+      <h4>Video thumbnail</h4>
+      <pre><code>Scandinavian Japanese interior detail, raw concrete wall with warm natural light beam creating geometric shadow, light oak surface, one small muted purple object, Blue Bottle Coffee aesthetic, quiet confident atmosphere, bright and optimistic, no text no people</code></pre>
+    </div>
+  </div>
+
+  <h2>{t("design.photography.title")}</h2>
+  <p>{t("design.photography.desc")}</p>
+
+  <div class="dos-donts">
+    <div class="dos-list">
+      <h4>{t("design.photography.prefer.title")}</h4>
+      <ul>
+        <li>{t("design.photography.prefer.1")}</li>
+        <li>{t("design.photography.prefer.2")}</li>
+        <li>{t("design.photography.prefer.3")}</li>
+        <li>{t("design.photography.prefer.4")}</li>
+      </ul>
+    </div>
+    <div class="donts-list">
+      <h4>{t("design.photography.avoid.title")}</h4>
+      <ul>
+        <li>{t("design.photography.avoid.1")}</li>
+        <li>{t("design.photography.avoid.2")}</li>
+        <li>{t("design.photography.avoid.3")}</li>
+        <li>{t("design.photography.avoid.4")}</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>{t("design.photography.treatment.title")}</h3>
+  <p>{t("design.photography.treatment.desc")}</p>
+
+  <h2>{t("design.charts.title")}</h2>
+  <p>{t("design.charts.desc")}</p>
+
+  <div class="chart-rules">
+    <div class="chart-rule">
+      <h4>{t("design.charts.rule.1.title")}</h4>
+      <p>{t("design.charts.rule.1.desc")}</p>
+      <div class="chart-example">
+        <div class="chart-example-bad">
+          <span class="chart-example-label bad">Niet</span>
+          <span class="chart-example-title">{t("design.charts.rule.1.bad")}</span>
+        </div>
+        <div class="chart-example-good">
+          <span class="chart-example-label good">Wel</span>
+          <span class="chart-example-title">{t("design.charts.rule.1.good")}</span>
+        </div>
+      </div>
+    </div>
+    <div class="chart-rule">
+      <h4>{t("design.charts.rule.2.title")}</h4>
+      <p>{t("design.charts.rule.2.desc")}</p>
+    </div>
+    <div class="chart-rule">
+      <h4>{t("design.charts.rule.3.title")}</h4>
+      <p>{t("design.charts.rule.3.desc")}</p>
+      <div class="color-strip">
+        <span class="color-dot" style="background-color: #6b7280;"></span>
+        <span class="color-dot" style="background-color: #9ca3af;"></span>
+        <span class="color-dot" style="background-color: #d1d5db;"></span>
+        <span class="color-dot color-dot--accent" style="background-color: #9b99ff;"></span>
+      </div>
+    </div>
+    <div class="chart-rule">
+      <h4>{t("design.charts.rule.4.title")}</h4>
+      <p>{t("design.charts.rule.4.desc")}</p>
+    </div>
+    <div class="chart-rule">
+      <h4>{t("design.charts.rule.5.title")}</h4>
+      <p>{t("design.charts.rule.5.desc")}</p>
+    </div>
+    <div class="chart-rule">
+      <h4>{t("design.charts.rule.6.title")}</h4>
+      <p>{t("design.charts.rule.6.desc")}</p>
+    </div>
+  </div>
+
+  <h2>{t("design.templates.title")}</h2>
+  <p>{t("design.templates.desc")}</p>
+
+  <h3>{t("design.templates.social.title")}</h3>
+  <table class="format-table">
+    <thead>
+      <tr>
+        <th>{t("design.templates.format")}</th>
+        <th>{t("design.templates.dimensions")}</th>
+        <th>{t("design.templates.usage")}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {socialFormats.map((f) => (
+        <tr>
+          <td>{f.format}</td>
+          <td>{f.dimensions}</td>
+          <td>{f.usage}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h3>{t("design.templates.video.title")}</h3>
+  <table class="format-table">
+    <thead>
+      <tr>
+        <th>{t("design.templates.format")}</th>
+        <th>{t("design.templates.dimensions")}</th>
+        <th>{t("design.templates.usage")}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {videoFormats.map((f) => (
+        <tr>
+          <td>{f.format}</td>
+          <td>{f.dimensions}</td>
+          <td>{f.usage}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h3>{t("design.templates.blog.title")}</h3>
+  <table class="format-table">
+    <thead>
+      <tr>
+        <th>{t("design.templates.format")}</th>
+        <th>{t("design.templates.dimensions")}</th>
+        <th>{t("design.templates.usage")}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {blogFormats.map((f) => (
+        <tr>
+          <td>{f.format}</td>
+          <td>{f.dimensions}</td>
+          <td>{f.usage}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h2>Brand Pattern</h2>
+  <p>Het Pantalytics-netwerkpatroon kan worden gebruikt als achtergrond voor video's, social media posts, presentaties en blog hero images. Beschikbaar in dark en light varianten.</p>
+  <div class="pattern-demo">
+    <div class="pattern-box pattern-box--dark">
+      <span class="pattern-label">Dark</span>
+    </div>
+    <div class="pattern-box pattern-box--light">
+      <span class="pattern-label">Light</span>
+    </div>
+  </div>
+</BrandLayout>
+
+<style>
+  /* Material palette */
+  .material-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-sm);
+    margin-block: var(--space-md);
+  }
+
+  .material-card {
+    text-align: center;
+  }
+
+  .material-swatch {
+    height: 80px;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-xs);
+    border: 1px solid var(--color-border-primary);
+  }
+
+  .material-swatch--concrete {
+    background: linear-gradient(145deg, #b8b5b0 0%, #a8a5a0 50%, #c2bfba 100%);
+  }
+
+  .material-swatch--wood {
+    background: linear-gradient(145deg, #d4b896 0%, #c4a87a 30%, #dcc8a6 70%, #c9ad85 100%);
+  }
+
+  .material-swatch--accent {
+    background-color: #9b99ff;
+  }
+
+  .material-swatch--light {
+    background: linear-gradient(180deg, #faf8f5 0%, #f5f0ea 100%);
+  }
+
+  .material-swatch--space {
+    background-color: #ffffff;
+    border-style: dashed;
+  }
+
+  .material-card p {
+    font-size: 0.81rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+  }
+
+  /* Data metaphors */
+  .data-metaphors {
+    margin-block: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .data-metaphor {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+  }
+
+  .metaphor-arrow {
+    color: var(--color-accent);
+    font-weight: var(--font-weight-bold);
+    flex-shrink: 0;
+  }
+
+  /* Reference cards */
+  .refs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    margin-block: var(--space-md);
+  }
+
+  .ref-card {
+    padding: var(--space-sm);
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-md);
+  }
+
+  .ref-card h4 {
+    font-size: 0.88rem;
+    color: var(--color-accent);
+    margin-bottom: 0.25rem;
+  }
+
+  .ref-card p {
+    font-size: 0.81rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+  }
+
+  /* Prompt library */
+  .prompt-library {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-block: var(--space-md);
+  }
+
+  .prompt-card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .prompt-card h4 {
+    font-size: 0.81rem;
+    padding: var(--space-xs) var(--space-sm);
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--color-border-primary);
+    color: var(--color-text-primary);
+  }
+
+  .prompt-card pre {
+    margin: 0;
+    padding: var(--space-sm);
+    overflow-x: auto;
+  }
+
+  .prompt-card code {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.5;
+  }
+
+  .principles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    margin-block: var(--space-md);
+  }
+
+  .principle-card {
+    padding: var(--space-md);
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-lg);
+  }
+
+  .principle-icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+    color: var(--color-accent);
+  }
+
+  .principle-card h3 {
+    font-size: 1.15rem;
+    margin-top: 0;
+    margin-bottom: var(--space-xs);
+  }
+
+  .principle-card p {
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .principle-example {
+    font-size: 0.81rem;
+    color: var(--color-text-secondary);
+    padding: var(--space-xs) var(--space-sm);
+    background-color: rgba(155, 153, 255, 0.05);
+    border-left: 2px solid var(--color-accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+
+  .principle-example-label {
+    display: block;
+    font-size: 0.69rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: 0.25em;
+  }
+
+  .treatment-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    margin-block: var(--space-md);
+  }
+
+  .treatment-box {
+    height: 160px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-xs);
+    position: relative;
+    background: linear-gradient(135deg, #667788 0%, #8899aa 50%, #556677 100%);
+  }
+
+  .treatment-box--treated {
+    overflow: hidden;
+  }
+
+  .treatment-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 29, 33, 0.15);
+  }
+
+  .treatment-label {
+    font-size: 0.69rem;
+    font-family: monospace;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0.2em 0.5em;
+    border-radius: var(--radius-sm);
+    position: relative;
+    z-index: 1;
+  }
+
+  .format-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--space-md);
+    font-size: 0.88rem;
+  }
+
+  .format-table th,
+  .format-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--color-border-primary);
+  }
+
+  .format-table th {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-medium);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+  }
+
+  .format-table td {
+    color: var(--color-text-secondary);
+  }
+
+  .format-table td:first-child {
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .format-table td:nth-child(2) {
+    font-family: monospace;
+  }
+
+  .pattern-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    margin-block: var(--space-md);
+  }
+
+  .pattern-box {
+    height: 200px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-primary);
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-xs);
+    background-size: 60px 60px;
+  }
+
+  .pattern-box--dark {
+    background-color: var(--color-bg-primary);
+    background-image:
+      radial-gradient(circle, rgba(155, 153, 255, 0.3) 1px, transparent 1px),
+      linear-gradient(rgba(155, 153, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(155, 153, 255, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px, 30px 30px, 30px 30px;
+  }
+
+  .pattern-box--light {
+    background-color: #ffffff;
+    background-image:
+      radial-gradient(circle, rgba(91, 88, 216, 0.3) 1px, transparent 1px),
+      linear-gradient(rgba(91, 88, 216, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(91, 88, 216, 0.08) 1px, transparent 1px);
+    background-size: 60px 60px, 30px 30px, 30px 30px;
+  }
+
+  .pattern-label {
+    font-size: 0.69rem;
+    font-family: monospace;
+    padding: 0.2em 0.5em;
+    border-radius: var(--radius-sm);
+  }
+
+  .pattern-box--dark .pattern-label {
+    color: var(--color-text-secondary);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .pattern-box--light .pattern-label {
+    color: rgba(0, 29, 33, 0.6);
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .chart-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    margin-block: var(--space-md);
+  }
+
+  .chart-rule {
+    padding: var(--space-sm);
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-md);
+  }
+
+  .chart-rule h4 {
+    font-size: 0.88rem;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text-primary);
+  }
+
+  .chart-rule p {
+    font-size: 0.81rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+  }
+
+  .chart-example {
+    display: flex;
+    gap: var(--space-xs);
+    margin-top: var(--space-xs);
+  }
+
+  .chart-example-bad,
+  .chart-example-good {
+    flex: 1;
+    padding: var(--space-xs);
+    border-radius: var(--radius-sm);
+    font-size: 0.81rem;
+  }
+
+  .chart-example-bad {
+    background-color: rgba(239, 68, 68, 0.05);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+
+  .chart-example-good {
+    background-color: rgba(34, 197, 94, 0.05);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+  }
+
+  .chart-example-label {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25em;
+  }
+
+  .chart-example-label.bad { color: #ef4444; }
+  .chart-example-label.good { color: #22c55e; }
+
+  .chart-example-title {
+    font-style: italic;
+    color: var(--color-text-secondary);
+  }
+
+  .color-strip {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: var(--space-xs);
+    align-items: center;
+  }
+
+  .color-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border-primary);
+  }
+
+  .color-dot--accent {
+    box-shadow: 0 0 0 2px var(--color-bg-secondary), 0 0 0 3px var(--color-accent);
+  }
+
+  @media (max-width: 767px) {
+    .treatment-demo,
+    .pattern-demo {
+      grid-template-columns: 1fr;
+    }
+
+    .chart-rules,
+    .refs-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .chart-example {
+      flex-direction: column;
+    }
+  }
+</style>

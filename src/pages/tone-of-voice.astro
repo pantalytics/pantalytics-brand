@@ -91,6 +91,47 @@ const t = useTranslations("nl");
     </div>
   </div>
 
+  <h2>{t("voice.structure.title")}</h2>
+  <p>{t("voice.structure.desc")}</p>
+
+  <h3>{t("voice.pyramid.title")}</h3>
+  <div class="pyramid">
+    <div class="pyramid-level pyramid-level--top">
+      <span class="pyramid-label">1</span>
+      <p>{t("voice.pyramid.governing")}</p>
+    </div>
+    <div class="pyramid-level pyramid-level--mid">
+      <span class="pyramid-label">2</span>
+      <p>{t("voice.pyramid.keyline")}</p>
+    </div>
+    <div class="pyramid-level pyramid-level--base">
+      <span class="pyramid-label">3</span>
+      <p>{t("voice.pyramid.evidence")}</p>
+    </div>
+  </div>
+  <p class="sowhat-callout">{t("voice.pyramid.sowhat")}</p>
+
+  <h3>{t("voice.scqa.title")}</h3>
+  <div class="scqa-grid">
+    <div class="scqa-step"><span class="scqa-letter">S</span><p>{t("voice.scqa.s")}</p></div>
+    <div class="scqa-step"><span class="scqa-letter">C</span><p>{t("voice.scqa.c")}</p></div>
+    <div class="scqa-step"><span class="scqa-letter">Q</span><p>{t("voice.scqa.q")}</p></div>
+    <div class="scqa-step"><span class="scqa-letter">A</span><p>{t("voice.scqa.a")}</p></div>
+  </div>
+
+  <h3>{t("voice.structure.slides")}</h3>
+  <p>{t("voice.structure.slides.desc")}</p>
+  <div class="example-block">
+    <div class="example-before">
+      <span class="example-label">{t("voice.example.before.label")}</span>
+      {t("voice.structure.slides.bad")}
+    </div>
+    <div class="example-after">
+      <span class="example-label">{t("voice.example.after.label")}</span>
+      {t("voice.structure.slides.good")}
+    </div>
+  </div>
+
   <h2>{t("voice.examples.title")}</h2>
   <div class="example-block">
     <div class="example-before">

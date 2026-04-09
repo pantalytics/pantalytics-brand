@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <rect width="240" height="240" fill="#001d21"/>
+  <!-- Grid lines -->
+  <line x1="60" y1="0" x2="60" y2="240" stroke="rgba(155,153,255,0.06)" stroke-width="1"/>
+  <line x1="120" y1="0" x2="120" y2="240" stroke="rgba(155,153,255,0.06)" stroke-width="1"/>
+  <line x1="180" y1="0" x2="180" y2="240" stroke="rgba(155,153,255,0.06)" stroke-width="1"/>
+  <line x1="0" y1="60" x2="240" y2="60" stroke="rgba(155,153,255,0.06)" stroke-width="1"/>
+  <line x1="0" y1="120" x2="240" y2="120" stroke="rgba(155,153,255,0.06)" stroke-width="1"/>
+  <line x1="0" y1="180" x2="240" y2="180" stroke="rgba(155,153,255,0.06)" stroke-width="1"/>
+  <!-- Connection lines -->
+  <line x1="60" y1="60" x2="120" y2="120" stroke="rgba(155,153,255,0.12)" stroke-width="0.5"/>
+  <line x1="120" y1="60" x2="180" y2="120" stroke="rgba(155,153,255,0.12)" stroke-width="0.5"/>
+  <line x1="60" y1="120" x2="120" y2="180" stroke="rgba(155,153,255,0.12)" stroke-width="0.5"/>
+  <line x1="120" y1="120" x2="180" y2="60" stroke="rgba(155,153,255,0.08)" stroke-width="0.5"/>
+  <line x1="180" y1="120" x2="120" y2="180" stroke="rgba(155,153,255,0.08)" stroke-width="0.5"/>
+  <!-- Nodes -->
+  <circle cx="60" cy="60" r="2" fill="rgba(155,153,255,0.35)"/>
+  <circle cx="120" cy="60" r="1.5" fill="rgba(155,153,255,0.25)"/>
+  <circle cx="180" cy="60" r="2" fill="rgba(155,153,255,0.3)"/>
+  <circle cx="60" cy="120" r="1.5" fill="rgba(155,153,255,0.25)"/>
+  <circle cx="120" cy="120" r="2.5" fill="rgba(155,153,255,0.4)"/>
+  <circle cx="180" cy="120" r="1.5" fill="rgba(155,153,255,0.2)"/>
+  <circle cx="60" cy="180" r="2" fill="rgba(155,153,255,0.3)"/>
+  <circle cx="120" cy="180" r="2" fill="rgba(155,153,255,0.35)"/>
+  <circle cx="180" cy="180" r="1.5" fill="rgba(155,153,255,0.25)"/>
+</svg>

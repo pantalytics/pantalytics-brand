@@ -407,6 +407,99 @@
   font-family: monospace;
 }
 
+/* Pyramid Principle */
+.pyramid {
+  margin-block: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pyramid-level {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-primary);
+}
+
+.pyramid-level--top {
+  background-color: rgba(155, 153, 255, 0.15);
+  border-color: rgba(155, 153, 255, 0.3);
+}
+
+.pyramid-level--mid {
+  background-color: rgba(155, 153, 255, 0.08);
+  margin-inline: var(--space-md);
+}
+
+.pyramid-level--base {
+  background-color: var(--color-bg-secondary);
+  margin-inline: calc(var(--space-md) * 2);
+}
+
+.pyramid-label {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.33rem;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  width: 2rem;
+  text-align: center;
+}
+
+.pyramid-level p {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
+.pyramid-level--top p {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.sowhat-callout {
+  font-size: 0.88rem;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-xs) var(--space-sm);
+  border-left: 2px solid var(--color-accent);
+  margin-top: var(--space-sm);
+}
+
+/* SCQA */
+.scqa-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xs);
+  margin-block: var(--space-md);
+}
+
+.scqa-step {
+  padding: var(--space-sm);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.scqa-letter {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.scqa-step p {
+  font-size: 0.81rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
 /* Responsive */
 @media (max-width: 991px) {
   .brand-content {
@@ -434,6 +527,18 @@
   .dos-donts,
   .example-block {
     grid-template-columns: 1fr;
+  }
+
+  .scqa-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pyramid-level--mid {
+    margin-inline: var(--space-xs);
+  }
+
+  .pyramid-level--base {
+    margin-inline: var(--space-sm);
   }
 
   .logo-grid {

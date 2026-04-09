@@ -1,0 +1,134 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("en");
+
+const tools = [
+  { key: "flux", icon: "✦" },
+  { key: "penpot", icon: "◇" },
+  { key: "remotion", icon: "▶" },
+  { key: "pixabay", icon: "♪" },
+  { key: "claude", icon: "◈" },
+];
+---
+
+<BrandLayout title={t("toolkit.title")} lang="en" description={t("toolkit.intro")} activeSection="toolkit">
+  <h1>{t("toolkit.h1")}</h1>
+  <p class="brand-intro">{t("toolkit.intro")}</p>
+
+  <div class="toolkit-grid">
+    {tools.map((tool) => (
+      <div class="toolkit-card">
+        <div class="toolkit-icon">{tool.icon}</div>
+        <h6>{t(`toolkit.${tool.key}.category`)}</h6>
+        <h3>{t(`toolkit.${tool.key}.title`)}</h3>
+        <p>{t(`toolkit.${tool.key}.desc`)}</p>
+        <div class="toolkit-meta">
+          <div class="toolkit-meta-item">
+            <span class="toolkit-meta-label">{t("toolkit.usage")}</span>
+            <span class="toolkit-meta-value">{t(`toolkit.${tool.key}.usage`)}</span>
+          </div>
+          <div class="toolkit-meta-item">
+            <span class="toolkit-meta-label">{t("toolkit.license")}</span>
+            <span class="toolkit-meta-value">{t(`toolkit.${tool.key}.license`)}</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="toolkit-principle">
+    <h2>{t("toolkit.principle.title")}</h2>
+    <p>{t("toolkit.principle.desc")}</p>
+  </div>
+</BrandLayout>
+
+<style>
+  .toolkit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    margin-block: var(--space-md);
+  }
+
+  .toolkit-card {
+    padding: var(--space-md);
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-lg);
+  }
+
+  .toolkit-icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+    color: var(--color-accent);
+  }
+
+  .toolkit-card h6 {
+    margin-bottom: 0.25rem;
+  }
+
+  .toolkit-card h3 {
+    font-size: 1.15rem;
+    margin-top: 0;
+    margin-bottom: var(--space-xs);
+  }
+
+  .toolkit-card p {
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .toolkit-meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-border-primary);
+  }
+
+  .toolkit-meta-item {
+    display: flex;
+    gap: var(--space-sm);
+    font-size: 0.81rem;
+  }
+
+  .toolkit-meta-label {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    min-width: 5rem;
+    flex-shrink: 0;
+  }
+
+  .toolkit-meta-value {
+    color: var(--color-text-secondary);
+  }
+
+  .toolkit-principle {
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background-color: rgba(155, 153, 255, 0.05);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  .toolkit-principle h2 {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .toolkit-principle p {
+    font-size: 0.88rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    .toolkit-meta-item {
+      flex-direction: column;
+      gap: 0.125rem;
+    }
+  }
+</style>
