@@ -54,44 +54,78 @@ const blogFormats = [
   <h2>{t("design.visual.title")}</h2>
   <p class="brand-intro">{t("design.visual.desc")}</p>
 
+  <h3>{t("design.visual.vision.title")}</h3>
+  <p>{t("design.visual.vision.desc")}</p>
+
   <h3>{t("design.visual.style.title")}</h3>
   <p>{t("design.visual.style.desc")}</p>
 
-  <h3>{t("design.visual.palette.title")}</h3>
+  <h3>{t("design.visual.principles.title")}</h3>
+  <div class="data-metaphors">
+    <div class="data-metaphor"><span class="metaphor-arrow">1</span>{t("design.visual.principle.1")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">2</span>{t("design.visual.principle.2")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">3</span>{t("design.visual.principle.3")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">4</span>{t("design.visual.principle.4")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">5</span>{t("design.visual.principle.5")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">6</span>{t("design.visual.principle.6")}</div>
+  </div>
+
+  <h3>{t("design.visual.tech.title")}</h3>
+  <p>{t("design.visual.tech.desc")}</p>
+  <div class="data-metaphors">
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.tech.1")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.tech.2")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.tech.3")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.tech.4")}</div>
+  </div>
+
+  <h3>{t("design.visual.scenes.title")}</h3>
+  <div class="refs-grid">
+    <div class="ref-card">
+      <h4>Adventure</h4>
+      <p>{t("design.visual.scene.1")}</p>
+    </div>
+    <div class="ref-card">
+      <h4>Social</h4>
+      <p>{t("design.visual.scene.2")}</p>
+    </div>
+    <div class="ref-card">
+      <h4>Care</h4>
+      <p>{t("design.visual.scene.3")}</p>
+    </div>
+    <div class="ref-card">
+      <h4>Freedom</h4>
+      <p>{t("design.visual.scene.4")}</p>
+    </div>
+  </div>
+
+  <h3>{t("design.visual.color.title")}</h3>
+  <p>{t("design.visual.color.desc")}</p>
   <div class="material-grid">
     <div class="material-card">
-      <div class="material-swatch material-swatch--concrete"></div>
-      <p>{t("design.visual.palette.concrete")}</p>
-    </div>
-    <div class="material-card">
-      <div class="material-swatch material-swatch--wood"></div>
-      <p>{t("design.visual.palette.wood")}</p>
+      <div class="material-swatch" style="background-color: #1b3a5c;"></div>
+      <p>Navy Blue — technology</p>
     </div>
     <div class="material-card">
       <div class="material-swatch material-swatch--accent"></div>
-      <p>{t("design.visual.palette.accent")}</p>
+      <p>Purple — digital interfaces</p>
     </div>
     <div class="material-card">
-      <div class="material-swatch material-swatch--light"></div>
-      <p>{t("design.visual.palette.light")}</p>
+      <div class="material-swatch" style="background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);"></div>
+      <p>Green — nature</p>
     </div>
     <div class="material-card">
-      <div class="material-swatch material-swatch--space"></div>
-      <p>{t("design.visual.palette.space")}</p>
+      <div class="material-swatch" style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);"></div>
+      <p>Gold — sunlight</p>
+    </div>
+    <div class="material-card">
+      <div class="material-swatch" style="background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%);"></div>
+      <p>Blue — sky & water</p>
     </div>
   </div>
 
   <h3>{t("design.visual.tone.title")}</h3>
   <p>{t("design.visual.tone.desc")}</p>
-
-  <h3>{t("design.visual.data.title")}</h3>
-  <p>{t("design.visual.data.desc")}</p>
-  <div class="data-metaphors">
-    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.data.1")}</div>
-    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.data.2")}</div>
-    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.data.3")}</div>
-    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.visual.data.4")}</div>
-  </div>
 
   <h3>{t("design.visual.donts.title")}</h3>
   <div class="donts-list" style="margin-block: var(--space-md);">
@@ -105,23 +139,61 @@ const blogFormats = [
     </ul>
   </div>
 
-  <h3>{t("design.visual.refs.title")}</h3>
-  <div class="refs-grid">
-    <div class="ref-card">
-      <h4>{t("design.visual.ref.1.name")}</h4>
-      <p>{t("design.visual.ref.1.desc")}</p>
+  <h2>{t("design.systemprompt.title")}</h2>
+  <p>{t("design.systemprompt.desc")}</p>
+  <div class="prompt-library">
+    <div class="prompt-card prompt-card--system">
+      <h4>Pantalytics Brand System Prompt</h4>
+      <pre><code>You are creating content for Pantalytics, a European AI and ERP company based in Utrecht, Netherlands.
+
+VISION: Technology should free people, not burden them. AI and automation enable people to do what makes them happy: being outdoors, social connection, nature, music, art, exercise. Technology is the enabler, not the subject.
+
+MISSION: Bring order to business processes with secure, open source software and AI. We strengthen teams, not replace them. European-hosted, GDPR-compliant, no vendor lock-in.
+
+BRAND VALUES: Reliable, Open, Practical, Smart.
+
+WRITING STYLE (McKinsey Pyramid Principle):
+- Always lead with the conclusion
+- Support with 2-5 arguments (MECE)
+- Every point must survive the "so what?" test
+- Slide/paragraph titles are complete sentences with the insight, not topic labels
+- Tone: professional, warm, honest. First person plural ("we"). Direct address ("you").
+- Use active voice, be specific, avoid jargon.
+
+CHARTS & DATA (Economist style):
+- Conclusion in the chart title (complete sentence)
+- Labels directly in the chart, no separate legend
+- One highlight color on a grey base
+- Minimal decoration, no 3D, always attribute sources
+
+VISUAL STYLE (Realistic Absurdism):
+- Photorealistic scenes where friendly technology frees people to live outdoors
+- Robots are soft, organic, with navy blue (#1b3a5c) accents and warm eyes
+- People first: laughing, relaxed, outdoors, connected
+- Always outdoors: nature, parks, beaches, mountains, European landscapes
+- Bright and optimistic: sunlight, golden hour, blue skies
+- Absurdist twist: a dog sled pulled by robots, a humanoid waving palm leaves
+- Avoid: cold tech imagery, people behind screens, dystopian AI, corporate stock
+
+COLORS:
+- Navy blue (#1b3a5c): on all technology (robots, drones, companions)
+- Purple (#9b99ff): digital interfaces, subtle light accents
+- Natural colors dominate: green, sunlight gold, sky blue, sand
+- Dark mode UI: bg #001d21, accent #9b99ff
+- Light mode UI: bg #ffffff, accent #5b58d8
+
+TYPOGRAPHY: Lexend 500 (headings), Instrument Sans 400-700 (body).
+
+More details: brand.pantalytics.com</code></pre>
     </div>
-    <div class="ref-card">
-      <h4>{t("design.visual.ref.2.name")}</h4>
-      <p>{t("design.visual.ref.2.desc")}</p>
-    </div>
-    <div class="ref-card">
-      <h4>{t("design.visual.ref.3.name")}</h4>
-      <p>{t("design.visual.ref.3.desc")}</p>
-    </div>
-    <div class="ref-card">
-      <h4>{t("design.visual.ref.4.name")}</h4>
-      <p>{t("design.visual.ref.4.desc")}</p>
+  </div>
+
+  <h2>{t("design.fluxpreset.title")}</h2>
+  <p>{t("design.fluxpreset.desc")}</p>
+  <div class="prompt-library">
+    <div class="prompt-card prompt-card--system">
+      <h4>Flux Preset — copy before every prompt</h4>
+      <pre><code>Photorealistic editorial photograph, bright optimistic natural sunlight, European landscape or setting, friendly organic technology with navy blue (#1b3a5c) accents and warm glowing eyes blending naturally into the scene, people laughing and relaxed outdoors, technology as helpful companion not machine, realistic yet absurdist, warm hopeful atmosphere, no text no letters no watermark</code></pre>
     </div>
   </div>
 
@@ -129,28 +201,28 @@ const blogFormats = [
   <p>{t("design.visual.prompts.desc")}</p>
   <div class="prompt-library">
     <div class="prompt-card">
-      <h4>Hero / Blog header</h4>
-      <pre><code>Scandinavian Japanese minimalist photograph, raw concrete surface with natural light oak wood accent, thin purple (#9b99ff) thread forming a subtle network diagram, soft natural daylight from the left, warm grey tones, generous negative space, quiet confidence, optimistic morning light, no text no people no letters</code></pre>
+      <h4>Adventure: robot sled</h4>
+      <pre><code>Bright sunny winter landscape, person joyfully riding traditional wooden dog sled pulled by eight friendly quadruped robots with soft rounded edges in navy blue (#1b3a5c) with warm glowing eyes running happily through fresh snow, robots have organic flowing design blending with nature, blue sky mountains, person laughing, photorealistic, warm sunlight, no text no letters</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Background / texture</h4>
-      <pre><code>Minimal abstract texture, raw poured concrete with subtle warm undertone, single delicate ink wash bloom in muted lavender purple, Japanese Scandinavian wabi-sabi aesthetic, tactile grain visible, vast white negative space, natural daylight, no objects no text no people</code></pre>
+      <h4>Social: terrace with humanoid</h4>
+      <pre><code>Bright Mediterranean terrace sunny afternoon, friendly humanoid with soft features and warm eyes in navy blue (#1b3a5c) accents gently waving large palm leaf to cool friends having lunch outdoors, wine glasses on wooden table, olive trees, everyone relaxed laughing, absurd yet beautiful, photorealistic, golden hour light, no text no letters</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Data concept: network</h4>
-      <pre><code>Overhead photograph of light oak table, thin purple threads and small concrete nodes forming a data network diagram, soft natural daylight, Japanese Scandinavian minimalism, warm muted palette with one purple accent, tactile materials, sense of connection and possibility, no text no people</code></pre>
+      <h4>Care: companion in garden</h4>
+      <pre><code>Sunny European garden, friendly quadruped companion robot with soft rounded body in navy blue (#1b3a5c) and warm glowing eyes gently helping a child water lavender flowers, robot moves naturally like a loyal pet, family picnicking nearby, bright optimistic daylight, technology as trusted family companion, photorealistic, no text no letters</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Data concept: growth</h4>
-      <pre><code>Minimalist photograph of stacked concrete layers forming an ascending bar chart, light oak wood base, single purple element highlighting the tallest bar, soft morning light, Japanese Scandinavian aesthetic, warm optimistic mood, architectural precision, no text no people</code></pre>
+      <h4>Freedom: cycling with companion</h4>
+      <pre><code>Bright Dutch countryside, person cycling happily along canal with friendly quadruped robot in navy blue (#1b3a5c) with warm accents running alongside like a loyal dog, robot has smooth organic form, wildflowers along path, windmills in background, warm summer light, technology blends into daily life, photorealistic, no text no letters</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Data concept: flow</h4>
-      <pre><code>Japanese ink wash watercolor, abstract flowing lines on raw paper suggesting data streams, muted lavender purple and warm concrete grey, Scandinavian minimalism, generous white space, gentle movement and optimism, fine art print quality, no text no people no letters</code></pre>
+      <h4>Social: festival</h4>
+      <pre><code>Warm summer evening European outdoor festival, friendly humanoid companion with soft organic design in navy blue (#1b3a5c) sitting on grass among friends listening to live music, robot sways gently to rhythm blending naturally into group, fairy lights in trees, golden sunset, technology belongs here, photorealistic, no text no letters</code></pre>
     </div>
     <div class="prompt-card">
-      <h4>Video thumbnail</h4>
-      <pre><code>Scandinavian Japanese interior detail, raw concrete wall with warm natural light beam creating geometric shadow, light oak surface, one small muted purple object, Blue Bottle Coffee aesthetic, quiet confident atmosphere, bright and optimistic, no text no people</code></pre>
+      <h4>Care: beach</h4>
+      <pre><code>Bright beach morning golden light, friendly quadruped companion robot with rounded organic design in navy blue (#1b3a5c) and warm glowing accents playing fetch with children in shallow waves, robot splashes joyfully, parents watching smiling, warm optimistic atmosphere, photorealistic, no text no letters</code></pre>
     </div>
   </div>
 
@@ -436,6 +508,16 @@ const blogFormats = [
     white-space: pre-wrap;
     word-break: break-word;
     line-height: 1.5;
+  }
+
+  .prompt-card--system {
+    border-color: rgba(155, 153, 255, 0.3);
+    background-color: rgba(155, 153, 255, 0.05);
+  }
+
+  .prompt-card--system h4 {
+    color: var(--color-accent);
+    border-bottom-color: rgba(155, 153, 255, 0.2);
   }
 
   .principles-grid {
