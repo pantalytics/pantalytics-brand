@@ -176,6 +176,18 @@ COLORS:
 
 TYPOGRAPHY: Lexend 500 (headings), Instrument Sans 400-700 (body).
 
+UI GUIDELINES (Vercel/Astro style):
+- Progressive disclosure: show only what's relevant
+- Simple language: tell what to do, not how the system works
+- Clear states: active, inactive, hover, focus, disabled, loading, error, success
+- Monochrome chrome: color only for status and accents
+- Border-based elevation: 1px borders, no heavy shadows
+- Buttons: 6px radius, 32/36/40px height, primary/secondary/ghost
+- Cards: 12px radius, 1px border, 24px padding
+- Inputs: 36px height, 6px radius, focus ring 2px accent
+- Transitions: 150ms ease everywhere. Skeleton loaders, not spinners.
+- Status colors: success #45a557, warning #e8a317, error #e5484d, info #9b99ff
+
 More details: brand.pantalytics.com</code></pre>
     </div>
   </div>
@@ -217,6 +229,57 @@ More details: brand.pantalytics.com</code></pre>
       <pre><code>Single thin navy (#1b3a5c) ink line dropping vertically with a gentle wave, ending in a soft purple (#9b99ff) watercolor bloom near the bottom, vast empty textured paper above, like a single drop of data falling, tall portrait format</code></pre>
     </div>
   </div>
+
+  <h2>{t("design.ui.title")}</h2>
+  <p>{t("design.ui.desc")}</p>
+
+  <h3>{t("design.ui.principles.title")}</h3>
+  <div class="data-metaphors">
+    <div class="data-metaphor"><span class="metaphor-arrow">1</span>{t("design.ui.principle.1")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">2</span>{t("design.ui.principle.2")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">3</span>{t("design.ui.principle.3")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">4</span>{t("design.ui.principle.4")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">5</span>{t("design.ui.principle.5")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">6</span>{t("design.ui.principle.6")}</div>
+  </div>
+
+  <h3>{t("design.ui.components.title")}</h3>
+  <div class="refs-grid">
+    <div class="ref-card"><h4>{t("design.ui.buttons.title")}</h4><p>{t("design.ui.buttons.desc")}</p></div>
+    <div class="ref-card"><h4>{t("design.ui.inputs.title")}</h4><p>{t("design.ui.inputs.desc")}</p></div>
+    <div class="ref-card"><h4>{t("design.ui.cards.title")}</h4><p>{t("design.ui.cards.desc")}</p></div>
+    <div class="ref-card"><h4>{t("design.ui.badges.title")}</h4><p>{t("design.ui.badges.desc")}</p></div>
+    <div class="ref-card"><h4>{t("design.ui.tables.title")}</h4><p>{t("design.ui.tables.desc")}</p></div>
+    <div class="ref-card"><h4>{t("design.ui.modals.title")}</h4><p>{t("design.ui.modals.desc")}</p></div>
+  </div>
+
+  <h3>{t("design.ui.states.title")}</h3>
+  <div class="data-metaphors">
+    <div class="data-metaphor" style="border-left: 2px solid var(--color-accent);"><span class="metaphor-arrow" style="color: var(--color-accent);">●</span>{t("design.ui.state.active")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow" style="color: #888;">○</span>{t("design.ui.state.inactive")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">↑</span>{t("design.ui.state.hover")}</div>
+    <div class="data-metaphor" style="border-left: 2px solid var(--color-accent);"><span class="metaphor-arrow" style="color: var(--color-accent);">◎</span>{t("design.ui.state.focus")}</div>
+    <div class="data-metaphor" style="opacity: 0.5;"><span class="metaphor-arrow">◌</span>{t("design.ui.state.disabled")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">⋯</span>{t("design.ui.state.loading")}</div>
+    <div class="data-metaphor" style="border-left: 2px solid #e5484d;"><span class="metaphor-arrow" style="color: #e5484d;">✕</span>{t("design.ui.state.error")}</div>
+    <div class="data-metaphor" style="border-left: 2px solid #45a557;"><span class="metaphor-arrow" style="color: #45a557;">✓</span>{t("design.ui.state.success")}</div>
+  </div>
+
+  <h3>{t("design.ui.spacing.title")}</h3>
+  <p>{t("design.ui.spacing.desc")}</p>
+
+  <h3>{t("design.ui.typography.title")}</h3>
+  <p>{t("design.ui.typography.desc")}</p>
+
+  <h3>{t("design.ui.nav.title")}</h3>
+  <div class="data-metaphors">
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.ui.nav.sidebar")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.ui.nav.tabs")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">→</span>{t("design.ui.nav.breadcrumbs")}</div>
+  </div>
+
+  <h3>{t("design.ui.empty.title")}</h3>
+  <p>{t("design.ui.empty.desc")}</p>
 
   <h2>{t("design.visual.journey.title")}</h2>
   <p>{t("design.visual.journey.desc")}</p>

@@ -75,6 +75,28 @@
   --color-light-border-secondary: rgba(0, 29, 33, 0.2);
   --color-light-border-inverse: rgba(255, 255, 255, 0.2);
 
+  /* UI Components */
+  --ui-radius-sm: 0.375rem;   /* 6px — buttons, inputs */
+  --ui-radius-md: 0.75rem;    /* 12px — cards, modals */
+  --ui-radius-pill: 9999px;   /* badges, pills */
+  --ui-height-sm: 2rem;       /* 32px */
+  --ui-height-md: 2.25rem;    /* 36px */
+  --ui-height-lg: 2.5rem;     /* 40px */
+  --ui-transition: 150ms ease;
+  --ui-focus-ring: 0 0 0 2px var(--color-accent);
+  --ui-overlay: rgba(0, 0, 0, 0.5);
+  --ui-backdrop-blur: blur(8px);
+
+  /* Status Colors */
+  --color-success: #45a557;
+  --color-success-bg: rgba(69, 165, 87, 0.15);
+  --color-warning: #e8a317;
+  --color-warning-bg: rgba(232, 163, 23, 0.15);
+  --color-error: #e5484d;
+  --color-error-bg: rgba(229, 72, 77, 0.15);
+  --color-info: #9b99ff;
+  --color-info-bg: rgba(155, 153, 255, 0.15);
+
   /* Typography */
   --font-heading: "Lexend", sans-serif;
   --font-body: "Instrument Sans", sans-serif;
