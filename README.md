@@ -24,7 +24,7 @@ npm run check     # TypeScript validation
 ## Tech stack
 
 - [Astro](https://astro.build/) 5 — static site generator
-- Self-hosted fonts (Lexend, Instrument Sans)
+- Self-hosted font (Murecho variable)
 - GitHub Pages with custom domain
 - Bilingual: Nederlands (default) + English
 

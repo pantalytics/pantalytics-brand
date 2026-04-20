@@ -23,7 +23,7 @@ npm run check        # TypeScript/Astro type checker
 
 ### Design
 - Mobile-first responsive (breakpoints: 991px, 767px, 479px)
-- Self-hosted fonts: Lexend 500, Instrument Sans 400-700 (woff2 in `public/fonts/`)
+- Self-hosted font: Murecho variable (weight 400–700), subsets latin + latin-ext (woff2 in `public/fonts/`)
 - Colors: `#9b99ff` (accent), `#001d21` (bg primary), `#002328` (bg secondary)
 - No Google Fonts, no external tracking
 
