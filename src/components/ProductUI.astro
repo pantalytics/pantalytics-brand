@@ -1,0 +1,99 @@
+---
+// Product UI: the one standard for how Pantalytics products look, behave and
+// talk. Shared by the NL and EN pages; the words live in src/i18n.
+import type { Locale } from "@/i18n/config";
+import { useTranslations } from "@/i18n/utils";
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const range = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
+---
+
+<h1>{t("ui.h1")}</h1>
+<p class="brand-intro">{t("ui.intro")}</p>
+
+<h2>{t("ui.standard.title")}</h2>
+<p>{t("ui.standard.desc")}</p>
+<p>{t("ui.standard.why")}</p>
+<p>{t("ui.standard.how")}</p>
+
+<h2>{t("ui.pages.title")}</h2>
+<p>{t("ui.pages.desc")}</p>
+<div class="values-grid">
+  {range(5).map((i) => (
+    <div class="value-card">
+      <h4>{t(`ui.page.${i}.name`)}</h4>
+      <p>{t(`ui.page.${i}.desc`)}</p>
+    </div>
+  ))}
+</div>
+
+<h2>{t("ui.when.title")}</h2>
+<table class="voice-table">
+  <thead>
+    <tr>
+      <th>{t("ui.when.col.element")}</th>
+      <th class="col-positive">{t("ui.when.col.use")}</th>
+      <th class="col-negative">{t("ui.when.col.not")}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {range(12).map((i) => (
+      <tr>
+        <td>{t(`ui.when.${i}.el`)}</td>
+        <td class="col-positive">{t(`ui.when.${i}.use`)}</td>
+        <td class="col-negative">{t(`ui.when.${i}.not`)}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+<h3>{t("ui.colour.title")}</h3>
+<p>{t("ui.colour.desc")}</p>
+
+<h2>{t("ui.rules.title")}</h2>
+<ol>
+  {range(8).map((i) => <li>{t(`ui.rule.${i}`)}</li>)}
+</ol>
+
+<h2>{t("ui.copy.title")}</h2>
+<p>{t("ui.copy.desc")}</p>
+<ul>
+  {range(8).map((i) => <li>{t(`ui.copy.${i}`)}</li>)}
+</ul>
+
+<h3>{t("ui.terms.title")}</h3>
+<table class="voice-table">
+  <thead>
+    <tr>
+      <th>{t("ui.terms.col.say")}</th>
+      <th>{t("ui.terms.col.meaning")}</th>
+      <th class="col-negative">{t("ui.terms.col.never")}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {range(7).map((i) => (
+      <tr>
+        <td><strong>{t(`ui.term.${i}.say`)}</strong></td>
+        <td>{t(`ui.term.${i}.means`)}</td>
+        <td class="col-negative">{t(`ui.term.${i}.never`)}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+<h3>{t("ui.example.title")}</h3>
+<div class="example-block">
+  <div class="example-before"><span class="example-label">{t("voice.example.before.label")}</span>{t("ui.example.before")}</div>
+  <div class="example-after"><span class="example-label">{t("voice.example.after.label")}</span>{t("ui.example.after")}</div>
+</div>
+<div class="example-block">
+  <div class="example-before"><span class="example-label">{t("voice.example.before.label")}</span>{t("ui.example2.before")}</div>
+  <div class="example-after"><span class="example-label">{t("voice.example.after.label")}</span>{t("ui.example2.after")}</div>
+</div>
+
+<h2>{t("ui.check.title")}</h2>
+<ul>
+  {range(5).map((i) => <li>{t(`ui.check.${i}`)}</li>)}
+</ul>
