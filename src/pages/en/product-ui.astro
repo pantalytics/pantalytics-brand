@@ -1,0 +1,11 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import ProductUI from "@/components/ProductUI.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("en");
+---
+
+<BrandLayout title={t("ui.title")} lang="en" description={t("ui.intro")} activeSection="productui">
+  <ProductUI lang="en" />
+</BrandLayout>
