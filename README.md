@@ -10,6 +10,8 @@ Official brand identity guide for [Pantalytics](https://www.pantalytics.com).
 - Color palette with WCAG contrast ratios
 - Typography specimens and scale
 - Tone of voice guidelines
+- Design philosophy
+- Product UI standard: how our products look, behave and talk
 - Downloadable brand assets
 
 ## Development
