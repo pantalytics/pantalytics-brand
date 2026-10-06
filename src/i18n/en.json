@@ -440,7 +440,7 @@
   "ui.copy.desc": "Product UI follows our tone of voice, tighter: the reader is in the middle of a task. Product screens are in English.",
   "ui.copy.1": "Sentence case everywhere: titles, buttons, labels, headings.",
   "ui.copy.2": "Buttons are a verb and the thing: \"Add Odoo instance\", \"Remove\", \"Back up now\". Never \"Click here\" or a bare \"OK\".",
-  "ui.copy.3": "Say what to do, not how the system works. No explainer lines under titles; if a button needs a sentence, change the button.",
+  "ui.copy.3": "Write small. Say what to do, not how the system works. Title one line, no explainer under it; help text one sentence at most. Cut your first draft in half. If the screen still needs more words, the screen is wrong, not the copy.",
   "ui.copy.4": "Status words name a state, short: Connected, No key, Off, Running, Stopped, Down.",
   "ui.copy.5": "Errors say what happened and what to do, in one or two sentences, without codes: \"Our server did not answer. Try again in a minute.\"",
   "ui.copy.6": "Confirmations: the title asks the question with the thing (\"Remove this Odoo instance?\"), the body says the consequence, the button repeats the verb (\"Remove\").",
@@ -480,7 +480,7 @@
   "ui.check.1": "The page is one of the five types, with one primary action.",
   "ui.check.2": "Every element is used for what the table above says.",
   "ui.check.3": "Colour only for status; accent only for the primary action and links.",
-  "ui.check.4": "Copy: sentence case, verb plus thing, fixed terms, no explainers.",
+  "ui.check.4": "Copy: sentence case, verb plus thing, fixed terms, no explainers, nothing that could be shorter.",
   "ui.check.5": "Every touched action clicked and judged right after the click, at desktop and 390px.",
   "design.ui.moved": "Product UI has its own page now: the standard, the page types, which element to use when, and how to write for the interface.",
   "design.ui.moved.link": "Go to Product UI"
