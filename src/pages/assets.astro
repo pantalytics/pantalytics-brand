@@ -26,6 +26,17 @@ const assets = [
   { file: "14d-blueprint-fractal.png", title: "Blueprint — fractal", size: "1440 × 1440", type: "Fractal + aquarel", prompt: `${P}, rich purple watercolor blooms with navy blueprint technical lines creating fractal-like geometric patterns through the wash, architectural precision dissolving into organic ink diffusion, multiple bloom clusters connected by hairline grid, visible paper fiber texture, torn edge, square format` },
   { file: "14e-blueprint-subtle.png", title: "Blueprint — subtiel", size: "1200 × 1200", type: "Subtiel blueprint", prompt: `${P}, very subtle purple watercolor wash in lower right with faint navy blueprint grid lines barely visible underneath, most of the page is beautiful empty cream textured paper, extremely minimal, the blueprint is almost a ghost, quiet and sophisticated, square format` },
   { file: "15-story-vertical.png", title: "Story / mobiel", size: "1080 × 1920", type: "Verticale lijn + goud", prompt: `${P}, single thin navy ink line dropping vertically with a gentle wave, ending in a soft purple watercolor bloom near the bottom, tiny gold (#e8a317) accent dot along the line, vast empty textured paper above, tall portrait format` },
+  { file: "16-video-paper.png", title: "Video — papier", size: "2048 × 1152", type: "Lege achtergrond", prompt: "Empty sheet of heavy cream Japanese washi rice paper filling the whole frame, visible long paper fibers and fine grain, very faint torn deckle edge along the bottom, soft even daylight, wabi-sabi imperfection, fine art print quality, 95% empty, no objects no figures no text no letters" },
+  { file: "17-video-title-card.png", title: "Video — titelkaart", size: "2048 × 1152", type: "Lijn + bloom", prompt: `${P}, a single thin navy ink line enters from the left edge and stops at one third of the width, a small soft purple watercolor bloom with irregular edges where it ends, right two thirds of the paper completely empty` },
+  { file: "18-video-frame.png", title: "Video — kader schermopname", size: "2048 × 1152", type: "Penseelkader", prompt: `${P}, four short, slightly dry navy ink brush strokes suggesting the corners of a large rectangle in the center of the sheet, the inside of the rectangle completely empty paper, one tiny soft purple watercolor bloom near the top-right corner stroke` },
+  { file: "19-video-outro.png", title: "Video — outro", size: "2048 × 1152", type: "Lijn door bloom", prompt: `${P}, two thin navy ink lines with gentle curves come in from the left and right edges and converge into one soft purple watercolor bloom slightly right of center, ink bleeding a little into the paper, lots of empty paper` },
+  { file: "20-bloom-single.png", title: "Losse bloom", size: "1024 × 1024", type: "Animatie-element", prompt: "A single irregular soft purple (#9b99ff) watercolor bloom, centered, pigment pooling darker at the edges, on plain flat cream watercolor paper, nothing else, wabi-sabi imperfection, fine art print quality, no objects no figures no text no letters" },
+];
+
+const videos = [
+  { file: "01-title-card-ink.mp4", title: "Titelkaart — inkt verschijnt", prompt: "Locked-off top-down shot of a sheet of cream watercolor paper, camera completely still. After a moment of stillness, a thin navy ink line slowly draws itself from the left edge toward the center, as if pulled by an invisible brush, ink soaking into the paper fibers. Where the line stops, a soft purple watercolor bloom gently blossoms outward with irregular wet edges, then settles. Calm, slow, meditative pace, Japanese wabi-sabi feel. No hands, no brush, no objects, no text." },
+  { file: "02-frame-ink.mp4", title: "Kader — penseelstreken", prompt: "Locked-off top-down shot of a sheet of cream handmade paper with torn edges, camera completely still. One by one, four dry navy ink brush strokes appear at the corners of an invisible rectangle, each stroke painted on quickly with a dry-brush texture, a short pause between strokes. Finally a small purple watercolor bloom soaks into the paper near the top-right corner. Calm, deliberate, Japanese calligraphy rhythm. No hands, no brush, no objects, no text." },
+  { file: "03-outro-ink.mp4", title: "Outro — bloom en lijn", prompt: "Locked-off top-down shot of a sheet of cream handmade paper with torn edges, camera completely still. A soft purple watercolor bloom slowly spreads outward from a point slightly right of center, wet pigment creeping through the paper fibers. Then a thin navy ink line glides across the sheet from left to right, passing through the bloom, ink bleeding slightly where it touches the wet paint. Everything settles into stillness. Slow, meditative, Japanese wabi-sabi pace. No hands, no brush, no objects, no text." },
 ];
 ---
 
@@ -45,6 +56,25 @@ const assets = [
           <details class="asset-prompt">
             <summary>Prompt</summary>
             <pre><code>{a.prompt}</code></pre>
+          </details>
+        </div>
+      </div>
+    ))}
+  </div>
+  <h2>Video</h2>
+  <p class="brand-intro">Flux 3 Video, image-to-video met twee keyframes: begin = hetzelfde vel leeg (de still met de instructie <em>Remove all ink and purple paint, keep the paper exactly identical</em>), eind = de still hierboven. 6 seconden, geen geluid. Gebruik als inspiratie en als intro/outro in de marketingvideo's.</p>
+  <div class="assets-grid">
+    {videos.map((v) => (
+      <div class="asset-card">
+        <div class="asset-image">
+          <video src={`/videos/brand-assets/${v.file}`} autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <div class="asset-info">
+          <h4>{v.title}</h4>
+          <div class="asset-meta">1280 × 704 · 6s</div>
+          <details class="asset-prompt">
+            <summary>Prompt</summary>
+            <pre><code>{v.prompt}</code></pre>
           </details>
         </div>
       </div>
@@ -72,7 +102,8 @@ const assets = [
     padding: var(--space-xs);
   }
 
-  .asset-image img {
+  .asset-image img,
+  .asset-image video {
     width: 100%;
     height: 200px;
     object-fit: cover;
