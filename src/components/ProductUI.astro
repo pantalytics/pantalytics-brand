@@ -57,6 +57,12 @@ const range = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
   {range(9).map((i) => <li>{t(`ui.rule.${i}`)}</li>)}
 </ol>
 
+<h2>{t("ui.speed.title")}</h2>
+<p>{t("ui.speed.desc")}</p>
+<ol>
+  {range(5).map((i) => <li>{t(`ui.speed.${i}`)}</li>)}
+</ol>
+
 <h2>{t("ui.copy.title")}</h2>
 <p>{t("ui.copy.desc")}</p>
 <ul>
