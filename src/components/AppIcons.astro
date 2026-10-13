@@ -1,0 +1,76 @@
+---
+import type { Locale } from "@/i18n/config";
+import { useTranslations } from "@/i18n/utils";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "nl" } = Astro.props;
+const t = useTranslations(lang);
+
+// Order matches scripts/app-icons.mjs; the label is the product name.
+const icons = [
+  { file: "pantalytics", label: "Pantalytics" },
+  { file: "mcp-pro", label: "MCP Pro" },
+  { file: "audit-log", label: "Audit Log" },
+  { file: "user-roles", label: "User Roles" },
+  { file: "outlook-pro", label: "Outlook Pro" },
+  { file: "ai-pro", label: "AI Pro" },
+  { file: "odoo-agents", label: "Odoo Agents" },
+  { file: "style-pro", label: "Style Pro" },
+  { file: "insights-pro", label: "Insights Pro" },
+  { file: "knowledge-pro", label: "Knowledge Pro" },
+];
+---
+
+<h3 id="app-icons">{t("logo.icons.title")}</h3>
+<p>{t("logo.icons.desc")}</p>
+<ul>
+  <li>{t("logo.icons.rule.1")}</li>
+  <li>{t("logo.icons.rule.2")}</li>
+  <li>{t("logo.icons.rule.3")}</li>
+</ul>
+<div class="icon-grid">
+  {icons.map((icon) => (
+    <a class="icon-card" href={`/images/app-icons/${icon.file}.png`} download>
+      <img src={`/images/app-icons/${icon.file}.png`} alt={`${icon.label} app icon`} width="96" height="96" loading="lazy" />
+      <span>{icon.label}</span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--space-sm);
+    margin-block: var(--space-md);
+  }
+
+  .icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-lg);
+    background-color: #ffffff;
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+    font-family: monospace;
+    text-align: center;
+  }
+
+  .icon-card:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .icon-card img {
+    width: 96px;
+    height: 96px;
+    border-radius: 0;
+  }
+</style>

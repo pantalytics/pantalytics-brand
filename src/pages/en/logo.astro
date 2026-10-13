@@ -1,5 +1,6 @@
 ---
 import BrandLayout from "@/layouts/BrandLayout.astro";
+import AppIcons from "@/components/AppIcons.astro";
 import { useTranslations } from "@/i18n/utils";
 
 const t = useTranslations("en");
@@ -50,6 +51,8 @@ const t = useTranslations("en");
       <span class="logo-card-label" style="color: var(--color-text-secondary);">Icon — blue/dark</span>
     </div>
   </div>
+
+  <AppIcons lang="en" />
 
   <h2>{t("logo.clearspace.title")}</h2>
   <p>{t("logo.clearspace")}</p>
