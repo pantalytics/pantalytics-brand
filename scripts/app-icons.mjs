@@ -81,23 +81,12 @@ const ICONS = {
   },
   "ai-pro": {
     label: "AI Pro",
-    // An owl: self-learning. Beak is the bloom.
+    // Sparkles: the common sign for AI. The big one is the bloom.
     glyph:
-      `<path d="M 128 72 C 166 72, 182 104, 182 142 C 182 170, 158 186, 128 186 C 98 186, 74 170, 74 142 C 74 104, 90 72, 128 72 Z" ${LINE}/>` +
-      `<path d="M 92 80 L 84 58 L 108 70 M 164 80 L 172 58 L 148 70" ${LINE}/>` +
-      `<circle cx="108" cy="118" r="15" ${LINE}/><circle cx="148" cy="118" r="15" ${LINE}/>` +
-      dot(108, 118, 5) + dot(148, 118, 5) +
-      bloom(128, 146, 8),
-    install: ["pan_ai_pro/pan_ai_pro"],
-  },
-  "odoo-agents": {
-    label: "Odoo Agents",
-    // A robot head with an antenna.
-    glyph:
-      `<rect x="80" y="104" width="96" height="76" rx="14" ${LINE}/>` +
-      `<path d="M 128 104 V 82 M 112 160 H 144" ${LINE}/>` +
-      dot(108, 136, 8) + dot(148, 136, 8) +
-      bloom(128, 74, 10),
+      `<path d="M 120 92 Q 120 136 164 136 Q 120 136 120 180 Q 120 136 76 136 Q 120 136 120 92 Z" ${LINE}/>` +
+      `<path d="M 176 66 Q 176 84 194 84 Q 176 84 176 102 Q 176 84 158 84 Q 176 84 176 66 Z" ${LINE}/>` +
+      `<path d="M 78 174 Q 78 186 90 186 Q 78 186 78 198 Q 78 186 66 186 Q 78 186 78 174 Z" ${LINE}/>` +
+      bloom(120, 136, 12),
     install: [],
   },
   "style-pro": {
@@ -110,13 +99,15 @@ const ICONS = {
       bloom(162, 114, 10),
     install: ["odoo-style-pro/pan_style_pro"],
   },
-  "insights-pro": {
-    label: "Insights Pro",
-    // A bar chart, the top bar lit.
+  "self-learning": {
+    label: "Odoo Self-Learning",
+    // An owl: learns by itself. Beak is the bloom.
     glyph:
-      `<path d="M 72 178 H 184" ${LINE}/>` +
-      `<path d="M 92 178 V 138 M 128 178 V 110 M 164 178 V 90" ${line(12)}/>` +
-      bloom(164, 86, 12),
+      `<path d="M 128 72 C 166 72, 182 104, 182 142 C 182 170, 158 186, 128 186 C 98 186, 74 170, 74 142 C 74 104, 90 72, 128 72 Z" ${LINE}/>` +
+      `<path d="M 92 80 L 84 58 L 108 70 M 164 80 L 172 58 L 148 70" ${LINE}/>` +
+      `<circle cx="108" cy="118" r="15" ${LINE}/><circle cx="148" cy="118" r="15" ${LINE}/>` +
+      dot(108, 118, 5) + dot(148, 118, 5) +
+      bloom(128, 146, 8),
     install: ["odoo-insights-pro/insights_pro"],
   },
   "knowledge-pro": {
