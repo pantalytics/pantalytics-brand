@@ -49,10 +49,10 @@ const ICONS = {
   },
   "mcp-pro": {
     label: "MCP Pro",
-    // A plug: connects AI clients to Odoo.
+    // The Model Context Protocol mark: three parallel strokes joined by U-turns.
     glyph:
-      `<path d="M 98 118 H 158 V 148 C 158 170, 98 170, 98 148 Z M 112 118 V 92 M 144 118 V 92 M 128 166 V 182" ${LINE}/>` +
-      bloom(128, 190, 10),
+      `<path d="M 48 138 L 136 50 A 26 26 0 0 1 173 87 L 110 150 A 26 26 0 0 0 147 187 L 206 128" ${line(12)}/>` +
+      bloom(210, 134, 10),
     install: ["odoo-mcp-pro-governance/pan_mcp_pro_governance"],
   },
   "audit-log": {
