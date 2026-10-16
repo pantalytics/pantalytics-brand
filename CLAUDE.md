@@ -17,7 +17,8 @@ npm run icons        # Render app icons, logo mark and favicons from scripts/app
 One ring, one object, one accent. Every app icon is the vector logo ring
 with a Flux-drawn object inside: cartoon-style navy ink on cream paper
 with exactly one purple watercolour accent (envelope with wax seal,
-palette, owl for Self-Learning, sparkles for AI Pro). No robots. MCP
+palette, owl for Self-Learning, sparkles for AI Pro, crystal on an open
+notebook for Vaults). No robots. MCP
 Pro is the exception: it uses the official Model Context Protocol mark
 painted as a sumi-e brushstroke, not a plug. Odoo Agents has no icon:
 it is folded into the Pantalytics suite. Abstract glyphs and traced-vector renders were both tried

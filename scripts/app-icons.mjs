@@ -99,6 +99,18 @@ const ICONS = {
       bloom(162, 114, 10),
     install: ["odoo-style-pro/pan_style_pro"],
   },
+  "vaults": {
+    label: "Pantalytics Vaults",
+    // An obsidian crystal: the Obsidian plugin for a shared second brain.
+    // Flux prompt: "Charming cartoon-style ink illustration of a faceted
+    // obsidian crystal gemstone, instantly recognisable: a tall cut gem with
+    // clear facet lines and a pointed top, its largest facet filled with one
+    // soft purple #9b99ff watercolour wash as the only colour ..." (recipe in CLAUDE.md)
+    glyph:
+      `<path d="M 128 64 L 172 108 L 156 188 L 100 188 L 84 108 Z M 84 108 L 128 128 L 172 108 M 128 128 L 128 64 M 128 128 L 100 188 M 128 128 L 156 188" ${LINE}/>` +
+      bloom(146, 152, 10),
+    install: [],
+  },
   "self-learning": {
     label: "Odoo Self-Learning",
     // An owl: learns by itself. Beak is the bloom.
