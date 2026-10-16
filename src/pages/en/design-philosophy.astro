@@ -130,6 +130,20 @@ const blogFormats = [
     </ul>
   </div>
 
+    <h3>{t("design.visual.character.title")}</h3>
+  <p>{t("design.visual.character.desc")}</p>
+  <div class="data-metaphors" style="margin-block: var(--space-md);">
+    <div class="data-metaphor"><span class="metaphor-arrow">A</span>{t("design.visual.character.when.1")}</div>
+    <div class="data-metaphor"><span class="metaphor-arrow">B</span>{t("design.visual.character.when.2")}</div>
+  </div>
+  <ul>
+    <li>{t("design.visual.character.rule.1")}</li>
+    <li>{t("design.visual.character.rule.2")}</li>
+    <li>{t("design.visual.character.rule.3")}</li>
+    <li>{t("design.visual.character.rule.4")}</li>
+    <li>{t("design.visual.character.rule.5")}</li>
+  </ul>
+
   <h2>{t("design.systemprompt.title")}</h2>
   <p>{t("design.systemprompt.desc")}</p>
   <div class="prompt-library">
@@ -165,6 +179,7 @@ VISUAL STYLE (Minimal Line + Wash):
 - Wabi-sabi: imperfection desired, ink that bleeds, irregular edges
 - Composition types: line+bloom, converging lines, line+data points, parallel lines, network constellation
 - Avoid: too many elements, bright colors, photography, symmetry
+- Character (campaigns, launches, stories): cartoon animals in the Japanese ink tradition (Chōjū-giga), navy lines, one purple accent, premium materials, at least 40% empty paper
 
 COLORS:
 - Navy (#1b3a5c): lines and structure
@@ -198,6 +213,10 @@ More details: brand.pantalytics.com</code></pre>
     <div class="prompt-card prompt-card--system">
       <h4>Flux Preset — copy before every prompt</h4>
       <pre><code>Abstract on heavy cream watercolor paper with beautiful visible texture, navy (#1b3a5c) ink lines and soft purple (#9b99ff) watercolor blooms, wabi-sabi imperfection, fine art print quality, no objects no figures no text no letters</code></pre>
+    </div>
+    <div class="prompt-card prompt-card--system">
+      <h4>Flux preset character — for campaigns and stories</h4>
+      <pre><code>Charming cartoon ink illustration in the style of the Choju-giga animal scrolls, loose confident navy (#1b3a5c) brush and dip-pen lines, one soft purple (#9b99ff) watercolor accent as the only colour, optional touch of gold (#e8a317), heavy cream (#f3eee4) washi paper with visible grain, at least 40% empty paper, wabi-sabi imperfection, fine art print quality, no text no letters</code></pre>
     </div>
   </div>
 
