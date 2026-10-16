@@ -77,7 +77,7 @@ const ICONS = {
       `<rect x="68" y="92" width="120" height="78" rx="8" ${LINE}/>` +
       `<path d="M 68 102 L 128 144 L 188 102" ${LINE}/>` +
       bloom(186, 92, 12),
-    install: ["pan_outlook_pro_store/pan_outlook_pro"],
+    install: ["pan_outlook_pro_store/pan_outlook_pro", "pan_mail_pro"],
   },
   "ai-pro": {
     label: "AI Pro",
@@ -118,7 +118,7 @@ const ICONS = {
       `<circle cx="108" cy="118" r="15" ${LINE}/><circle cx="148" cy="118" r="15" ${LINE}/>` +
       dot(108, 118, 5) + dot(148, 118, 5) +
       bloom(128, 146, 8),
-    install: ["odoo-insights-pro/insights_pro"],
+    install: ["odoo-self-learning/pan_self_learning"],
   },
   "knowledge-pro": {
     label: "Knowledge Pro",
