@@ -87,7 +87,7 @@ const ICONS = {
       `<path d="M 176 66 Q 176 84 194 84 Q 176 84 176 102 Q 176 84 158 84 Q 176 84 176 66 Z" ${LINE}/>` +
       `<path d="M 78 174 Q 78 186 90 186 Q 78 186 78 198 Q 78 186 66 186 Q 78 186 78 174 Z" ${LINE}/>` +
       bloom(120, 136, 12),
-    install: [],
+    install: ["../pan_ai_pro/pan_ai_pro/static/description/icon.png"],
   },
   "style-pro": {
     label: "Style Pro",
