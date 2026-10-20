@@ -55,6 +55,12 @@ const BANNERS = {
     tagline: "See how your team really uses Odoo",
     install: ["odoo-self-learning/pan_self_learning"],
   },
+  "ai-pro": {
+    icon: "ai-pro",
+    name: "AI Pro",
+    tagline: "Your key, your models, your rules",
+    install: ["pan_ai_pro/pan_ai_pro"],
+  },
 };
 
 const html = ({ icon, name, tagline }) => `<!doctype html>
