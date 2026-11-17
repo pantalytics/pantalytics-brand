@@ -1,0 +1,95 @@
+{
+  "base": "Abstract hand-drawn fine art on a small sheet of heavy cream cotton watercolor paper with deeply visible grain fibers and embossed relief impressions, the paper has a torn deckled edge and sits on a darker textured surface with subtle relief shadow around the rim, navy (#1b3a5c) charcoal smudges and gestural ink marks rubbed and scraped, combined with soft purple (#9b99ff) watercolor washes bleeding organically into the paper, raw monotype and drypoint quality showing the artist's hand, wabi-sabi imperfection, fine art print quality, no objects no figures no text no letters",
+  "jobs": [
+    {
+      "name": "16-hero-data",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "single navy charcoal line gently ascending from lower-left to upper-right with subtle wave, charcoal-dust shadow trailing along it, five soft purple watercolor blooms as data points along the line each slightly larger and more saturated than the last, faint embossed grid barely visible underneath like ghost graph paper pressed into the paper, vast empty cream paper above with just paper grain showing, landscape format"
+    },
+    {
+      "name": "17-sector-productie",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "many fine navy charcoal lines starting scattered and frayed along the left edge then gradually converging into a single confident drypoint line on the right, soft purple watercolor bloom where they meet, faint embossed blueprint grid underneath, evoking refinement and process, vast empty cream paper above with visible grain, landscape format"
+    },
+    {
+      "name": "18-app-ai-pro",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "dense constellation of small navy charcoal dots in the upper-left area connected by gestural hairline drypoint scratches forming a tight network, soft purple watercolor blooms pulsing around five key nodes like quiet activation, one tiny gold (#e8a317) accent dot rubbed into the paper at a peripheral node, faint embossed blueprint grid behind, vast empty cream paper to the right with visible grain, landscape format"
+    },
+    {
+      "name": "19-sector-ecommerce",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "horizontal procession of small navy charcoal rectangular marks of varying sizes drifting from left to right across the page with rhythmic spacing, three clusters of soft purple watercolor blooms marking arrival points along the path, faint embossed grid underneath, evoking flow and exchange, vast empty cream paper above with visible grain, landscape format"
+    },
+    {
+      "name": "20-sector-dienstverleners",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "two thin navy charcoal arcs entering from opposite sides of the page meeting in a confident drypoint line in the center, soft purple watercolor bloom and a tiny gold (#e8a317) accent gathering at the meeting point, faint embossed grid behind, evoking partnership and trust, vast empty cream paper around with visible grain, landscape format"
+    },
+    {
+      "name": "21-sector-defensie",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "vertical bands of dense navy charcoal hatching forming an impenetrable wall on the left third of the page, soft purple watercolor pressing against it from the right side but not breaking through, faint embossed grid behind, evoking strength and protection, vast empty cream paper to the right with visible grain, landscape format"
+    },
+    {
+      "name": "22-app-outlook-pro",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "three thin navy charcoal lines folding back and forth across the page like a paper aircraft trajectory tracing a flight path, soft purple watercolor blooms at three pivot points along the path, faint embossed envelope-fold grid underneath, evoking communication and exchange, vast empty cream paper above with visible grain, landscape format"
+    },
+    {
+      "name": "23-app-mcp-server",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "five small navy charcoal nodes arranged in a triangular cluster connected by thicker drypoint lines forming a strong network spine, soft purple watercolor blooms around two key junction nodes, one tiny gold (#e8a317) accent dot at a peripheral node, faint embossed grid behind, evoking connectivity and infrastructure, vast empty cream paper around with visible grain, landscape format"
+    },
+    {
+      "name": "24-app-odoo-agents",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "two interlocking navy charcoal wave patterns rising and falling across the page like alternating voices in a conversation, three soft purple watercolor blooms at the intersection peaks where the waves overlap, faint embossed grid behind, evoking dialogue and interaction, vast empty cream paper above with visible grain, landscape format"
+    },
+    {
+      "name": "25-over-ons",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "two thin navy charcoal lines approaching from opposite sides of the page meeting and intertwining briefly in the center where soft purple and gold (#e8a317) watercolor blooms warm together, evoking partnership and shared origin, faint embossed grid behind, vast empty cream paper around with visible grain, landscape format"
+    },
+    {
+      "name": "26-hoe-we-werken",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "suffix": "single navy charcoal line winding gently from left to right across the page with four soft purple watercolor blooms as stations along the path each slightly different in shape and size, faint embossed grid underneath, evoking steady progress through stages, vast empty cream paper above and below with visible grain, landscape format"
+    },
+    {
+      "name": "27-wp-loupe-a",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "prompt": "Charming cartoon-style ink illustration of a large round magnifying glass lying on a single sheet of paper covered with neat horizontal ruled lines and a small grid table, seen from slightly above, the purple wash glows inside the lens, navy #1b3a5c dip pen line work with confident hand-drawn strokes, one soft purple #9b99ff watercolour wash as the only colour, cream #f3eee4 cotton watercolour paper background fills the frame edge to edge with visible grain, generous empty space, wordless illustration, every line on the paper is a plain ruled stroke, landscape format"
+    },
+    {
+      "name": "27-wp-loupe-b",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "prompt": "Charming cartoon-style ink illustration of a large round magnifying glass lying on a single sheet of paper covered with neat horizontal ruled lines and a small grid table, seen from slightly above, the purple wash glows inside the lens, navy #1b3a5c dip pen line work with confident hand-drawn strokes, one soft purple #9b99ff watercolour wash as the only colour, cream #f3eee4 cotton watercolour paper background fills the frame edge to edge with visible grain, generous empty space, wordless illustration, every line on the paper is a plain ruled stroke, landscape format"
+    },
+    {
+      "name": "28-wp-notes-a",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "prompt": "Charming cartoon-style ink illustration of two square sticky notes and a navy pencil lying on a single sheet of paper covered with neat horizontal ruled lines, the sticky notes carry only a few wavy pen strokes and check marks, one sticky note is washed purple, seen from slightly above, navy #1b3a5c dip pen line work with confident hand-drawn strokes, one soft purple #9b99ff watercolour wash as the only colour, cream #f3eee4 cotton watercolour paper background fills the frame edge to edge with visible grain, generous empty space, wordless illustration, every line on the paper is a plain ruled stroke, landscape format"
+    },
+    {
+      "name": "28-wp-notes-b",
+      "model": "ultra",
+      "aspect_ratio": "16:9",
+      "prompt": "Charming cartoon-style ink illustration of two square sticky notes and a navy pencil lying on a single sheet of paper covered with neat horizontal ruled lines, the sticky notes carry only a few wavy pen strokes and check marks, one sticky note is washed purple, seen from slightly above, navy #1b3a5c dip pen line work with confident hand-drawn strokes, one soft purple #9b99ff watercolour wash as the only colour, cream #f3eee4 cotton watercolour paper background fills the frame edge to edge with visible grain, generous empty space, wordless illustration, every line on the paper is a plain ruled stroke, landscape format"
+    }
+  ]
+}
