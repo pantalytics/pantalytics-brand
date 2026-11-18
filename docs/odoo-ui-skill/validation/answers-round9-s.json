@@ -1,0 +1,42 @@
+{
+  "19/task6-390.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left, first setting under the tabs", "x": 22, "y": 225},
+    "confidence": "sure",
+    "considered": ["Agents May Write", "Default User", "Save"],
+    "read": ["Agents May Write"],
+    "ignored": ["tabs row", "search", "Default User dropdown", "top bar icons"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Agents settings page"}
+  },
+  "20/task6-1440.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left of the content panel", "x": 254, "y": 139},
+    "confidence": "sure",
+    "considered": ["Agents May Write", "Default User"],
+    "read": ["Agents", "Agents May Write"],
+    "ignored": ["left app list", "search bar", "Default User dropdown", "top bar"],
+    "stands_out": "Agents May Write",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "19/task6-1440.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left of the content area", "x": 238, "y": 139},
+    "confidence": "sure",
+    "considered": ["Agents May Write", "Default User"],
+    "read": ["Agents", "Agents May Write"],
+    "ignored": ["left app list", "search bar", "Default User dropdown", "top bar"],
+    "stands_out": "Agents May Write",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "20/task6-390.png": {
+    "first_tap": {"label": "Agents May Write toggle", "where": "top left of the card", "x": 40, "y": 200},
+    "confidence": "sure",
+    "considered": ["Agents May Write", "Agents dropdown", "Default User"],
+    "read": ["Agents", "Agents May Write"],
+    "ignored": ["search icon", "Default User dropdown", "top bar icons"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Agents settings"}
+  }
+}
