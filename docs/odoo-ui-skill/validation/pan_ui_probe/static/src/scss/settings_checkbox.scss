@@ -1,0 +1,8 @@
+// Deliberate exception to the skill's "never restyle Odoo" rule, approved by
+// the owner on 2026-11-18 (docs/odoo-ui-skill/validation/RESULTS.md, round 9).
+// Odoo 19 draws an unchecked settings checkbox so faintly that lazy-user runs
+// tapped its label instead. Only the border of an unchecked settings
+// checkbox changes, with Odoo's own grey; switches are left alone.
+.o_setting_left_pane .form-check:not(.form-switch) .form-check-input:not(:checked) {
+    border-color: $o-gray-600;
+}

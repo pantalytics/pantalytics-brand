@@ -14,6 +14,9 @@
         "views/menus.xml",
     ],
     "demo": ["demo/agent_demo.xml"],
+    "assets": {
+        "web.assets_backend": ["pan_ui_probe/static/src/scss/settings_checkbox.scss"],
+    },
     "application": True,
     "installable": True,
 }

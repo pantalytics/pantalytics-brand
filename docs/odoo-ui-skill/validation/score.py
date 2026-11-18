@@ -1,6 +1,6 @@
 """Score lazy-user answers against the intended targets.
 
-Usage: python3 score.py screens/targets.json answers.json [answers2.json ...] > results.md
+Usage: python3 score.py [--strict] screens/targets.json answers.json [answers2.json ...] > results.md
 
 With several answer files (fresh runs), a screen passes only when every run passes.
 
@@ -26,7 +26,14 @@ CHROME = {
 }
 
 
+STRICT = "--strict" in sys.argv  # the plan's original gate: chrome counts, no native exceptions
+if STRICT:
+    sys.argv.remove("--strict")
+
+
 def own_labels(read):
+    if STRICT:
+        return list(read)
     return [r for r in read if str(r).strip().lower() not in CHROME]
 
 
@@ -46,7 +53,7 @@ def judge(answer, box):
         fails.append("wrong tap")
     conf = answer.get("confidence")
     if conf != "sure":
-        if conf == "think so" and box.get("native_faint"):
+        if conf == "think so" and box.get("native_faint") and not STRICT:
             warns.append("think so (Odoo's own faint checkbox)")
         else:
             fails.append(f"confidence {conf}")

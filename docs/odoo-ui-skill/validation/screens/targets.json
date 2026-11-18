@@ -76,16 +76,14 @@
     "x": 231,
     "y": 128,
     "width": 156,
-    "height": 21,
-    "native_faint": true
+    "height": 21
   },
   "19/task6-390.png": {
     "label": "Agents May Write checkbox",
     "x": 16,
     "y": 214,
     "width": 173,
-    "height": 28,
-    "native_faint": true
+    "height": 28
   },
   "19/task7-1440.png": {
     "label": "Action menu (dots) on the quotation",
