@@ -87,7 +87,9 @@ Do not override:
 - **18 -> 19**: VSM size (475 px) removed, SIZES renumbered (`SM` 2 -> 1) and XXL 1534 -> 1400, so side chatter
   now appears from 1400 px; size updates via `matchMedia` change events instead of a throttled `resize`
   (`ui_service.js`). New `core/bottom_sheet/`: dropdowns, selection fields and select menus become bottom sheets on
-  small touch screens (none in 18). Form header status buttons fold behind `⋮` (`status_bar_buttons.xml`, new).
+  small touch screens (none in 18). Form header: in 18 **all** header buttons move into the cog menu on small
+screens (`views/form/form_controller.xml`, `statusBarDropdownItemsTemplate`); from 19 the first stays visible
+and the rest fold behind `⋮` (`status_bar_buttons.xml`).
 - **19 -> 20**: Owl 3. `ui` service becomes `UIPlugin` with `isSmall`/`size` signals (`core/ui/ui_plugin.js`), old
   service kept as a "temporary" shim; `env.isSmall` throws. Bottom sheet now on **any touch device**, phone or
   tablet (`isBottomSheet = hasTouch() && props.bottomSheet`, the `isSmall` check is gone). Dialogs of size `sm`/`md`
