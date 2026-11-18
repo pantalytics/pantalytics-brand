@@ -1,0 +1,372 @@
+{
+  "native/19-settings-390": {
+    "first_tap": {"label": "Discounts checkbox", "where": "lower left, under Pricing", "x": 22, "y": 756},
+    "confidence": "sure",
+    "considered": ["SALES tab", "Search", "Discounts checkbox"],
+    "read": ["Settings", "SALES", "Pricing", "Discounts"],
+    "ignored": ["grey description lines", "Variants rows", "Save"],
+    "stands_out": "purple SALES tab and Save button",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Sales settings"}
+  },
+  "19/task5-1440.png": {
+    "first_tap": {"label": "green switch in Stock Checker row", "where": "row 5, far right", "x": 1337, "y": 323},
+    "confidence": "sure",
+    "considered": ["Stock Checker name", "green switch row 5"],
+    "read": ["Stock Checker", "On"],
+    "ignored": ["status pills", "Problem column", "dates"],
+    "stands_out": "red Failing pill and red sentence in row 3",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "19/task6-1440.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left of Access block", "x": 238, "y": 179},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown"],
+    "read": ["Access", "Agents May Write"],
+    "ignored": ["left app list", "grey descriptions"],
+    "stands_out": "purple Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "20/task7-dialog-390.png": {
+    "first_tap": {"label": "Test", "where": "big purple button in popup", "x": 195, "y": 480},
+    "confidence": "sure",
+    "considered": ["Test button", "Agent dropdown", "Discard"],
+    "read": ["Test Agent", "Sales Agent", "Test"],
+    "ignored": ["greyed quotation behind"],
+    "stands_out": "wide purple Test button",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Test Agent popup"}
+  },
+  "19/task8-390.png": {
+    "first_tap": {"label": "New", "where": "top left", "x": 46, "y": 72},
+    "confidence": "think so",
+    "considered": ["No agents yet text", "New button", "gear button"],
+    "read": ["Agents", "No agents yet", "New"],
+    "ignored": ["kanban and search icons"],
+    "stands_out": "No agents yet in the middle",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Empty agent list"}
+  },
+  "19/task5-390.png": {
+    "first_tap": {"label": "green switch on Stock Checker card", "where": "card 5, right", "x": 361, "y": 558},
+    "confidence": "sure",
+    "considered": ["Stock Checker card", "green switch card 5"],
+    "read": ["Stock Checker"],
+    "ignored": ["pills", "red sentence", "other cards"],
+    "stands_out": "red sentence on Lead Scorer card",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "20/task3-1440.png": {
+    "first_tap": {"label": "red sentence in Lead Scorer row", "where": "row 3, Problem column", "x": 699, "y": 246},
+    "confidence": "sure",
+    "considered": ["red sentence row 3", "Failing pill"],
+    "read": ["Problem", "The Key was refused. Add a new Key in Settings."],
+    "ignored": ["dates", "switches", "other rows"],
+    "stands_out": "red sentence in row 3",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "19/task2-1440.png": {
+    "first_tap": {"label": "Lead Scorer row (red Failing)", "where": "row 3", "x": 85, "y": 243},
+    "confidence": "sure",
+    "considered": ["red Failing pill", "orange Needs Key pill", "Lead Scorer"],
+    "read": ["Failing", "Lead Scorer"],
+    "ignored": ["green Running pills", "switches"],
+    "stands_out": "red Failing pill and red sentence",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "20/task6-390.png": {
+    "first_tap": {"label": "switch next to Agents May Write", "where": "top left of Access card", "x": 40, "y": 239},
+    "confidence": "sure",
+    "considered": ["Agents May Write switch", "Default User dropdown"],
+    "read": ["Access", "Agents May Write"],
+    "ignored": ["grey description", "Agents app picker"],
+    "stands_out": "purple Save button",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Agents settings"}
+  },
+  "19/task6-390.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "left, first item under Access", "x": 23, "y": 265},
+    "confidence": "sure",
+    "considered": ["Agents May Write", "Default User"],
+    "read": ["Access", "Agents May Write"],
+    "ignored": ["tabs row", "descriptions"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Agents settings"}
+  },
+  "19/task7-dialog-1440.png": {
+    "first_tap": {"label": "Test", "where": "popup bottom left", "x": 436, "y": 522},
+    "confidence": "sure",
+    "considered": ["Test button", "Agent field", "Discard"],
+    "read": ["Test Agent", "Sales Agent", "Test"],
+    "ignored": ["quotation behind", "chatter"],
+    "stands_out": "white popup with blue highlighted Sales Agent",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Test Agent popup"}
+  },
+  "19/task1-1440.png": {
+    "first_tap": {"label": "Agents app icon", "where": "row 2, first icon", "x": 379, "y": 345},
+    "confidence": "think so",
+    "considered": ["Agents icon", "Settings icon"],
+    "read": ["Agents"],
+    "ignored": ["subscription banner", "other apps"],
+    "stands_out": "blue expiry banner",
+    "feel": "calm",
+    "where": {"app": "Home", "screen": "App menu"}
+  },
+  "20/task1-390.png": {
+    "first_tap": {"label": "Agents app icon", "where": "row 2, third icon", "x": 240, "y": 315},
+    "confidence": "think so",
+    "considered": ["Agents icon", "Settings icon"],
+    "read": ["Agents"],
+    "ignored": ["expiry banner", "other apps"],
+    "stands_out": "colourful app icons",
+    "feel": "calm",
+    "where": {"app": "Home", "screen": "App menu"}
+  },
+  "20/task7-dialog-1440.png": {
+    "first_tap": {"label": "Test", "where": "popup bottom left", "x": 451, "y": 518},
+    "confidence": "sure",
+    "considered": ["Test button", "Agent field", "Discard"],
+    "read": ["Test Agent", "Sales Agent", "Test"],
+    "ignored": ["quotation behind", "chatter"],
+    "stands_out": "popup with highlighted Sales Agent",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Test Agent popup"}
+  },
+  "20/task7-menu-390.png": {
+    "first_tap": {"label": "Test Agent", "where": "bottom sheet, middle", "x": 72, "y": 575},
+    "confidence": "sure",
+    "considered": ["Test Agent", "Share"],
+    "read": ["Quotation / Order", "Duplicate", "Delete", "Payment Link", "Test Agent"],
+    "ignored": ["red Delete", "rest of list"],
+    "stands_out": "red Delete",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Quotation actions menu"}
+  },
+  "20/task4-390.png": {
+    "first_tap": {"label": "Run Agent", "where": "top left, purple button", "x": 66, "y": 126},
+    "confidence": "sure",
+    "considered": ["Run Agent", "Running pill"],
+    "read": ["Sales Agent", "Run Agent"],
+    "ignored": ["fields", "chatter"],
+    "stands_out": "purple Run Agent button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "20/task1-1440.png": {
+    "first_tap": {"label": "Agents app icon", "where": "row 2, first icon", "x": 366, "y": 321},
+    "confidence": "think so",
+    "considered": ["Agents icon", "Settings icon"],
+    "read": ["Agents"],
+    "ignored": ["expiry banner", "other apps"],
+    "stands_out": "blue expiry banner",
+    "feel": "calm",
+    "where": {"app": "Home", "screen": "App menu"}
+  },
+  "20/task2-1440.png": {
+    "first_tap": {"label": "Lead Scorer row (red sentence)", "where": "row 3", "x": 85, "y": 246},
+    "confidence": "sure",
+    "considered": ["red sentence row 3", "Failing pill", "Needs Key pill"],
+    "read": ["Failing", "Lead Scorer"],
+    "ignored": ["pale Running pills", "switches"],
+    "stands_out": "red sentence in row 3",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "20/task2-390.png": {
+    "first_tap": {"label": "Lead Scorer card", "where": "card 3", "x": 52, "y": 320},
+    "confidence": "sure",
+    "considered": ["Lead Scorer card with red text", "Needs Key card"],
+    "read": ["Lead Scorer", "Failing"],
+    "ignored": ["switches", "other cards"],
+    "stands_out": "red sentence on card 3",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "19/task8-1440.png": {
+    "first_tap": {"label": "New", "where": "top left", "x": 41, "y": 70},
+    "confidence": "think so",
+    "considered": ["No agents yet text", "New button", "gear"],
+    "read": ["Agents", "No agents yet", "New"],
+    "ignored": ["column headers", "search"],
+    "stands_out": "No agents yet in the middle",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Empty agent list"}
+  },
+  "19/task7-menu-1440.png": {
+    "first_tap": {"label": "Test Agent", "where": "dropdown under gear, middle", "x": 186, "y": 257},
+    "confidence": "sure",
+    "considered": ["Test Agent", "Print", "Send an email"],
+    "read": ["Print", "Duplicate", "Delete", "Generate a Payment Link", "Test Agent"],
+    "ignored": ["quotation lines", "chatter", "status bar"],
+    "stands_out": "red Delete in the dropdown",
+    "feel": "busy",
+    "where": {"app": "Sales", "screen": "Quotation actions menu"}
+  },
+  "19/task4-1440.png": {
+    "first_tap": {"label": "Run Agent", "where": "top left, purple button", "x": 61, "y": 130},
+    "confidence": "sure",
+    "considered": ["Run Agent", "Running pill"],
+    "read": ["Run Agent", "Sales Agent"],
+    "ignored": ["fields", "chatter"],
+    "stands_out": "purple Run Agent button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "20/task4-1440.png": {
+    "first_tap": {"label": "Run Agent", "where": "top left, purple button", "x": 61, "y": 125},
+    "confidence": "sure",
+    "considered": ["Run Agent", "Running pill"],
+    "read": ["Run Agent", "Sales Agent"],
+    "ignored": ["fields", "chatter"],
+    "stands_out": "purple Run Agent button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "20/task3-390.png": {
+    "first_tap": {"label": "red sentence on Lead Scorer card", "where": "card 3, middle", "x": 165, "y": 359},
+    "confidence": "sure",
+    "considered": ["red sentence card 3", "Failing pill"],
+    "read": ["The Key was refused. Add a new Key in Settings."],
+    "ignored": ["other cards", "switches"],
+    "stands_out": "red sentence on card 3",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "19/task7-dialog-390.png": {
+    "first_tap": {"label": "Test", "where": "bottom left, purple button", "x": 104, "y": 817},
+    "confidence": "sure",
+    "considered": ["Test button", "Agent dropdown", "Discard"],
+    "read": ["Test Agent", "Sales Agent", "Test"],
+    "ignored": ["big empty white middle"],
+    "stands_out": "purple Test button at the bottom",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Test Agent popup"}
+  },
+  "19/task3-1440.png": {
+    "first_tap": {"label": "red sentence in Lead Scorer row", "where": "row 3, Problem column", "x": 699, "y": 243},
+    "confidence": "sure",
+    "considered": ["red sentence row 3", "Failing pill"],
+    "read": ["Problem", "The Key was refused. Add a new Key in Settings."],
+    "ignored": ["dates", "switches"],
+    "stands_out": "red Failing pill and red sentence",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "19/task1-390.png": {
+    "first_tap": {"label": "Agents app icon", "where": "row 2, third icon", "x": 240, "y": 357},
+    "confidence": "think so",
+    "considered": ["Agents icon", "Settings icon"],
+    "read": ["Agents"],
+    "ignored": ["subscription banner", "other apps"],
+    "stands_out": "blue expiry banner with links",
+    "feel": "calm",
+    "where": {"app": "Home", "screen": "App menu"}
+  },
+  "20/task7-menu-1440.png": {
+    "first_tap": {"label": "Test Agent", "where": "dropdown under dots, middle", "x": 217, "y": 240},
+    "confidence": "sure",
+    "considered": ["Test Agent", "Payment Link"],
+    "read": ["Quotation / Order", "Duplicate", "Delete", "Payment Link", "Test Agent"],
+    "ignored": ["order lines", "chatter", "Actions tooltip"],
+    "stands_out": "red Delete in the dropdown",
+    "feel": "busy",
+    "where": {"app": "Sales", "screen": "Quotation actions menu"}
+  },
+  "20/task5-390.png": {
+    "first_tap": {"label": "green switch on Stock Checker card", "where": "card 5, right", "x": 354, "y": 581},
+    "confidence": "sure",
+    "considered": ["Stock Checker card", "green switch card 5"],
+    "read": ["Stock Checker"],
+    "ignored": ["pills", "red sentence", "other cards"],
+    "stands_out": "red sentence on Lead Scorer card",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "20/task8-1440.png": {
+    "first_tap": {"label": "New", "where": "top left", "x": 41, "y": 72},
+    "confidence": "think so",
+    "considered": ["No agents yet text", "New button"],
+    "read": ["Agents", "No agents yet", "New"],
+    "ignored": ["column headers", "search"],
+    "stands_out": "No agents yet in the middle",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Empty agent list"}
+  },
+  "19/task2-390.png": {
+    "first_tap": {"label": "Lead Scorer card (red Failing)", "where": "card 3", "x": 48, "y": 308},
+    "confidence": "sure",
+    "considered": ["red Failing pill", "orange Needs Key pill"],
+    "read": ["Failing", "Lead Scorer"],
+    "ignored": ["switches", "Running pills"],
+    "stands_out": "red sentence and red Failing pill",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "20/task6-1440.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left of Access block", "x": 254, "y": 179},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown"],
+    "read": ["Access", "Agents May Write"],
+    "ignored": ["left app list", "descriptions"],
+    "stands_out": "purple Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "19/task3-390.png": {
+    "first_tap": {"label": "red sentence on Lead Scorer card", "where": "card 3, middle", "x": 169, "y": 350},
+    "confidence": "sure",
+    "considered": ["red sentence card 3", "Failing pill"],
+    "read": ["The Key was refused. Add a new Key in Settings."],
+    "ignored": ["other cards", "switches"],
+    "stands_out": "red sentence on card 3",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  },
+  "20/task8-390.png": {
+    "first_tap": {"label": "New", "where": "top left", "x": 46, "y": 72},
+    "confidence": "think so",
+    "considered": ["No agents yet text", "New button"],
+    "read": ["Agents", "No agents yet", "New"],
+    "ignored": ["dots, kanban, search icons"],
+    "stands_out": "No agents yet in the middle",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Empty agent list"}
+  },
+  "19/task4-390.png": {
+    "first_tap": {"label": "Run Agent", "where": "top left, purple button", "x": 66, "y": 134},
+    "confidence": "sure",
+    "considered": ["Run Agent", "Running pill"],
+    "read": ["Sales Agent", "Run Agent"],
+    "ignored": ["fields", "chatter"],
+    "stands_out": "purple Run Agent button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "19/task7-menu-390.png": {
+    "first_tap": {"label": "Test Agent", "where": "bottom sheet, middle", "x": 72, "y": 630},
+    "confidence": "sure",
+    "considered": ["Test Agent", "Send an email"],
+    "read": ["Print", "Duplicate", "Delete", "Generate a Payment Link", "Test Agent"],
+    "ignored": ["red Delete", "Share"],
+    "stands_out": "red Delete",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Quotation actions menu"}
+  },
+  "20/task5-1440.png": {
+    "first_tap": {"label": "green switch in Stock Checker row", "where": "row 5, far right", "x": 1337, "y": 325},
+    "confidence": "sure",
+    "considered": ["Stock Checker name", "green switch row 5"],
+    "read": ["Stock Checker", "On"],
+    "ignored": ["pale pills", "dates"],
+    "stands_out": "red sentence in row 3",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agent list"}
+  }
+}
