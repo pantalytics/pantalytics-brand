@@ -103,7 +103,7 @@ const range = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
 <p>{t("ui.lazy.desc")}</p>
 <p>{t("ui.lazy.test")}</p>
 
-<h2>{t("ui.odoo.title")}</h2>
+<h2 id="inside-odoo">{t("ui.odoo.title")}</h2>
 <p>{t("ui.odoo.desc")}</p>
 <table class="voice-table">
   <thead>
@@ -124,6 +124,7 @@ const range = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
   </tbody>
 </table>
 <p>{t("ui.odoo.not")}</p>
+<p><a href={lang === "nl" ? "/odoo-ui" : "/en/odoo-ui"}>{t("ui.odoo.page")}</a></p>
 <p><a href="https://github.com/pantalytics/pantalytics-brand/tree/main/skills/pantalytics-odoo-ui">{t("ui.odoo.skill")}</a></p>
 
 <h2>{t("ui.check.title")}</h2>

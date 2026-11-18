@@ -1,0 +1,11 @@
+---
+import BrandLayout from "@/layouts/BrandLayout.astro";
+import OdooUI from "@/components/OdooUI.astro";
+import { useTranslations } from "@/i18n/utils";
+
+const t = useTranslations("en");
+---
+
+<BrandLayout title={t("odoo.title")} lang="en" description={t("odoo.intro")} activeSection="odooui">
+  <OdooUI lang="en" />
+</BrandLayout>
