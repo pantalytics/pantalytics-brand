@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_pan_probe_root" name="Agents" action="action_pan_probe_agent"
+              web_icon="pan_ui_probe,static/description/icon.png" sequence="40"/>
+    <menuitem id="menu_pan_probe_agents" name="Agents" parent="menu_pan_probe_root"
+              action="action_pan_probe_agent" sequence="10"/>
+    <menuitem id="menu_pan_probe_config" name="Configuration" parent="menu_pan_probe_root" sequence="90"/>
+    <menuitem id="menu_pan_probe_settings" name="Settings" parent="menu_pan_probe_config"
+              action="action_pan_probe_settings" sequence="10" groups="base.group_system"/>
+</odoo>
