@@ -69,6 +69,12 @@ what tells you)", or the judge hesitates because there is nothing to tap.
 One task, one step: a task that needs two screens (open the app, then add) is
 two tasks, each judged on its own screen.
 
+Labels from Odoo's own frame (Settings, Save, Discard, app tabs, the
+breadcrumb) do not count toward the three: a module cannot remove them. A
+"think so" caused by Odoo's own rendering (Odoo 19's faint settings checkbox)
+is a warning when native Odoo gets the same answer; a wrong tap or "lost"
+always fails.
+
 Warnings (fix when cheap, never ship-blocking): more than one item in
 `considered`, `feel` "busy", `stands_out` not the target. Calibrated on native
 Odoo 20: the Sales quotations list gets two candidates (New and the

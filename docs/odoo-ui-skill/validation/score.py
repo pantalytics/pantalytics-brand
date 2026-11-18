@@ -16,6 +16,19 @@ import sys
 
 NATIVE = ("search", "breadcrumb", "menu", "new", "save", "back")
 
+# Labels from Odoo's own frame: the navbar, app tabs, control panel and the
+# Settings Save/Discard. They do not count toward the three labels a lazy user
+# may read: a module cannot remove them (decided 2026-11-18, RESULTS.md).
+CHROME = {
+    "settings", "general settings", "save", "discard", "new", "configuration",
+    "crm", "sales", "calendar", "inventory", "invoicing", "discuss", "contacts",
+    "agents", "quotations", "search", "actions",
+}
+
+
+def own_labels(read):
+    return [r for r in read if str(r).strip().lower() not in CHROME]
+
 
 def hit(tap, box, slack=8):
     x, y = tap.get("x", -1), tap.get("y", -1)
@@ -31,9 +44,13 @@ def judge(answer, box):
     fails, warns = [], []
     if not hit(answer.get("first_tap", {}), box):
         fails.append("wrong tap")
-    if answer.get("confidence") != "sure":
-        fails.append(f"confidence {answer.get('confidence')}")
-    read = answer.get("read", [])
+    conf = answer.get("confidence")
+    if conf != "sure":
+        if conf == "think so" and box.get("native_faint"):
+            warns.append("think so (Odoo's own faint checkbox)")
+        else:
+            fails.append(f"confidence {conf}")
+    read = own_labels(answer.get("read", []))
     if not box.get("read_ok") and (len(read) > 3 or any(is_sentence(str(r)) for r in read)):
         fails.append("had to read")
     considered = answer.get("considered", [])

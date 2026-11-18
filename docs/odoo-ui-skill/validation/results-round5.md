@@ -11,7 +11,7 @@
 | 19/task5-1440.png | Stock Checker on/off switch (list row) | Stock Checker toggle / Stock Checker toggle / toggle in Stock Checker row | pass | run 1: 2 candidates, run 3: 2 candidates |
 | 19/task5-390.png | Stock Checker on/off switch (kanban card) | Stock Checker toggle / Stock Checker toggle / toggle on Stock Checker card | pass | run 1: 2 candidates, run 3: 2 candidates, run 3: busy |
 | 19/task6-1440.png | Agents May Write checkbox | Agents May Write checkbox / Agents May Write checkbox / Agents May Write checkbox | pass |  |
-| 19/task6-390.png | Agents May Write checkbox | Agents May Write checkbox / Agents May Write checkbox / Agents May Write checkbox | run 1: confidence think so | run 1: 3 candidates |
+| 19/task6-390.png | Agents May Write checkbox | Agents May Write checkbox / Agents May Write checkbox / Agents May Write checkbox | pass | run 1: think so (Odoo's own faint checkbox), run 1: 3 candidates |
 | 19/task7-dialog-1440.png | Test | Test / Test / Test | run 1: confidence think so, run 2: confidence think so | run 1: 2 candidates, run 2: 2 candidates, run 3: 2 candidates |
 | 19/task7-dialog-390.png | Test | Test / Test / Test | run 1: confidence think so, run 2: confidence think so, run 3: confidence think so | run 1: 2 candidates, run 2: 3 candidates, run 3: 2 candidates |
 | 19/task7-menu-1440.png | Test Agent | Test Agent / Test Agent / Test Agent | pass | run 1: busy, run 2: busy, run 3: busy |
@@ -37,4 +37,4 @@
 | 20/task8-1440.png | New | New / New / New | pass | run 3: 2 candidates |
 | 20/task8-390.png | New | New / New / New | pass | run 3: 2 candidates |
 
-29 of 36 pass (all 3 runs).
+30 of 36 pass (all 3 runs).

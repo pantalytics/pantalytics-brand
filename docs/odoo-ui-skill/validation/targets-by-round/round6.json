@@ -1,0 +1,296 @@
+{
+  "19/task1-1440.png": {
+    "label": "Agents app tile",
+    "x": 311,
+    "y": 302,
+    "width": 136,
+    "height": 115
+  },
+  "19/task1-390.png": {
+    "label": "Agents app tile",
+    "x": 195,
+    "y": 314,
+    "width": 90,
+    "height": 106
+  },
+  "19/task2-1440.png": {
+    "label": "Lead Scorer row (Failing)",
+    "x": 0,
+    "y": 224,
+    "width": 1440,
+    "height": 40
+  },
+  "19/task2-390.png": {
+    "label": "Lead Scorer card (Failing)",
+    "x": 0,
+    "y": 288,
+    "width": 390,
+    "height": 112
+  },
+  "19/task3-1440.png": {
+    "label": "Problem text of Lead Scorer",
+    "x": 815,
+    "y": 224,
+    "width": 248,
+    "height": 40,
+    "read_ok": true
+  },
+  "19/task3-390.png": {
+    "label": "Problem text of Lead Scorer",
+    "x": 8,
+    "y": 339,
+    "width": 374,
+    "height": 21,
+    "read_ok": true
+  },
+  "19/task4-1440.png": {
+    "label": "Run Agent",
+    "x": 16,
+    "y": 113,
+    "width": 92,
+    "height": 33
+  },
+  "19/task4-390.png": {
+    "label": "Run Agent",
+    "x": 16,
+    "y": 116,
+    "width": 100,
+    "height": 37
+  },
+  "19/task5-1440.png": {
+    "label": "Stock Checker on/off switch (list row)",
+    "x": 1275,
+    "y": 313,
+    "width": 35,
+    "height": 21
+  },
+  "19/task5-390.png": {
+    "label": "Stock Checker on/off switch (kanban card)",
+    "x": 347,
+    "y": 548,
+    "width": 35,
+    "height": 21
+  },
+  "19/task6-1440.png": {
+    "label": "Agents May Write checkbox",
+    "x": 231,
+    "y": 168,
+    "width": 156,
+    "height": 21,
+    "native_faint": true
+  },
+  "19/task6-390.png": {
+    "label": "Agents May Write checkbox",
+    "x": 16,
+    "y": 254,
+    "width": 173,
+    "height": 28,
+    "native_faint": true
+  },
+  "19/task7-1440.png": {
+    "label": "Action menu (dots) on the quotation",
+    "x": 129,
+    "y": 70,
+    "width": 18,
+    "height": 18,
+    "gated": false
+  },
+  "19/task7-390.png": {
+    "label": "Action menu (dots) on the quotation",
+    "x": 80,
+    "y": 54,
+    "width": 40,
+    "height": 37,
+    "gated": false
+  },
+  "19/task7-dialog-1440.png": {
+    "label": "Test",
+    "x": 412,
+    "y": 521,
+    "width": 51,
+    "height": 33
+  },
+  "19/task7-dialog-390.png": {
+    "label": "Test",
+    "x": 24,
+    "y": 799,
+    "width": 161,
+    "height": 37
+  },
+  "19/task7-menu-1440.png": {
+    "label": "Test Agent",
+    "x": 130,
+    "y": 243,
+    "width": 205,
+    "height": 27,
+    "read_ok": true
+  },
+  "19/task7-menu-390.png": {
+    "label": "Test Agent",
+    "x": 16,
+    "y": 603,
+    "width": 358,
+    "height": 55,
+    "read_ok": true
+  },
+  "19/task8-1440.png": {
+    "label": "New",
+    "x": 16,
+    "y": 54,
+    "width": 52,
+    "height": 33
+  },
+  "19/task8-390.png": {
+    "label": "New",
+    "x": 16,
+    "y": 54,
+    "width": 60,
+    "height": 37
+  },
+  "20/task1-1440.png": {
+    "label": "Agents app tile",
+    "x": 295,
+    "y": 278,
+    "width": 142,
+    "height": 115
+  },
+  "20/task1-390.png": {
+    "label": "Agents app tile",
+    "x": 195,
+    "y": 276,
+    "width": 90,
+    "height": 106
+  },
+  "20/task2-1440.png": {
+    "label": "Lead Scorer row (Failing)",
+    "x": 0,
+    "y": 226,
+    "width": 1440,
+    "height": 40
+  },
+  "20/task2-390.png": {
+    "label": "Lead Scorer card (Failing)",
+    "x": 0,
+    "y": 300,
+    "width": 390,
+    "height": 114
+  },
+  "20/task3-1440.png": {
+    "label": "Problem text of Lead Scorer",
+    "x": 816,
+    "y": 226,
+    "width": 247,
+    "height": 40,
+    "read_ok": true
+  },
+  "20/task3-390.png": {
+    "label": "Problem text of Lead Scorer",
+    "x": 15,
+    "y": 350,
+    "width": 360,
+    "height": 20,
+    "read_ok": true
+  },
+  "20/task4-1440.png": {
+    "label": "Run Agent",
+    "x": 16,
+    "y": 108,
+    "width": 92,
+    "height": 33
+  },
+  "20/task4-390.png": {
+    "label": "Run Agent",
+    "x": 16,
+    "y": 107,
+    "width": 100,
+    "height": 37
+  },
+  "20/task5-1440.png": {
+    "label": "Stock Checker on/off switch (list row)",
+    "x": 1276,
+    "y": 315,
+    "width": 35,
+    "height": 21
+  },
+  "20/task5-390.png": {
+    "label": "Stock Checker on/off switch (kanban card)",
+    "x": 340,
+    "y": 572,
+    "width": 35,
+    "height": 21
+  },
+  "20/task6-1440.png": {
+    "label": "Agents May Write checkbox",
+    "x": 247,
+    "y": 168,
+    "width": 140,
+    "height": 21
+  },
+  "20/task6-390.png": {
+    "label": "Agents May Write checkbox",
+    "x": 26,
+    "y": 228,
+    "width": 171,
+    "height": 28
+  },
+  "20/task7-1440.png": {
+    "label": "Action menu (dots) on the quotation",
+    "x": 156,
+    "y": 70,
+    "width": 26,
+    "height": 22,
+    "gated": false
+  },
+  "20/task7-390.png": {
+    "label": "Action menu (dots) on the quotation",
+    "x": 251,
+    "y": 54,
+    "width": 40,
+    "height": 37,
+    "gated": false
+  },
+  "20/task7-dialog-1440.png": {
+    "label": "Test",
+    "x": 427,
+    "y": 517,
+    "width": 51,
+    "height": 33
+  },
+  "20/task7-dialog-390.png": {
+    "label": "Test",
+    "x": 33,
+    "y": 491,
+    "width": 325,
+    "height": 37
+  },
+  "20/task7-menu-1440.png": {
+    "label": "Test Agent",
+    "x": 161,
+    "y": 226,
+    "width": 177,
+    "height": 27,
+    "read_ok": true
+  },
+  "20/task7-menu-390.png": {
+    "label": "Test Agent",
+    "x": 16,
+    "y": 548,
+    "width": 358,
+    "height": 55,
+    "read_ok": true
+  },
+  "20/task8-1440.png": {
+    "label": "New",
+    "x": 16,
+    "y": 56,
+    "width": 52,
+    "height": 33
+  },
+  "20/task8-390.png": {
+    "label": "New",
+    "x": 16,
+    "y": 54,
+    "width": 60,
+    "height": 37
+  }
+}
