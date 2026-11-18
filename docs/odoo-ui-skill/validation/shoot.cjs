@@ -52,7 +52,7 @@ async function run(browser, ver, width) {
   const recs = await rpc(page, 'pan.probe.agent', 'search_read', [[]],
     { fields: ['name', 'state', 'enabled', 'run_count', 'last_run'] });
   const by = Object.fromEntries(recs.map(r => [r.name, r]));
-  const sales = by['Sales Agent'], inv = by['Inventory Agent'];
+  const sales = by['Sales Agent'], inv = by['Stock Checker'];
   const w = width;
 
   // Task 1: home menu, target = Agents tile
@@ -81,13 +81,13 @@ async function run(browser, ver, width) {
   const msgs = await rpc(page, 'mail.message', 'search', [[['model', '=', 'pan.probe.agent'], ['res_id', '=', sales.id], ['body', 'ilike', 'Run finished']]]);
   if (msgs.length) await rpc(page, 'mail.message', 'unlink', [msgs]);
 
-  // Task 5: default view (list on desktop, kanban on phone), target = Inventory Agent switch
+  // Task 5: default view (list on desktop, kanban on phone), target = Stock Checker switch
   await openAgents(page, base);
   const isKanban = await page.locator('.o_kanban_view').count() > 0;
-  const holder = isKanban ? page.locator('.o_kanban_record').filter({ hasText: 'Inventory Agent' })
-                          : page.locator('.o_data_row').filter({ hasText: 'Inventory Agent' });
+  const holder = isKanban ? page.locator('.o_kanban_record').filter({ hasText: 'Stock Checker' })
+                          : page.locator('.o_data_row').filter({ hasText: 'Stock Checker' });
   const sw = holder.locator('.o_field_boolean_toggle .form-check').first();
-  await shot(page, ver, `task5-${w}`, await box(page, sw, `Inventory Agent on/off switch (${isKanban ? 'kanban card' : 'list row'})`));
+  await shot(page, ver, `task5-${w}`, await box(page, sw, `Stock Checker on/off switch (${isKanban ? 'kanban card' : 'list row'})`));
   await holder.locator('.o_field_boolean_toggle input').first().click({ force: true });
   await page.waitForTimeout(2000); await settle(page, 500);
   await shot(page, ver, `task5-after-${w}`);

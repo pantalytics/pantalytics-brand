@@ -21,7 +21,7 @@
         <field name="error">The Key was refused. Add a new Key in Settings.</field>
     </record>
     <record id="agent_inventory" model="pan.probe.agent">
-        <field name="name">Inventory Agent</field>
+        <field name="name">Stock Checker</field>
         <field name="app">stock</field>
         <field name="state">running</field>
         <field name="user_id" ref="base.user_demo"/>

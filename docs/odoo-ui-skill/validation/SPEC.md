@@ -44,9 +44,9 @@ One line each, no other explanation.
 2. "Which agent is broken?" (from the list)
 3. "Why is it broken?" (from the list)
 4. "Run the Sales agent now."
-5. "Turn the Inventory agent off."
+5. "Turn off the Stock Checker." (round 4; was "Turn the Inventory agent off.", ambiguous with three agents in the Inventory app)
 6. "Let agents write in Odoo." (Settings)
-7. "Test an agent on a quotation." (round 2: Run and Test merged into one Run Agent button)
+7. "Test an agent on a quotation." Rare task: lives in the quotation's action menu and is not gated (three rounds: every hidden place is lost by a lazy user; a phone shows one header button). Its menu and dialog steps are gated.
 8. "Start with agents." (empty database)
 
 Each at 1440 x 900 and 390 x 844, on Odoo 19 and 20.

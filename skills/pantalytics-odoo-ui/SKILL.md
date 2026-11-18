@@ -55,7 +55,7 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
 | A flow with checks | form, `target="current"`; the crumb is the back link | |
 | Feedback on an action | the changed value on the record where the eye is; a notification with a type (`success`/`warning`/`danger`) only when nothing visible changes | never `info`; an output worth reading is a field on the record, not a toast |
 | A problem with this record | inline `alert` with `invisible=` | gone when solved; <= 1 per form |
-| Empty | action help: one `o_view_nocontent_smiling_face` line, verb + thing | no second paragraph, no button in it, no `sample="1"`: the lazy user read the faded sample rows as real records |
+| Empty | action help: one line that names the state, `<p>No agents yet</p>`; New is the action | no illustration, no imperative ("Add your first agent" looked like a button and was tapped), no second paragraph, no `sample="1"` (sample rows read as real records) |
 | Settings | `<app>` > `<block>` > `<setting id=...>` | 1 app, <= 3 blocks, <= 6 settings per block, help <= 12 words. A block is named after what it controls ("Access"), never after the app |
 | An app that needs pairing | setup checklist inside `<block>`/`<setting>`: one row per step, status, one action | later steps hidden until earlier ones work |
 | Advanced options | last notebook page, `groups="base.group_no_one"`, or a small `priority=100` form | |
@@ -110,9 +110,9 @@ The smallest set that follows the rules (Odoo 18, 19 and 20; icons differ, see V
   </templates>
 </kanban>
 
-<!-- Empty state: one line, verb + thing -->
+<!-- Empty state: one line that names the state; New is the action -->
 <field name="help" type="html">
-  <p class="o_view_nocontent_smiling_face">Add your first agent</p>
+  <p>No agents yet</p>
 </field>
 ```
 

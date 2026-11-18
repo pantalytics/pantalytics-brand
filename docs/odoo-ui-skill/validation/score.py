@@ -55,6 +55,8 @@ def main():
         if key not in targets:
             continue
         box = targets[key]
+        if box.get("gated") is False:
+            continue  # rare task: reported, not gated (SPEC.md)
         fails, warns, taps = [], [], []
         for i, run in enumerate(runs):
             if key not in run:
