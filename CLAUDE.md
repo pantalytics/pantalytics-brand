@@ -36,6 +36,23 @@ no text, no letters", 1:1, 1k, no reference image. Flux allows 8
 concurrent renders. `npm run icons -- --install` copies the PNGs into
 the Odoo addon repos listed per icon in the script.
 
+## Skills: one source for people and AI
+
+`skills/<name>/` holds Claude skills (SKILL.md with frontmatter, plus
+`reference/` and `agents/`). They are the source of truth for design rules;
+the site explains and shows them.
+
+- Machines: the site publishes every skill file raw at
+  `/skills/<name>/...` (`src/pages/skills/[...path].ts`) and lists them in
+  `/llms.txt`. The repo is a Claude Code plugin (`.claude-plugin/`):
+  `/plugin marketplace add pantalytics/pantalytics-brand`, then
+  `/plugin install pantalytics-brand`.
+- People: Product UI (Inside Odoo) and Odoo UI on the site.
+- When a rule changes, change the skill and the site copy (`ui.*`,
+  `odoo.*` in both i18n files) in the same commit.
+- Odoo UI screenshots: `node scripts/odoo-ui-shots.mjs` against a running
+  Odoo 20 (`docs/odoo-ui-skill/screens/HOWTO.md`).
+
 ## Transparent torn-edge assets
 
 Some Flux outputs (the blueprint series — `14*.png`) frame the cream
