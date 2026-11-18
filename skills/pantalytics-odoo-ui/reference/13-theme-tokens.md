@@ -152,7 +152,8 @@ Symbols on 20.
   odoo-style-pro needs `body, .o_web_client { font-family: var(--pan-font-body) !important }` and then a patch
   `.oi { font-family: 'odoo_ui_icons' !important }` to keep icons alive (`pan_style_pro/static/src/scss/_typography.scss`).
   On Odoo 20 that patch breaks every Material Symbol (`.oi` must resolve to `Material Symbols Outlined` via
-  `--icon-font-family`; `webclient/icons.scss`), so `icon="east"` would print the word "east". Proof that a font
+  `--icon-font-family`; `webclient/icons.scss`), so `icon="east"` would print the word "east". Style Pro's
+  20.0 branch has dropped that rule (checked 2026-11-18); the 19.0 rule shows why a font
   override is upgrade debt. Style Pro is the opt-in theme product; functional modules never carry it.
 - **No shadows**: we add none; Odoo's own dropdown shadow and Enterprise 20 gradients stay.
 - Checkable rules for module SCSS (lint by grep): 0 hex colours, 0 `font-family`, 0 `box-shadow`, 0 `!important`,

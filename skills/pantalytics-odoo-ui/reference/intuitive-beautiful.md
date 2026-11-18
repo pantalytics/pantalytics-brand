@@ -1,6 +1,6 @@
 # Intuitive and beautiful, as rules you can check
 
-Phase 0 of [PLAN.md](PLAN.md). Builds on the Product UI page (`ui.*` and
+Phase 0 of [PLAN.md](../../../docs/odoo-ui-skill/PLAN.md). Builds on the Product UI page (`ui.*` and
 `design.principle.*` in `src/i18n/en.json`); rules already there are not
 repeated, only given a check.
 
