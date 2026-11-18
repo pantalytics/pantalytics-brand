@@ -1,0 +1,42 @@
+{
+  "20/task6-1440.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left of main panel, first setting", "x": 254, "y": 139},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown", "Save"],
+    "read": ["Agents May Write", "Default User", "Save"],
+    "ignored": ["left app list", "search bar", "Discard", "top bar icons", "grey helper lines"],
+    "stands_out": "Agents May Write",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "19/task6-390.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left, first setting under tabs", "x": 23, "y": 225},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown", "Save"],
+    "read": ["Agents May Write", "Default User", "Save"],
+    "ignored": ["tab strip (General Settings, CRM, Sales, Calendar)", "search", "kebab menu", "top icons"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "settings page, unclear which app"}
+  },
+  "19/task6-1440.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left of main panel, first setting", "x": 238, "y": 139},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown", "Save"],
+    "read": ["Agents May Write", "Default User", "Save"],
+    "ignored": ["left app list", "search bar", "Discard", "top bar icons", "grey helper lines"],
+    "stands_out": "Agents May Write",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "20/task6-390.png": {
+    "first_tap": {"label": "Agents May Write toggle", "where": "top left, first setting", "x": 40, "y": 200},
+    "confidence": "sure",
+    "considered": ["Agents May Write toggle", "Agents dropdown", "Default User dropdown", "Save"],
+    "read": ["Agents May Write", "Agents", "Default User", "Save"],
+    "ignored": ["search icon", "Save arrow", "top icons", "grey helper lines"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  }
+}
