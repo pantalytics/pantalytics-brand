@@ -12,7 +12,7 @@ gate**: right first tap, "sure", at most three labels read (Odoo's chrome
 included), no sentence, in every run; on Odoo 19 and 20, desktop and phone.
 Each screen is judged by its latest three-run round after its last change:
 28 in round 6, the 4 dialog screens in round 7, the 4 settings screens in
-round 9. Per screen: `results-final.md` (`score.py --strict`).
+round 9. Per screen: `results-final.md` (`score.py`, which scores the strict gate by default).
 
 How the last screen got there:
 
@@ -24,8 +24,8 @@ How the last screen got there:
   All three runs: "sure", on 19 and 20, desktop and phone.
 
 After round 8 a looser scoring (Odoo chrome labels not counted, the faint
-checkbox as a warning) was agreed and is kept in `score.py` as the default;
-the final result above does not need it.
+checkbox as a warning) was agreed; it is kept behind `score.py --lenient` for
+comparison only. The final result above does not use it.
 
 Not gated: the first step of "test an agent on a quotation" (a rare task in
 the action menu; see round 3). Lost in every run, as expected.

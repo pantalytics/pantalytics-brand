@@ -1,6 +1,6 @@
 """Score lazy-user answers against the intended targets.
 
-Usage: python3 score.py [--strict] screens/targets.json answers.json [answers2.json ...] > results.md
+Usage: python3 score.py [--lenient] screens/targets.json answers.json [answers2.json ...] > results.md
 
 With several answer files (fresh runs), a screen passes only when every run passes.
 
@@ -26,8 +26,12 @@ CHROME = {
 }
 
 
-STRICT = "--strict" in sys.argv  # the plan's original gate: chrome counts, no native exceptions
-if STRICT:
+# Default: the plan's gate (chrome labels count, no native exceptions).
+# --lenient: the looser scoring agreed after round 8, kept for comparison only.
+STRICT = "--lenient" not in sys.argv
+if "--lenient" in sys.argv:
+    sys.argv.remove("--lenient")
+if "--strict" in sys.argv:
     sys.argv.remove("--strict")
 
 
