@@ -1,0 +1,865 @@
+{
+  "19/task1-1440.png": {
+    "first_tap": {
+      "label": "Agents app icon",
+      "where": "row 2, first icon",
+      "x": 379,
+      "y": 345
+    },
+    "confidence": "sure",
+    "considered": [
+      "Agents icon"
+    ],
+    "read": [
+      "Agents"
+    ],
+    "ignored": "other app icons, subscription banner",
+    "stands_out": "Agents compass icon",
+    "feel": "calm",
+    "where": {
+      "app": "Odoo home",
+      "screen": "app menu"
+    }
+  },
+  "19/task1-390.png": {
+    "first_tap": {
+      "label": "Agents app icon",
+      "where": "row 2, third icon",
+      "x": 240,
+      "y": 353
+    },
+    "confidence": "sure",
+    "considered": [
+      "Agents icon"
+    ],
+    "read": [
+      "Agents"
+    ],
+    "ignored": "other app icons, subscription banner",
+    "stands_out": "subscription banner",
+    "feel": "calm",
+    "where": {
+      "app": "Odoo home",
+      "screen": "app menu"
+    }
+  },
+  "20/task1-1440.png": {
+    "first_tap": {
+      "label": "Agents app icon",
+      "where": "row 2, first icon",
+      "x": 366,
+      "y": 321
+    },
+    "confidence": "sure",
+    "considered": [
+      "Agents icon"
+    ],
+    "read": [
+      "Agents"
+    ],
+    "ignored": "other app icons, expiry banner",
+    "stands_out": "Agents compass icon",
+    "feel": "calm",
+    "where": {
+      "app": "Odoo home",
+      "screen": "app menu"
+    }
+  },
+  "20/task1-390.png": {
+    "first_tap": {
+      "label": "Agents app icon",
+      "where": "row 2, third icon",
+      "x": 240,
+      "y": 315
+    },
+    "confidence": "sure",
+    "considered": [
+      "Agents icon"
+    ],
+    "read": [
+      "Agents"
+    ],
+    "ignored": "other app icons, expiry banner",
+    "stands_out": "expiry banner",
+    "feel": "calm",
+    "where": {
+      "app": "Odoo home",
+      "screen": "app menu"
+    }
+  },
+  "19/task2-1440.png": {
+    "first_tap": {
+      "label": "Lead Scorer row (red Failing)",
+      "where": "row 3",
+      "x": 85,
+      "y": 243
+    },
+    "confidence": "sure",
+    "considered": [
+      "Failing badge",
+      "Needs Key badge",
+      "Key refused"
+    ],
+    "read": [
+      "Failing",
+      "Lead Scorer"
+    ],
+    "ignored": "search bar, App and Last Run columns, dates, top bar icons, green toggles",
+    "stands_out": "red Failing badge",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "20/task2-1440.png": {
+    "first_tap": {
+      "label": "Lead Scorer row (red Failing)",
+      "where": "row 3",
+      "x": 85,
+      "y": 245
+    },
+    "confidence": "sure",
+    "considered": [
+      "Failing badge",
+      "Key refused",
+      "Needs Key badge"
+    ],
+    "read": [
+      "Failing",
+      "Key refused",
+      "Lead Scorer"
+    ],
+    "ignored": "search bar, App and Last Run columns, dates, top bar icons, green toggles",
+    "stands_out": "red Key refused text",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "19/task2-390.png": {
+    "first_tap": {
+      "label": "Lead Scorer card (red Failing)",
+      "where": "card 3",
+      "x": 48,
+      "y": 307
+    },
+    "confidence": "sure",
+    "considered": [
+      "Failing badge",
+      "Problem: Key refused",
+      "Needs Key badge"
+    ],
+    "read": [
+      "Failing",
+      "Problem: Key refused",
+      "Lead Scorer"
+    ],
+    "ignored": "green Running badges, toggles, top icons",
+    "stands_out": "red Failing badge",
+    "feel": "busy",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "20/task2-390.png": {
+    "first_tap": {
+      "label": "Lead Scorer card (red Failing)",
+      "where": "card 3",
+      "x": 52,
+      "y": 320
+    },
+    "confidence": "sure",
+    "considered": [
+      "Problem: Key refused",
+      "Failing badge",
+      "Needs Key badge"
+    ],
+    "read": [
+      "Problem: Key refused",
+      "Failing",
+      "Lead Scorer"
+    ],
+    "ignored": "Running badges, toggles, top icons",
+    "stands_out": "red Problem: Key refused",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "19/task3-1440.png": {
+    "first_tap": {
+      "label": "Key refused (red text)",
+      "where": "row 3, Problem column",
+      "x": 858,
+      "y": 243
+    },
+    "confidence": "sure",
+    "considered": [
+      "Key refused",
+      "Failing badge"
+    ],
+    "read": [
+      "Problem",
+      "Key refused"
+    ],
+    "ignored": "search bar, App and Last Run columns, dates, top bar icons, toggles",
+    "stands_out": "red Failing badge",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "20/task3-1440.png": {
+    "first_tap": {
+      "label": "Key refused (red text)",
+      "where": "row 3, Problem column",
+      "x": 860,
+      "y": 245
+    },
+    "confidence": "sure",
+    "considered": [
+      "Key refused",
+      "Failing badge"
+    ],
+    "read": [
+      "Problem",
+      "Key refused"
+    ],
+    "ignored": "search bar, App and Last Run columns, dates, top bar icons, toggles",
+    "stands_out": "red Key refused text",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "19/task3-390.png": {
+    "first_tap": {
+      "label": "Problem: Key refused",
+      "where": "card 3, red line",
+      "x": 79,
+      "y": 349
+    },
+    "confidence": "sure",
+    "considered": [
+      "Problem: Key refused",
+      "Failing badge"
+    ],
+    "read": [
+      "Problem: Key refused"
+    ],
+    "ignored": "other cards, toggles, top icons",
+    "stands_out": "red Failing badge",
+    "feel": "busy",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "20/task3-390.png": {
+    "first_tap": {
+      "label": "Problem: Key refused",
+      "where": "card 3, red line",
+      "x": 81,
+      "y": 359
+    },
+    "confidence": "sure",
+    "considered": [
+      "Problem: Key refused",
+      "Failing badge"
+    ],
+    "read": [
+      "Problem: Key refused"
+    ],
+    "ignored": "other cards, toggles, top icons",
+    "stands_out": "red Problem: Key refused",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "19/task4-1440.png": {
+    "first_tap": {
+      "label": "Run Agent",
+      "where": "top left button",
+      "x": 61,
+      "y": 129
+    },
+    "confidence": "sure",
+    "considered": [
+      "Run Agent"
+    ],
+    "read": [
+      "Run Agent",
+      "Sales Agent"
+    ],
+    "ignored": "chatter, Running badge, fields, New",
+    "stands_out": "Run Agent button",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "Sales Agent form"
+    }
+  },
+  "20/task4-1440.png": {
+    "first_tap": {
+      "label": "Run Agent",
+      "where": "top left button",
+      "x": 61,
+      "y": 124
+    },
+    "confidence": "sure",
+    "considered": [
+      "Run Agent"
+    ],
+    "read": [
+      "Run Agent",
+      "Sales Agent"
+    ],
+    "ignored": "chatter, Running badge, fields, New",
+    "stands_out": "Run Agent button",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "Sales Agent form"
+    }
+  },
+  "19/task4-390.png": {
+    "first_tap": {
+      "label": "Run Agent",
+      "where": "top left button",
+      "x": 66,
+      "y": 134
+    },
+    "confidence": "sure",
+    "considered": [
+      "Run Agent"
+    ],
+    "read": [
+      "Run Agent",
+      "Sales Agent"
+    ],
+    "ignored": "Running badge, fields, Send message, Log note",
+    "stands_out": "Run Agent button",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "Sales Agent form"
+    }
+  },
+  "20/task4-390.png": {
+    "first_tap": {
+      "label": "Run Agent",
+      "where": "top left button",
+      "x": 66,
+      "y": 125
+    },
+    "confidence": "sure",
+    "considered": [
+      "Run Agent",
+      "Send message"
+    ],
+    "read": [
+      "Run Agent",
+      "Sales Agent"
+    ],
+    "ignored": "Running badge, fields, chatter",
+    "stands_out": "Run Agent button",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "Sales Agent form"
+    }
+  },
+  "19/task5-1440.png": {
+    "first_tap": {
+      "label": "On toggle in Stock Checker row",
+      "where": "row 5, On column",
+      "x": 1288,
+      "y": 322
+    },
+    "confidence": "sure",
+    "considered": [
+      "Stock Checker row",
+      "On toggle"
+    ],
+    "read": [
+      "Stock Checker",
+      "On"
+    ],
+    "ignored": "search bar, App and Last Run columns, dates, top bar icons, status badges",
+    "stands_out": "red Failing badge",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "20/task5-1440.png": {
+    "first_tap": {
+      "label": "On toggle in Stock Checker row",
+      "where": "row 5, On column",
+      "x": 1289,
+      "y": 324
+    },
+    "confidence": "sure",
+    "considered": [
+      "Stock Checker row",
+      "On toggle"
+    ],
+    "read": [
+      "Stock Checker",
+      "On"
+    ],
+    "ignored": "search bar, App and Last Run columns, dates, top bar icons, status badges",
+    "stands_out": "red Key refused text",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "19/task5-390.png": {
+    "first_tap": {
+      "label": "Toggle on Stock Checker card",
+      "where": "card 5, right",
+      "x": 361,
+      "y": 558
+    },
+    "confidence": "sure",
+    "considered": [
+      "Stock Checker card",
+      "toggle"
+    ],
+    "read": [
+      "Stock Checker"
+    ],
+    "ignored": "other cards, badges, top icons",
+    "stands_out": "red Failing badge",
+    "feel": "busy",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "20/task5-390.png": {
+    "first_tap": {
+      "label": "Toggle on Stock Checker card",
+      "where": "card 5, right",
+      "x": 354,
+      "y": 581
+    },
+    "confidence": "sure",
+    "considered": [
+      "Stock Checker card",
+      "toggle"
+    ],
+    "read": [
+      "Stock Checker"
+    ],
+    "ignored": "other cards, badges, top icons",
+    "stands_out": "red Problem: Key refused",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "agent list"
+    }
+  },
+  "19/task6-1440.png": {
+    "first_tap": {
+      "label": "Agents May Write (label, checkbox is faint)",
+      "where": "Access block, left",
+      "x": 327,
+      "y": 179
+    },
+    "confidence": "think so",
+    "considered": [
+      "Agents May Write",
+      "faint checkbox left of it",
+      "Default User"
+    ],
+    "read": [
+      "Access",
+      "Agents May Write"
+    ],
+    "ignored": "left app list, search, Default User dropdown, Save",
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {
+      "app": "Agents settings",
+      "screen": "Settings, Access"
+    }
+  },
+  "20/task6-1440.png": {
+    "first_tap": {
+      "label": "Agents May Write checkbox",
+      "where": "Access block, left",
+      "x": 254,
+      "y": 179
+    },
+    "confidence": "sure",
+    "considered": [
+      "Agents May Write checkbox",
+      "Default User"
+    ],
+    "read": [
+      "Access",
+      "Agents May Write"
+    ],
+    "ignored": "left app list, search, Default User dropdown, Save",
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {
+      "app": "Agents settings",
+      "screen": "Settings, Access"
+    }
+  },
+  "19/task6-390.png": {
+    "first_tap": {
+      "label": "Agents May Write checkbox",
+      "where": "Access block, left",
+      "x": 23,
+      "y": 265
+    },
+    "confidence": "sure",
+    "considered": [
+      "Agents May Write checkbox",
+      "Default User"
+    ],
+    "read": [
+      "Agents May Write"
+    ],
+    "ignored": "app tabs, search, Default User dropdown, Save",
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {
+      "app": "Settings",
+      "screen": "Settings, Access"
+    }
+  },
+  "20/task6-390.png": {
+    "first_tap": {
+      "label": "Agents May Write toggle",
+      "where": "Access block, left",
+      "x": 40,
+      "y": 239
+    },
+    "confidence": "sure",
+    "considered": [
+      "Agents May Write toggle",
+      "Default User"
+    ],
+    "read": [
+      "Agents May Write"
+    ],
+    "ignored": "Agents app picker, search, Default User dropdown, Save",
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {
+      "app": "Settings",
+      "screen": "Agents settings, Access"
+    }
+  },
+  "19/task7-menu-1440.png": {
+    "first_tap": {
+      "label": "Test Agent",
+      "where": "action menu, item 5",
+      "x": 186,
+      "y": 257
+    },
+    "confidence": "sure",
+    "considered": [
+      "Test Agent"
+    ],
+    "read": [
+      "Test Agent",
+      "Duplicate",
+      "Delete",
+      "Generate a Payment Link"
+    ],
+    "ignored": "form behind, chatter, Print",
+    "stands_out": "red Delete",
+    "feel": "busy",
+    "where": {
+      "app": "Sales",
+      "screen": "quotation, action menu"
+    }
+  },
+  "20/task7-menu-1440.png": {
+    "first_tap": {
+      "label": "Test Agent",
+      "where": "action menu, item 5",
+      "x": 217,
+      "y": 240
+    },
+    "confidence": "sure",
+    "considered": [
+      "Test Agent"
+    ],
+    "read": [
+      "Test Agent",
+      "Payment Link",
+      "Mark as Sent"
+    ],
+    "ignored": "form behind, chatter, Actions tooltip",
+    "stands_out": "red Delete",
+    "feel": "busy",
+    "where": {
+      "app": "Sales",
+      "screen": "quotation, action menu"
+    }
+  },
+  "19/task7-menu-390.png": {
+    "first_tap": {
+      "label": "Test Agent",
+      "where": "bottom sheet, item 5",
+      "x": 86,
+      "y": 630
+    },
+    "confidence": "sure",
+    "considered": [
+      "Test Agent"
+    ],
+    "read": [
+      "Test Agent",
+      "Generate a Payment Link",
+      "Send an email"
+    ],
+    "ignored": "Print, Duplicate, Delete, form behind",
+    "stands_out": "red Delete",
+    "feel": "calm",
+    "where": {
+      "app": "Sales",
+      "screen": "quotation, action sheet"
+    }
+  },
+  "20/task7-menu-390.png": {
+    "first_tap": {
+      "label": "Test Agent",
+      "where": "bottom sheet, item 5",
+      "x": 86,
+      "y": 575
+    },
+    "confidence": "sure",
+    "considered": [
+      "Test Agent"
+    ],
+    "read": [
+      "Test Agent",
+      "Payment Link"
+    ],
+    "ignored": "Quotation / Order, Duplicate, Delete, form behind",
+    "stands_out": "red Delete",
+    "feel": "calm",
+    "where": {
+      "app": "Sales",
+      "screen": "quotation, action sheet"
+    }
+  },
+  "19/task7-dialog-1440.png": {
+    "first_tap": {
+      "label": "Test",
+      "where": "dialog, bottom left",
+      "x": 436,
+      "y": 537
+    },
+    "confidence": "sure",
+    "considered": [
+      "Test",
+      "Discard"
+    ],
+    "read": [
+      "Test Agent",
+      "Sales Agent",
+      "S00003",
+      "Test"
+    ],
+    "ignored": "dimmed quotation, close X",
+    "stands_out": "Test Agent dialog",
+    "feel": "calm",
+    "where": {
+      "app": "Sales",
+      "screen": "Test Agent dialog"
+    }
+  },
+  "20/task7-dialog-1440.png": {
+    "first_tap": {
+      "label": "Test",
+      "where": "dialog, bottom left",
+      "x": 452,
+      "y": 533
+    },
+    "confidence": "sure",
+    "considered": [
+      "Test",
+      "Discard"
+    ],
+    "read": [
+      "Test Agent",
+      "Sales Agent",
+      "S00003",
+      "Test"
+    ],
+    "ignored": "dimmed quotation, close X",
+    "stands_out": "Test Agent dialog",
+    "feel": "calm",
+    "where": {
+      "app": "Sales",
+      "screen": "Test Agent dialog"
+    }
+  },
+  "19/task7-dialog-390.png": {
+    "first_tap": {
+      "label": "Test",
+      "where": "bottom left button",
+      "x": 104,
+      "y": 817
+    },
+    "confidence": "sure",
+    "considered": [
+      "Test",
+      "Discard"
+    ],
+    "read": [
+      "Test Agent",
+      "Sales Agent",
+      "S00003",
+      "Test"
+    ],
+    "ignored": "empty middle, close X",
+    "stands_out": "purple Test button",
+    "feel": "calm",
+    "where": {
+      "app": "Sales",
+      "screen": "Test Agent dialog"
+    }
+  },
+  "20/task7-dialog-390.png": {
+    "first_tap": {
+      "label": "Test",
+      "where": "dialog, wide button",
+      "x": 195,
+      "y": 509
+    },
+    "confidence": "sure",
+    "considered": [
+      "Test",
+      "Discard"
+    ],
+    "read": [
+      "Test Agent",
+      "Sales Agent",
+      "S00003",
+      "Test"
+    ],
+    "ignored": "dimmed quotation, close X",
+    "stands_out": "purple Test button",
+    "feel": "calm",
+    "where": {
+      "app": "Sales",
+      "screen": "Test Agent dialog"
+    }
+  },
+  "19/task8-1440.png": {
+    "first_tap": {
+      "label": "New",
+      "where": "top left button",
+      "x": 41,
+      "y": 70
+    },
+    "confidence": "sure",
+    "considered": [
+      "New",
+      "No agents yet"
+    ],
+    "read": [
+      "No agents yet",
+      "Add one with New",
+      "New"
+    ],
+    "ignored": "search, column headers, top icons",
+    "stands_out": "No agents yet",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "empty agent list"
+    }
+  },
+  "20/task8-1440.png": {
+    "first_tap": {
+      "label": "New",
+      "where": "top left button",
+      "x": 41,
+      "y": 72
+    },
+    "confidence": "sure",
+    "considered": [
+      "New",
+      "No agents yet"
+    ],
+    "read": [
+      "No agents yet",
+      "Add one with New",
+      "New"
+    ],
+    "ignored": "search, column headers, top icons",
+    "stands_out": "No agents yet",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "empty agent list"
+    }
+  },
+  "19/task8-390.png": {
+    "first_tap": {
+      "label": "New",
+      "where": "top left button",
+      "x": 46,
+      "y": 72
+    },
+    "confidence": "sure",
+    "considered": [
+      "New"
+    ],
+    "read": [
+      "New",
+      "No agents yet"
+    ],
+    "ignored": "gear, kanban, search icons",
+    "stands_out": "New button",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "empty agent list"
+    }
+  },
+  "20/task8-390.png": {
+    "first_tap": {
+      "label": "New",
+      "where": "top left button",
+      "x": 46,
+      "y": 72
+    },
+    "confidence": "sure",
+    "considered": [
+      "New"
+    ],
+    "read": [
+      "New",
+      "No agents yet"
+    ],
+    "ignored": "dots, kanban, search icons",
+    "stands_out": "New button",
+    "feel": "calm",
+    "where": {
+      "app": "Agents",
+      "screen": "empty agent list"
+    }
+  }
+}
