@@ -61,6 +61,9 @@ x,y to an element. A screen passes only if, at both widths:
 - all 3 runs hit the intended target, `confidence` "sure";
 - `read` holds only labels, at most 3, no sentence.
 
+Screens that are read by nature (an open menu, an error text the task asks
+for) skip the "labels only" rule; mark their target `read_ok`.
+
 Warnings (fix when cheap, never ship-blocking): more than one item in
 `considered`, `feel` "busy", `stands_out` not the target. Calibrated on native
 Odoo 20: the Sales quotations list gets two candidates (New and the

@@ -34,14 +34,16 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
    CSS for something Odoo has is a bug.
 3. Cut: run the bloat list.
 4. Check the counts, at 1440 px and 390 px, on every supported version.
-5. Pass the lazy user (`agents/lazy-user.md`). No pass, no ship.
+5. Pass the lazy user (`agents/lazy-user.md`) on every main task. No pass, no ship.
+   Write the task list first and mark each task main or rare; rare tasks are
+   allowed in the action menu and are not gated.
 
 ## Which widget, when
 
 | Need | Use | Limit |
 |---|---|---|
 | The main action | `<header>` button with `class="btn-primary"`, **first** in the header | 1 per state; on a phone only the first is shown |
-| Other actions | `btn-secondary` in the header, or a bound server action in the cog | <= 3 visible header buttons; no duplicate of the same action anywhere. The user's word for a task must be on the screen where the task starts: a merged button that hides that word fails just like a button behind the caret (validation: "Test" merged into "Run Agent" was lost on all four screens). A task that starts from another record ("test on a quotation") belongs on that record, as a bound action in its ⋮ menu (`binding_model_id`) |
+| Other actions | `btn-secondary` in the header, or a bound server action in the cog | <= 3 visible header buttons; no duplicate of the same action anywhere. The user's word for a task must be on the screen where the task starts, as a visible button. Validation, three rounds: a task behind the phone caret, inside a merged button, or in the action menu (⋮, `binding_model_id`) was lost every time, 19 and 20, desktop and phone. So decide per task: a main task gets a visible button; a rare task (testing, setup) may live in the action menu, knowing a lazy user will not find it |
 | Row action | `<button icon=... class="btn-link">` in the list | only when it is not "open the record" |
 | Why it is broken | the error as a short column next to the status, empty when healthy; on the card a red line shown only when failing | the user must not open the record to learn why |
 | Status | A lifecycle of 3-5 steps: `statusbar` in the form header. A health state (Running, Failing): `widget="badge"` in the form `<header>`, where a statusbar would sit. One `badge` column in the list | one status per record, said once |

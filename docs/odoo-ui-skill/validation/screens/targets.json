@@ -118,14 +118,16 @@
     "x": 130,
     "y": 243,
     "width": 205,
-    "height": 27
+    "height": 27,
+    "read_ok": true
   },
   "19/task7-menu-390.png": {
     "label": "Test Agent",
     "x": 16,
     "y": 603,
     "width": 358,
-    "height": 55
+    "height": 55,
+    "read_ok": true
   },
   "19/task8-1440.png": {
     "label": "New",
@@ -260,14 +262,16 @@
     "x": 161,
     "y": 226,
     "width": 177,
-    "height": 27
+    "height": 27,
+    "read_ok": true
   },
   "20/task7-menu-390.png": {
     "label": "Test Agent",
     "x": 16,
     "y": 548,
     "width": 358,
-    "height": 55
+    "height": 55,
+    "read_ok": true
   },
   "20/task8-1440.png": {
     "label": "New",
