@@ -10,6 +10,8 @@ const nlToEn: Record<string, string> = {
   "/typografie": "/en/typography",
   "/tone-of-voice": "/en/tone-of-voice",
   "/design-filosofie": "/en/design-philosophy",
+  "/product-ui": "/en/product-ui",
+  "/odoo-ui": "/en/odoo-ui",
   "/toolkit": "/en/toolkit",
   "/assets": "/en/assets",
   "/downloads": "/en/downloads",

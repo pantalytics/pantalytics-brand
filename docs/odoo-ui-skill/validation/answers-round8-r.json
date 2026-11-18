@@ -1,0 +1,42 @@
+{
+  "19/task6-390.png": {
+    "first_tap": {"label": "checkbox next to \"Agents May Write\"", "where": "top left of content, first row under the tabs", "x": 23, "y": 225},
+    "confidence": "sure",
+    "considered": ["Agents May Write", "Default User", "Save"],
+    "read": ["Settings", "Agents May Write", "Default User", "Save"],
+    "ignored": ["tab bar (General Settings, CRM, Sales, Calenda...)", "search bar", "grey description lines", "chat/clock badges", "empty dropdown"],
+    "stands_out": "purple Save button",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Agents settings page"}
+  },
+  "19/task6-1440.png": {
+    "first_tap": {"label": "checkbox next to \"Agents May Write\"", "where": "top left of content area", "x": 238, "y": 139},
+    "confidence": "sure",
+    "considered": ["Agents May Write", "Default User", "Agents (sidebar)"],
+    "read": ["Agents", "Agents May Write", "Default User"],
+    "ignored": ["sidebar apps list", "search bar", "description lines", "top bar icons and company name", "Save/Discard"],
+    "stands_out": "Agents May Write",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "20/task6-390.png": {
+    "first_tap": {"label": "toggle next to \"Agents May Write\"", "where": "top left of the card, first row", "x": 40, "y": 199},
+    "confidence": "sure",
+    "considered": ["Agents May Write toggle", "Agents dropdown", "Default User"],
+    "read": ["Settings", "Agents", "Agents May Write", "Default User"],
+    "ignored": ["Save button", "search icon", "grey description lines", "badges", "empty dropdown"],
+    "stands_out": "Agents May Write",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Agents settings page"}
+  },
+  "20/task6-1440.png": {
+    "first_tap": {"label": "checkbox next to \"Agents May Write\"", "where": "top left of the white card", "x": 254, "y": 139},
+    "confidence": "sure",
+    "considered": ["Agents May Write", "Default User"],
+    "read": ["Agents", "Agents May Write", "Default User"],
+    "ignored": ["sidebar apps list", "search bar", "description lines", "top bar", "Save/Discard"],
+    "stands_out": "Agents May Write",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  }
+}

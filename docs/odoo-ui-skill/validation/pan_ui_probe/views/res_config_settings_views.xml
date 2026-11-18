@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.pan_ui_probe</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Agents" name="pan_ui_probe">
+                    <block name="pan_probe_agents_block">
+                        <setting id="pan_probe_may_write" help="Agents can create and change records.">
+                            <field name="pan_probe_may_write"/>
+                        </setting>
+                        <setting id="pan_probe_default_user" string="Default User" help="New agents run as this user.">
+                            <field name="pan_probe_default_user_id" context="{'active_test': True}"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_pan_probe_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+        <field name="context">{'module': 'pan_ui_probe', 'bin_size': False}</field>
+    </record>
+</odoo>

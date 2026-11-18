@@ -1,0 +1,187 @@
+---
+// Odoo UI: how Odoo's interface is built, as annotated screenshots. The
+// numbers in each image are drawn by scripts/odoo-ui-shots.mjs and match the
+// numbered legend below it. Shared by the NL and EN pages; words in src/i18n.
+import type { Locale } from "@/i18n/config";
+import { useTranslations } from "@/i18n/utils";
+
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const range = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
+const img = (name: string) => `/images/odoo-ui/${name}.jpg`;
+// Pixel sizes of the screenshots (2x), so the page does not jump while they load.
+const size: Record<string, [number, number]> = {
+  "01-home-menu": [2880, 940],
+  "02-shell-list": [2880, 1200],
+  "03-search": [2880, 1280],
+  "04-form": [2880, 1800],
+  "05-kanban": [2880, 1640],
+  "06-settings": [2880, 1800],
+  "07-wizard": [2880, 1400],
+  "08-empty": [2880, 1600],
+  "09-phone-list": [780, 1688],
+  "09-phone-form": [780, 1688],
+};
+
+const sections = [
+  { key: "home", count: 3, images: ["01-home-menu"] },
+  { key: "list", count: 14, images: ["02-shell-list"] },
+  { key: "search", count: 4, images: ["03-search"] },
+  { key: "form", count: 9, images: ["04-form"] },
+  { key: "kanban", count: 7, images: ["05-kanban"] },
+  { key: "settings", count: 8, images: ["06-settings"] },
+  { key: "wizard", count: 4, images: ["07-wizard"] },
+  { key: "empty", count: 2, images: ["08-empty"] },
+  { key: "phone", count: 8, images: ["09-phone-list", "09-phone-form"], phone: true },
+];
+const productUi = lang === "nl" ? "/product-ui" : "/en/product-ui";
+---
+
+<h1>{t("odoo.h1")}</h1>
+<p class="brand-intro">{t("odoo.intro")}</p>
+<p class="odoo-source">{t("odoo.source")}</p>
+
+<h2>{t("odoo.layers.title")}</h2>
+<p>{t("odoo.layers.desc")}</p>
+<div class="values-grid">
+  {range(4).map((i) => (
+    <div class="value-card">
+      <h4>{t(`odoo.layer.${i}.name`)}</h4>
+      <p>{t(`odoo.layer.${i}.desc`)}</p>
+    </div>
+  ))}
+</div>
+
+{sections.map((s) => (
+  <section class="odoo-section" id={s.key}>
+    <h2>{t(`odoo.${s.key}.title`)}</h2>
+    <p>{t(`odoo.${s.key}.desc`)}</p>
+    <div class:list={["odoo-shots", { phone: s.phone }]}>
+      {s.images.map((name) => (
+        <a href={img(name)} class="odoo-shot">
+          <img
+            src={img(name)}
+            alt={t(`odoo.${s.key}.title`)}
+            width={size[name][0]}
+            height={size[name][1]}
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      ))}
+    </div>
+    <ol class="odoo-legend">
+      {range(s.count).map((i) => (
+        <li>
+          <strong>{t(`odoo.${s.key}.${i}.name`)}</strong>
+          <span>{t(`odoo.${s.key}.${i}.desc`)}</span>
+        </li>
+      ))}
+    </ol>
+    <p class="odoo-rule"><strong>{t("odoo.rule.label")}</strong> {t(`odoo.${s.key}.rule`)}</p>
+  </section>
+))}
+
+<h2>{t("odoo.versions.title")}</h2>
+<p>{t("odoo.versions.desc")}</p>
+<div class="odoo-table-wrap">
+  <table class="voice-table">
+    <thead>
+      <tr>
+        <th>{t("odoo.versions.col.what")}</th>
+        <th>18</th>
+        <th>19</th>
+        <th>20</th>
+      </tr>
+    </thead>
+    <tbody>
+      {range(8).map((i) => (
+        <tr>
+          <td>{t(`odoo.v.${i}.what`)}</td>
+          <td>{t(`odoo.v.${i}.18`)}</td>
+          <td>{t(`odoo.v.${i}.19`)}</td>
+          <td>{t(`odoo.v.${i}.20`)}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<h2>{t("odoo.us.title")}</h2>
+<p>{t("odoo.us.desc")}</p>
+<p><a href={productUi + "#inside-odoo"}>{t("odoo.us.link")}</a></p>
+
+<style>
+  .odoo-source {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+  }
+  .odoo-section {
+    scroll-margin-top: 5rem;
+  }
+  .odoo-shots {
+    margin: 1.5rem 0 1rem;
+  }
+  .odoo-shots.phone {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 300px));
+    gap: 1rem;
+  }
+  .odoo-shot {
+    display: block;
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--ui-radius-md);
+    overflow: hidden;
+    background: #fff;
+  }
+  .odoo-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .odoo-legend {
+    margin: 0 0 1rem;
+    padding-left: 1.75rem;
+    columns: 2;
+    column-gap: 2.5rem;
+  }
+  .odoo-legend li {
+    break-inside: avoid;
+    margin-bottom: 0.625rem;
+    line-height: 1.5;
+  }
+  .odoo-legend li::marker {
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+  .odoo-legend strong {
+    display: block;
+  }
+  .odoo-legend span {
+    color: var(--color-text-secondary);
+  }
+  .odoo-rule {
+    border-left: 3px solid var(--color-accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    margin: 1rem 0 2.5rem;
+  }
+  .odoo-rule strong {
+    margin-right: 0.25rem;
+  }
+  .odoo-table-wrap {
+    overflow-x: auto;
+    width: 0;
+    min-width: 100%;
+  }
+  @media (max-width: 767px) {
+    .odoo-legend {
+      columns: 1;
+    }
+  }
+  @media (max-width: 479px) {
+    .odoo-shots.phone {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

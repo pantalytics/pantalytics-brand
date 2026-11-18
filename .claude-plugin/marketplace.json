@@ -1,0 +1,11 @@
+{
+  "name": "pantalytics",
+  "owner": { "name": "Pantalytics" },
+  "plugins": [
+    {
+      "name": "pantalytics-brand",
+      "source": "./",
+      "description": "Pantalytics design rules as Claude skills: building screens inside Odoo the Pantalytics way."
+    }
+  ]
+}

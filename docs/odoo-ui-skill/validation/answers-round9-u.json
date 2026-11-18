@@ -1,0 +1,42 @@
+{
+  "19/task6-1440.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left of the form, first setting", "x": 238, "y": 139},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown", "Save"],
+    "read": ["Agents May Write", "Default User"],
+    "ignored": ["side app list", "search bar", "description lines", "top bar icons"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "20/task6-390.png": {
+    "first_tap": {"label": "Agents May Write toggle", "where": "top left of the card, first row", "x": 40, "y": 200},
+    "confidence": "sure",
+    "considered": ["Agents May Write toggle", "Default User dropdown", "Save"],
+    "read": ["Agents May Write", "Default User"],
+    "ignored": ["Agents app picker", "search icon", "description lines", "top bar icons"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "20/task6-1440.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left of the card, first setting", "x": 254, "y": 139},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown", "Save"],
+    "read": ["Agents May Write", "Default User"],
+    "ignored": ["side app list", "search bar", "description lines", "top bar icons"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "19/task6-390.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left, first row below the tabs", "x": 23, "y": 225},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown", "Save"],
+    "read": ["Agents May Write", "Default User"],
+    "ignored": ["app tabs row", "search bar", "description lines", "top bar icons"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Agents settings"}
+  }
+}

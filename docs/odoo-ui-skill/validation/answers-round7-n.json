@@ -1,0 +1,82 @@
+{
+  "19/task6-390.png": {
+    "first_tap": {"label": "checkbox next to Agents May Write", "where": "top left, first setting under Access", "x": 23, "y": 265},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown", "Save"],
+    "read": ["Agents May Write", "Default User"],
+    "ignored": ["tabs row", "search bar", "grey line under each label", "empty bottom half"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Agents access settings"}
+  },
+  "19/task7-dialog-1440.png": {
+    "first_tap": {"label": "Test", "where": "dialog, bottom left", "x": 436, "y": 517},
+    "confidence": "sure",
+    "considered": ["Test", "Discard", "close X"],
+    "read": ["Test Agent", "Test", "Discard"],
+    "ignored": ["quotation behind the overlay", "chatter", "Sales Agent on S00003 line"],
+    "stands_out": "white Test Agent dialog in the middle",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Test Agent dialog on quotation"}
+  },
+  "native/19-settings-390": {
+    "first_tap": {"label": "checkbox next to Discounts", "where": "bottom left, under Pricing", "x": 23, "y": 756},
+    "confidence": "think so",
+    "considered": ["SALES tab", "Variants checkbox", "Discounts checkbox"],
+    "read": ["SALES", "Product Catalog", "Variants", "Pricing", "Discounts"],
+    "ignored": ["grey descriptions", "Attributes link", "Units of Measure", "Deliver Content by Email"],
+    "stands_out": "purple SALES tab",
+    "feel": "busy",
+    "where": {"app": "Settings", "screen": "Sales settings"}
+  },
+  "20/task7-dialog-1440.png": {
+    "first_tap": {"label": "Test", "where": "dialog, bottom left", "x": 451, "y": 513},
+    "confidence": "sure",
+    "considered": ["Test", "Discard", "close X"],
+    "read": ["Test Agent", "Test", "Discard"],
+    "ignored": ["greyed quotation behind", "chatter", "Sales Agent on S00003 line"],
+    "stands_out": "white Test Agent dialog",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Test Agent dialog on quotation"}
+  },
+  "19/task6-1440.png": {
+    "first_tap": {"label": "checkbox next to Agents May Write", "where": "top left of content, under Access", "x": 238, "y": 179},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown", "Save"],
+    "read": ["Agents", "Access", "Agents May Write", "Default User"],
+    "ignored": ["left app list", "search bar", "descriptions", "big empty area"],
+    "stands_out": "Save button top left",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings, Access section"}
+  },
+  "20/task7-dialog-390.png": {
+    "first_tap": {"label": "Test", "where": "middle of screen, wide purple button", "x": 195, "y": 464},
+    "confidence": "sure",
+    "considered": ["Test", "Discard"],
+    "read": ["Test Agent", "Test"],
+    "ignored": ["quotation behind", "close X", "Sales Agent on S00003 line"],
+    "stands_out": "wide purple Test button",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Test Agent popup on quotation"}
+  },
+  "native/19-settings-1440": {
+    "first_tap": {"label": "checkbox next to Discounts", "where": "left column, under Pricing", "x": 238, "y": 452},
+    "confidence": "sure",
+    "considered": ["Discounts checkbox", "Pricelists checkbox", "Promotions, Loyalty & Gift Card checkbox"],
+    "read": ["Pricing", "Discounts", "Pricelists", "Promotions, Loyalty & Gift Card"],
+    "ignored": ["Product Catalog section", "Customer Account radios", "Quotations & Orders section", "grey descriptions"],
+    "stands_out": "green ticked checkboxes (Variants, Online Signature)",
+    "feel": "busy",
+    "where": {"app": "Sales", "screen": "Settings"}
+  },
+  "19/task7-dialog-390.png": {
+    "first_tap": {"label": "Test", "where": "bottom left", "x": 104, "y": 817},
+    "confidence": "sure",
+    "considered": ["Test", "Discard", "close X"],
+    "read": ["Test Agent", "Test", "Discard"],
+    "ignored": ["Sales Agent on S00003 line", "big empty white middle"],
+    "stands_out": "purple Test button at the bottom",
+    "feel": "calm",
+    "where": {"app": "Sales (assumed)", "screen": "Test Agent fullscreen dialog"}
+  }
+}

@@ -1,0 +1,342 @@
+{
+  "native/07-1440": {
+    "first_tap": {"label": "New", "where": "top left", "x": 51, "y": 72},
+    "confidence": "sure",
+    "considered": ["New", "Quotations"],
+    "read": ["New", "Quotations"],
+    "ignored": ["colored count tiles", "list rows", "revenue box", "view icons"],
+    "stands_out": "purple New button",
+    "feel": "busy",
+    "where": {"app": "Sales", "screen": "Quotations list"}
+  },
+  "native/07-390": {
+    "first_tap": {"label": "New", "where": "top left", "x": 55, "y": 72},
+    "confidence": "sure",
+    "considered": ["New", "Quotations"],
+    "read": ["New", "Quotations"],
+    "ignored": ["Last 7 days box", "colored tiles", "number rows"],
+    "stands_out": "purple New button",
+    "feel": "busy",
+    "where": {"app": "Sales", "screen": "Quotations list"}
+  },
+  "20/task1-1440.png": {
+    "first_tap": {"label": "Agents app icon", "where": "row 2, first icon", "x": 366, "y": 321},
+    "confidence": "think so",
+    "considered": ["Sales", "Agents"],
+    "read": ["Sales", "Agents"],
+    "ignored": ["expiry banner", "other app icons"],
+    "stands_out": "expiry banner",
+    "feel": "calm",
+    "where": {"app": "Odoo home", "screen": "App menu"}
+  },
+  "19/task2-390.png": {
+    "first_tap": {"label": "Lead Scor... row with red Failing", "where": "row 4", "x": 221, "y": 287},
+    "confidence": "sure",
+    "considered": ["red Failing badge", "orange Needs K... badge"],
+    "read": ["Failing", "Lead Scor..."],
+    "ignored": ["green Running badges", "dates", "Off row"],
+    "stands_out": "red Failing badge",
+    "feel": "busy",
+    "where": {"app": "Agents", "screen": "Agents list"}
+  },
+  "20/task3-1440.png": {
+    "first_tap": {"label": "Lead Scorer (Failing)", "where": "row 4", "x": 85, "y": 286},
+    "confidence": "think so",
+    "considered": ["Failing badge", "Needs Key badge", "Lead Scorer row"],
+    "read": ["Failing", "Needs Key", "Lead Scorer"],
+    "ignored": ["toggles", "dates", "Running badges"],
+    "stands_out": "green toggles column",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agents list"}
+  },
+  "19/task4-390.png": {
+    "first_tap": {"label": "Run Now", "where": "top left under New", "x": 60, "y": 135},
+    "confidence": "sure",
+    "considered": ["Run Now"],
+    "read": ["Run Now", "Sales Agent"],
+    "ignored": ["fields", "chatter", "Running badge"],
+    "stands_out": "purple Run Now button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "20/task5-1440.png": {
+    "first_tap": {"label": "toggle on Inventory Agent row", "where": "row 2, right", "x": 1230, "y": 205},
+    "confidence": "think so",
+    "considered": ["Inventory Agent toggle", "Delivery Tracker toggle (also Inventory)"],
+    "read": ["Inventory Agent", "Inventory", "Active"],
+    "ignored": ["status badges", "dates", "search"],
+    "stands_out": "green toggles",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agents list"}
+  },
+  "19/task6-390.png": {
+    "first_tap": {"label": "checkbox Agents May Write", "where": "middle left", "x": 23, "y": 265},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Save"],
+    "read": ["Agents May Write"],
+    "ignored": ["tab strip", "Default User", "small grey text"],
+    "stands_out": "Agents May Write",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Agents settings"}
+  },
+  "20/task7-1440.png": {
+    "first_tap": {"label": "Test", "where": "top left, next to Run Now", "x": 127, "y": 124},
+    "confidence": "think so",
+    "considered": ["Test", "Run Now"],
+    "read": ["Test", "Run Now"],
+    "ignored": ["fields", "chatter", "Instructions line"],
+    "stands_out": "Sales Agent title",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "19/task8-390.png": {
+    "first_tap": {"label": "New", "where": "top left", "x": 46, "y": 72},
+    "confidence": "think so",
+    "considered": ["Add your first agent picture", "New", "faded REF rows"],
+    "read": ["Add your first agent", "New"],
+    "ignored": ["faded REF rows", "gear"],
+    "stands_out": "smiling paper picture",
+    "feel": "busy",
+    "where": {"app": "Agents", "screen": "Empty agents list"}
+  },
+  "19/task1-1440.png": {
+    "first_tap": {"label": "Agents app icon", "where": "row 2, first icon", "x": 379, "y": 345},
+    "confidence": "think so",
+    "considered": ["Sales", "Agents"],
+    "read": ["Sales", "Agents"],
+    "ignored": ["expiry banner links", "other icons"],
+    "stands_out": "expiry banner",
+    "feel": "calm",
+    "where": {"app": "Odoo home", "screen": "App menu"}
+  },
+  "20/task2-390.png": {
+    "first_tap": {"label": "Lead Scorer row (Failing)", "where": "row 4", "x": 70, "y": 286},
+    "confidence": "sure",
+    "considered": ["Failing badge", "Needs Key badge"],
+    "read": ["Failing", "Lead Scorer"],
+    "ignored": ["Running badges", "Off row", "dates"],
+    "stands_out": "purple New button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agents list"}
+  },
+  "19/task3-1440.png": {
+    "first_tap": {"label": "red Failing on Lead Scorer", "where": "row 4", "x": 721, "y": 283},
+    "confidence": "think so",
+    "considered": ["Failing badge", "Lead Scorer name", "Needs Key badge"],
+    "read": ["Failing", "Lead Scorer"],
+    "ignored": ["toggles", "dates", "Running badges"],
+    "stands_out": "red Failing badge",
+    "feel": "busy",
+    "where": {"app": "Agents", "screen": "Agents list"}
+  },
+  "20/task4-390.png": {
+    "first_tap": {"label": "Run Now", "where": "top left", "x": 61, "y": 125},
+    "confidence": "sure",
+    "considered": ["Run Now", "arrow next to Run Now"],
+    "read": ["Run Now"],
+    "ignored": ["field boxes", "chatter"],
+    "stands_out": "purple Run Now button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "19/task5-1440.png": {
+    "first_tap": {"label": "toggle on Inventory Agent row", "where": "row 2, right", "x": 1228, "y": 203},
+    "confidence": "think so",
+    "considered": ["Inventory Agent toggle", "Delivery Tracker toggle"],
+    "read": ["Inventory Agent", "Active"],
+    "ignored": ["badges", "dates"],
+    "stands_out": "colored status badges",
+    "feel": "busy",
+    "where": {"app": "Agents", "screen": "Agents list"}
+  },
+  "20/task6-390.png": {
+    "first_tap": {"label": "switch Agents May Write", "where": "upper left", "x": 40, "y": 239},
+    "confidence": "sure",
+    "considered": ["Agents May Write switch", "Save"],
+    "read": ["Agents May Write"],
+    "ignored": ["Agents dropdown", "Default User", "grey text"],
+    "stands_out": "Agents May Write",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Agents settings"}
+  },
+  "19/task7-1440.png": {
+    "first_tap": {"label": "Test", "where": "top left, next to Run Now", "x": 127, "y": 129},
+    "confidence": "think so",
+    "considered": ["Test", "Run Now"],
+    "read": ["Test", "Run Now"],
+    "ignored": ["fields", "chatter"],
+    "stands_out": "Sales Agent title",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "20/task8-390.png": {
+    "first_tap": {"label": "New", "where": "top left", "x": 46, "y": 72},
+    "confidence": "think so",
+    "considered": ["Add your first agent picture", "New", "faded REF rows"],
+    "read": ["Add your first agent", "New"],
+    "ignored": ["faded REF rows", "kanban and search icons"],
+    "stands_out": "smiling paper picture",
+    "feel": "busy",
+    "where": {"app": "Agents", "screen": "Empty agents list"}
+  },
+  "20/task1-390.png": {
+    "first_tap": {"label": "Agents app icon", "where": "row 2, third icon", "x": 240, "y": 315},
+    "confidence": "think so",
+    "considered": ["Sales", "Agents"],
+    "read": ["Sales", "Agents"],
+    "ignored": ["expiry banner", "other icons"],
+    "stands_out": "expiry banner",
+    "feel": "calm",
+    "where": {"app": "Odoo home", "screen": "App menu"}
+  },
+  "19/task2-1440.png": {
+    "first_tap": {"label": "Lead Scorer row (Failing)", "where": "row 4", "x": 85, "y": 284},
+    "confidence": "sure",
+    "considered": ["red Failing badge", "orange Needs Key badge"],
+    "read": ["Failing", "Lead Scorer"],
+    "ignored": ["Running badges", "toggles", "dates"],
+    "stands_out": "red Failing badge",
+    "feel": "busy",
+    "where": {"app": "Agents", "screen": "Agents list"}
+  },
+  "20/task3-390.png": {
+    "first_tap": {"label": "Lead Scorer row (Failing)", "where": "row 4", "x": 70, "y": 286},
+    "confidence": "think so",
+    "considered": ["Failing badge", "Needs Key badge"],
+    "read": ["Failing", "Lead Scorer"],
+    "ignored": ["Running badges", "dates cut off"],
+    "stands_out": "purple New button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agents list"}
+  },
+  "19/task4-1440.png": {
+    "first_tap": {"label": "Run Now", "where": "top left", "x": 57, "y": 129},
+    "confidence": "sure",
+    "considered": ["Run Now"],
+    "read": ["Run Now"],
+    "ignored": ["Test", "chatter", "fields"],
+    "stands_out": "purple Run Now button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "20/task5-390.png": {
+    "first_tap": {"label": "toggle on Inventory Agent card", "where": "card 2, right", "x": 354, "y": 274},
+    "confidence": "think so",
+    "considered": ["Inventory Agent toggle", "Delivery Tracker toggle"],
+    "read": ["Inventory Agent", "Inventory"],
+    "ignored": ["badges", "Stock Counter"],
+    "stands_out": "green toggles",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agents cards"}
+  },
+  "19/task6-1440.png": {
+    "first_tap": {"label": "checkbox Agents May Write", "where": "top middle-left", "x": 238, "y": 179},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Save"],
+    "read": ["Agents May Write"],
+    "ignored": ["left app list", "Default User", "grey text"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "20/task7-390.png": {
+    "first_tap": {"label": "arrow next to Run Now", "where": "top left", "x": 124, "y": 125},
+    "confidence": "lost",
+    "considered": ["Run Now", "arrow next to Run Now", "three dots menu", "Instructions box (says quotations)"],
+    "read": ["Run Now", "Instructions", "quotations"],
+    "ignored": ["field boxes", "chatter"],
+    "stands_out": "purple Run Now button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "19/task8-1440.png": {
+    "first_tap": {"label": "New", "where": "top left", "x": 42, "y": 70},
+    "confidence": "think so",
+    "considered": ["Add your first agent picture", "New", "faded REF rows"],
+    "read": ["Add your first agent", "New"],
+    "ignored": ["faded REF rows", "search"],
+    "stands_out": "smiling paper picture",
+    "feel": "busy",
+    "where": {"app": "Agents", "screen": "Empty agents list"}
+  },
+  "19/task1-390.png": {
+    "first_tap": {"label": "Agents app icon", "where": "row 2, third icon", "x": 240, "y": 354},
+    "confidence": "think so",
+    "considered": ["Sales", "Agents"],
+    "read": ["Sales", "Agents"],
+    "ignored": ["expiry banner links", "other icons"],
+    "stands_out": "expiry banner",
+    "feel": "calm",
+    "where": {"app": "Odoo home", "screen": "App menu"}
+  },
+  "20/task2-1440.png": {
+    "first_tap": {"label": "Lead Scorer row (Failing)", "where": "row 4", "x": 85, "y": 286},
+    "confidence": "sure",
+    "considered": ["Failing badge", "Needs Key badge"],
+    "read": ["Failing", "Lead Scorer"],
+    "ignored": ["Running badges", "toggles", "dates"],
+    "stands_out": "green toggles column",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Agents list"}
+  },
+  "19/task3-390.png": {
+    "first_tap": {"label": "Lead Scor... row (red Failing)", "where": "row 4", "x": 221, "y": 287},
+    "confidence": "think so",
+    "considered": ["Failing badge", "Needs K... badge"],
+    "read": ["Failing", "Lead Scor..."],
+    "ignored": ["Running badges", "cut-off dates"],
+    "stands_out": "red Failing badge",
+    "feel": "busy",
+    "where": {"app": "Agents", "screen": "Agents list"}
+  },
+  "20/task4-1440.png": {
+    "first_tap": {"label": "Run Now", "where": "top left", "x": 57, "y": 124},
+    "confidence": "sure",
+    "considered": ["Run Now"],
+    "read": ["Run Now"],
+    "ignored": ["Test", "chatter", "fields"],
+    "stands_out": "Sales Agent title",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "19/task5-390.png": {
+    "first_tap": {"label": "toggle on Inventory Agent card", "where": "card 2, right", "x": 360, "y": 268},
+    "confidence": "think so",
+    "considered": ["Inventory Agent toggle", "Delivery Tracker toggle"],
+    "read": ["Inventory Agent", "Inventory"],
+    "ignored": ["badges", "Stock Counter"],
+    "stands_out": "colored status badges",
+    "feel": "busy",
+    "where": {"app": "Agents", "screen": "Agents cards"}
+  },
+  "20/task6-1440.png": {
+    "first_tap": {"label": "checkbox Agents May Write", "where": "top middle-left", "x": 254, "y": 179},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Save"],
+    "read": ["Agents May Write"],
+    "ignored": ["left app list", "Default User", "grey text"],
+    "stands_out": "Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "19/task7-390.png": {
+    "first_tap": {"label": "three dots next to Run Now", "where": "top left", "x": 130, "y": 134},
+    "confidence": "lost",
+    "considered": ["Run Now", "three dots", "Instructions (says quotations)"],
+    "read": ["Run Now", "Instructions", "quotations"],
+    "ignored": ["fields", "chatter"],
+    "stands_out": "purple Run Now button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Sales Agent form"}
+  },
+  "20/task8-1440.png": {
+    "first_tap": {"label": "New", "where": "top left", "x": 42, "y": 72},
+    "confidence": "think so",
+    "considered": ["Add your first agent picture", "New", "faded REF rows"],
+    "read": ["Add your first agent", "New"],
+    "ignored": ["faded REF rows", "search"],
+    "stands_out": "smiling paper picture",
+    "feel": "busy",
+    "where": {"app": "Agents", "screen": "Empty agents list"}
+  }
+}

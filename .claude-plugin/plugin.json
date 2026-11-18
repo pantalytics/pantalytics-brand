@@ -1,0 +1,5 @@
+{
+  "name": "pantalytics-brand",
+  "description": "Pantalytics design rules as Claude skills: building screens inside Odoo 18, 19 and 20 the Pantalytics way, with the lazy-user test.",
+  "version": "0.1.0"
+}

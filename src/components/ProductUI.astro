@@ -99,7 +99,35 @@ const range = (n: number) => Array.from({ length: n }, (_, i) => i + 1);
   <div class="example-after"><span class="example-label">{t("voice.example.after.label")}</span>{t("ui.example2.after")}</div>
 </div>
 
+<h2>{t("ui.lazy.title")}</h2>
+<p>{t("ui.lazy.desc")}</p>
+<p>{t("ui.lazy.test")}</p>
+
+<h2 id="inside-odoo">{t("ui.odoo.title")}</h2>
+<p>{t("ui.odoo.desc")}</p>
+<table class="voice-table">
+  <thead>
+    <tr>
+      <th>{t("ui.odoo.col.zone")}</th>
+      <th>{t("ui.odoo.col.what")}</th>
+      <th>{t("ui.odoo.col.rule")}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {range(3).map((i) => (
+      <tr>
+        <td><strong>{t(`ui.odoo.zone.${i}.name`)}</strong></td>
+        <td>{t(`ui.odoo.zone.${i}.what`)}</td>
+        <td>{t(`ui.odoo.zone.${i}.rule`)}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+<p>{t("ui.odoo.not")}</p>
+<p><a href={lang === "nl" ? "/odoo-ui" : "/en/odoo-ui"}>{t("ui.odoo.page")}</a></p>
+<p><a href="https://github.com/pantalytics/pantalytics-brand/tree/main/skills/pantalytics-odoo-ui">{t("ui.odoo.skill")}</a></p>
+
 <h2>{t("ui.check.title")}</h2>
 <ul>
-  {range(5).map((i) => <li>{t(`ui.check.${i}`)}</li>)}
+  {range(6).map((i) => <li>{t(`ui.check.${i}`)}</li>)}
 </ul>

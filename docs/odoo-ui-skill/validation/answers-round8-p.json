@@ -1,0 +1,42 @@
+{
+  "19/task6-1440.png": {
+    "first_tap": {"label": "Agents May Write (the label, then the faint box next to it)", "where": "top left of content, row 1", "x": 327, "y": 139},
+    "confidence": "think so",
+    "considered": ["Agents May Write", "faint checkbox left of it", "Default User dropdown", "Save"],
+    "read": ["Agents", "Settings", "Agents May Write", "Default User"],
+    "ignored": ["left app list", "search bar", "top-right icons and company", "grey sub-lines"],
+    "stands_out": "purple Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "20/task6-390.png": {
+    "first_tap": {"label": "toggle switch next to Agents May Write", "where": "top left of card, row 1", "x": 40, "y": 200},
+    "confidence": "sure",
+    "considered": ["Agents May Write toggle", "Default User dropdown", "Save"],
+    "read": ["Settings", "Agents", "Agents May Write"],
+    "ignored": ["search icon", "chat and clock badges", "avatar", "Default User sub-line"],
+    "stands_out": "purple Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "20/task6-1440.png": {
+    "first_tap": {"label": "checkbox Agents May Write", "where": "top left of content card, row 1", "x": 254, "y": 139},
+    "confidence": "sure",
+    "considered": ["Agents May Write checkbox", "Default User dropdown", "Save"],
+    "read": ["Agents", "Settings", "Agents May Write"],
+    "ignored": ["left app list", "search bar", "top-right icons and company", "grey sub-lines"],
+    "stands_out": "purple Save button",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "19/task6-390.png": {
+    "first_tap": {"label": "Agents May Write (label; faint box left of it)", "where": "top left of content, row 1", "x": 120, "y": 226},
+    "confidence": "think so",
+    "considered": ["Agents May Write", "faint box left of it", "Default User dropdown", "tab strip GENERAL SETTINGS / CRM / SALES", "Save"],
+    "read": ["Settings", "GENERAL SETTINGS", "CRM", "SALES", "Agents May Write", "Default User"],
+    "ignored": ["search bar", "kebab menu", "top-right icons", "grey sub-lines"],
+    "stands_out": "purple Save button",
+    "feel": "calm",
+    "where": {"app": "Settings (no Agents tab visible)", "screen": "Settings"}
+  }
+}

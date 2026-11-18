@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Access rules differ per version: 19 has ir.model.access (CSV with perm_*),
+         20 replaced it with ir.access (operation 'crud'). A CSV for one breaks the
+         install on the other, so the module creates them in code, on install and update. -->
+    <function model="pan.probe.agent" name="_pan_setup_access"/>
+</odoo>

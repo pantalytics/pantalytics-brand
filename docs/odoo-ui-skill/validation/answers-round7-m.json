@@ -1,0 +1,82 @@
+{
+  "native/19-settings-1440": {
+    "first_tap": {"label": "Discounts checkbox", "where": "middle left, under Pricing", "x": 238, "y": 452},
+    "confidence": "sure",
+    "considered": ["Discounts", "Pricelists", "Promotions, Loyalty & Gift Card"],
+    "read": ["Pricing", "Discounts", "Pricelists"],
+    "ignored": ["Product Catalog rows", "Customer Account radios", "Quotations & Orders", "left app list", "search bar"],
+    "stands_out": "Purple Save button top left",
+    "feel": "busy",
+    "where": {"app": "Sales", "screen": "Settings"}
+  },
+  "20/task7-dialog-390.png": {
+    "first_tap": {"label": "Test", "where": "middle of dialog, big purple button", "x": 195, "y": 464},
+    "confidence": "sure",
+    "considered": ["Test", "Discard"],
+    "read": ["Test Agent", "Test"],
+    "ignored": ["Sales Agent on S00003 line", "greyed quotation behind", "close X"],
+    "stands_out": "Big purple Test button",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Quotation, Test Agent popup"}
+  },
+  "19/task6-1440.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top left of content, under Access", "x": 238, "y": 179},
+    "confidence": "sure",
+    "considered": ["Agents May Write", "Default User"],
+    "read": ["Access", "Agents May Write"],
+    "ignored": ["Default User dropdown", "left app list", "search bar", "empty space"],
+    "stands_out": "Agents May Write",
+    "feel": "calm",
+    "where": {"app": "Agents", "screen": "Settings"}
+  },
+  "19/task7-dialog-1440.png": {
+    "first_tap": {"label": "Test", "where": "bottom left of popup", "x": 436, "y": 517},
+    "confidence": "sure",
+    "considered": ["Test", "Discard"],
+    "read": ["Test Agent", "Test"],
+    "ignored": ["Sales Agent on S00003 line", "greyed quotation behind", "chatter", "close X"],
+    "stands_out": "Test Agent popup in the middle",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Quotation, Test Agent popup"}
+  },
+  "native/19-settings-390": {
+    "first_tap": {"label": "Discounts checkbox", "where": "bottom, under Pricing", "x": 23, "y": 756},
+    "confidence": "sure",
+    "considered": ["Discounts", "Promotions, Loyalty & Gift Card"],
+    "read": ["Pricing", "Discounts"],
+    "ignored": ["Product Catalog rows", "Variants", "tab strip", "search"],
+    "stands_out": "Purple SALES tab and Save button",
+    "feel": "busy",
+    "where": {"app": "Settings", "screen": "Sales settings"}
+  },
+  "20/task7-dialog-1440.png": {
+    "first_tap": {"label": "Test", "where": "bottom left of popup", "x": 451, "y": 513},
+    "confidence": "sure",
+    "considered": ["Test", "Discard"],
+    "read": ["Test Agent", "Test"],
+    "ignored": ["Sales Agent on S00003 line", "greyed quotation behind", "chatter", "close X"],
+    "stands_out": "Test Agent popup in the middle",
+    "feel": "calm",
+    "where": {"app": "Sales", "screen": "Quotation, Test Agent popup"}
+  },
+  "19/task6-390.png": {
+    "first_tap": {"label": "Agents May Write checkbox", "where": "top, under Access", "x": 23, "y": 265},
+    "confidence": "sure",
+    "considered": ["Agents May Write", "Default User"],
+    "read": ["Access", "Agents May Write"],
+    "ignored": ["Default User dropdown", "tab strip (no Agents tab visible)", "search", "empty grey space"],
+    "stands_out": "Purple Save button",
+    "feel": "calm",
+    "where": {"app": "Settings", "screen": "Access settings"}
+  },
+  "19/task7-dialog-390.png": {
+    "first_tap": {"label": "Test", "where": "bottom left, purple button", "x": 104, "y": 817},
+    "confidence": "sure",
+    "considered": ["Test", "Discard"],
+    "read": ["Test Agent", "Test"],
+    "ignored": ["Sales Agent on S00003 line", "big empty white space", "close X"],
+    "stands_out": "Purple Test button at the bottom",
+    "feel": "calm",
+    "where": {"app": "Unknown (full-screen popup)", "screen": "Test Agent popup"}
+  }
+}
