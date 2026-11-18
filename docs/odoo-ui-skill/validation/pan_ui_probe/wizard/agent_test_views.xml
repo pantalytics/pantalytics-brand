@@ -7,13 +7,15 @@
         <field name="model">pan.probe.agent.test</field>
         <field name="arch" type="xml">
             <form>
-                <group invisible="answer">
+                <!-- One line says what Test will do; a picker only when there is a real choice -->
+                <div invisible="answer">
                     <field name="agent_count" invisible="1"/>
-                    <!-- one choice is no choice: read-only, but shown, so the dialog says what Test will do -->
-                    <field name="agent_id" options="{'no_create': True, 'no_open': True}"
-                           readonly="agent_count &lt; 2"/>
-                    <field name="order_id" readonly="1" options="{'no_open': True}"/>
-                </group>
+                    <field name="order_id" invisible="1"/>
+                    <field name="summary" class="fs-5" invisible="agent_count &gt; 1"/>
+                    <group invisible="agent_count &lt; 2">
+                        <field name="agent_id" options="{'no_create': True, 'no_open': True}"/>
+                    </group>
+                </div>
                 <group invisible="not answer">
                     <field name="answer" nolabel="1" colspan="2"/>
                 </group>

@@ -51,7 +51,7 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
 | On/off with immediate effect | `boolean_toggle` on its own field (`enabled`), in list or kanban only | 0 toggles in forms, wizards, settings. Never on `active`: archived rows leave the list. On/off is the switch, health is the badge: the badge stays empty when off, so "off" is said once |
 | A choice saved later | plain `boolean` (checkbox); 2-4 options `radio`, 5+ selection | Odoo 20 shows checkboxes as switches on a phone: accept it |
 | Counts users act on | stat button, `invisible` when 0 | <= 4 |
-| One short step | wizard, `target="new"`, `medium` | <= 4 fields; a field with one possible value is shown read-only, never hidden (an empty dialog left users unsure what the button would do), 1 primary + Discard, 0 paragraphs. A wizard that shows a result shows it in the same dialog, footer then 1 primary "Done" |
+| One short step | wizard, `target="new"`, `medium` | <= 4 fields; a confirming dialog says in one line what the button will do ("Sales Agent on S00003"); a picker only when there is a real choice (an empty dialog left users unsure, labelled read-only fields made them read four labels), 1 primary + Discard, 0 paragraphs. A wizard that shows a result shows it in the same dialog, footer then 1 primary "Done" |
 | A flow with checks | form, `target="current"`; the crumb is the back link | |
 | Feedback on an action | the changed value on the record where the eye is; a notification with a type (`success`/`warning`/`danger`) only when nothing visible changes | never `info`; an output worth reading is a field on the record, not a toast |
 | A problem with this record | inline `alert` with `invisible=` | gone when solved; <= 1 per form |

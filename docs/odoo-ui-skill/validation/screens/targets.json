@@ -104,7 +104,7 @@
   "19/task7-dialog-1440.png": {
     "label": "Test",
     "x": 412,
-    "y": 521,
+    "y": 501,
     "width": 51,
     "height": 33
   },
@@ -250,14 +250,14 @@
   "20/task7-dialog-1440.png": {
     "label": "Test",
     "x": 427,
-    "y": 517,
+    "y": 497,
     "width": 51,
     "height": 33
   },
   "20/task7-dialog-390.png": {
     "label": "Test",
     "x": 33,
-    "y": 491,
+    "y": 445,
     "width": 325,
     "height": 37
   },

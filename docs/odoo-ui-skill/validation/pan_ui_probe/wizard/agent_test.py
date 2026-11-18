@@ -13,12 +13,18 @@ class PanProbeAgentTest(models.TransientModel):
         domain="[('app', '=', 'sale'), ('enabled', '=', True)]")
     order_id = fields.Many2one("sale.order", string="Quotation", required=True)
     agent_count = fields.Integer(compute="_compute_agent_count")
+    summary = fields.Char(compute="_compute_summary")
     answer = fields.Text(readonly=True)
 
     def _compute_agent_count(self):
         count = self.env["pan.probe.agent"].search_count([("app", "=", "sale"), ("enabled", "=", True)])
         for wizard in self:
             wizard.agent_count = count
+
+    @api.depends("agent_id", "order_id")
+    def _compute_summary(self):
+        for wizard in self:
+            wizard.summary = _("%(agent)s on %(order)s", agent=wizard.agent_id.name or "", order=wizard.order_id.name or "")
 
     @api.model
     def default_get(self, fields_list):
