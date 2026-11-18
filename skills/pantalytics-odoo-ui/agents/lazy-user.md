@@ -62,7 +62,12 @@ x,y to an element. A screen passes only if, at both widths:
 - `read` holds only labels, at most 3, no sentence.
 
 Screens that are read by nature (an open menu, an error text the task asks
-for) skip the "labels only" rule; mark their target `read_ok`.
+for) skip the "labels only" rule; mark their target `read_ok`. For a task
+answered by looking, add to the task line "(answered by looking: first_tap is
+what tells you)", or the judge hesitates because there is nothing to tap.
+
+One task, one step: a task that needs two screens (open the app, then add) is
+two tasks, each judged on its own screen.
 
 Warnings (fix when cheap, never ship-blocking): more than one item in
 `considered`, `feel` "busy", `stands_out` not the target. Calibrated on native

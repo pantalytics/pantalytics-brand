@@ -674,7 +674,7 @@
   "odoo.empty.1.desc": "Een titel en een regel; in Odoo's eigen apps vaak met een plaatje of video.",
   "odoo.empty.2.name": "Nieuw",
   "odoo.empty.2.desc": "De actie die het lege scherm beëindigt.",
-  "odoo.empty.rule": "Eén regel die de toestand noemt (\"Nog geen agents\"), geen plaatje, geen uitleg. Nieuw is de actie.",
+  "odoo.empty.rule": "De toestand, dan waar de actie zit: \"Nog geen agents. Voeg er een toe met Nieuw.\" Geen plaatje, geen uitleg.",
   "odoo.phone.title": "Telefoon",
   "odoo.phone.desc": "Onder 768 pixels herschikt Odoo dezelfde onderdelen. Het opent kanban in plaats van de lijst, verstopt zoeken achter een icoon en toont alleen de eerste headerknop.",
   "odoo.phone.1.name": "Menu",

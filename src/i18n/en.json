@@ -674,7 +674,7 @@
   "odoo.empty.1.desc": "A title and a line; in Odoo's own apps often a picture or video.",
   "odoo.empty.2.name": "New",
   "odoo.empty.2.desc": "The action that ends the empty state.",
-  "odoo.empty.rule": "One line that names the state (\"No agents yet\"), no picture, no explainer. New is the action.",
+  "odoo.empty.rule": "The state, then where the action is: \"No agents yet. Add one with New.\" No picture, no explainer.",
   "odoo.phone.title": "Phone",
   "odoo.phone.desc": "Below 768 pixels Odoo rearranges the same parts. It opens kanban instead of the list, hides search behind an icon and shows only the first header button.",
   "odoo.phone.1.name": "Menu",

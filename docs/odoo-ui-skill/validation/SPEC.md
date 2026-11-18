@@ -40,9 +40,9 @@ Demo data: 6 agents, one in each state, at least one failing with an error.
 
 One line each, no other explanation.
 
-1. "Add a new agent." (from the app menu; round 1 said "for Sales", which pulled the eye to the Sales app)
+1. "Open your agents." (from the home menu; round 1 said "Add an agent for Sales", rounds 2-4 "Add a new agent.", a two-step task judged on its first step)
 2. "Which agent is broken?" (from the list)
-3. "Why is it broken?" (from the list)
+3. "Why is it broken? (answered by looking: first_tap is what tells you)" (from the list)
 4. "Run the Sales agent now."
 5. "Turn off the Stock Checker." (round 4; was "Turn the Inventory agent off.", ambiguous with three agents in the Inventory app)
 6. "Let agents write in Odoo." (Settings)

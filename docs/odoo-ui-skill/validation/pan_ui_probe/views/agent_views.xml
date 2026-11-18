@@ -32,7 +32,9 @@
                     <t t-name="card">
                         <field name="name" class="fw-bold"/>
                         <field name="app" class="text-muted"/>
-                        <field name="error" class="text-danger" invisible="state != 'failing'"/>
+                        <div class="text-danger" invisible="state != 'failing'">
+                            <span class="fw-bold">Problem: </span><field name="error"/>
+                        </div>
                         <footer>
                             <field name="state" widget="badge" invisible="state == 'off'"
                                    decoration-success="state == 'running'"
@@ -118,6 +120,7 @@
         <field name="mobile_view_mode">kanban</field>
         <field name="help" type="html">
             <p>No agents yet</p>
+            <p>Add one with New.</p>
         </field>
     </record>
 </odoo>

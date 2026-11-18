@@ -12,7 +12,13 @@ class PanProbeAgentTest(models.TransientModel):
         "pan.probe.agent", string="Agent", required=True,
         domain="[('app', '=', 'sale'), ('enabled', '=', True)]")
     order_id = fields.Many2one("sale.order", string="Quotation", required=True)
+    agent_count = fields.Integer(compute="_compute_agent_count")
     answer = fields.Text(readonly=True)
+
+    def _compute_agent_count(self):
+        count = self.env["pan.probe.agent"].search_count([("app", "=", "sale"), ("enabled", "=", True)])
+        for wizard in self:
+            wizard.agent_count = count
 
     @api.model
     def default_get(self, fields_list):
