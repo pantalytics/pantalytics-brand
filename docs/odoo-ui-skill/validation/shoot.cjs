@@ -1,6 +1,6 @@
-// Phase 6 screenshots for pan_ui_probe. Usage: node shoot.js [19,20] [1440,390]
+// Phase 6 screenshots for pan_ui_probe. Usage: node shoot.cjs [19,20] [1440,390]
 const fs = require('fs');
-const { chromium, newContext, login, rpc, settle, box } = require('./shoot-lib');
+const { chromium, newContext, login, rpc, settle, box } = require('./shoot-lib.cjs');
 
 const OUT = '/home/user/pantalytics-brand/docs/odoo-ui-skill/validation/screens';
 const VERS = (process.argv[2] || '19,20').split(',');
@@ -49,8 +49,8 @@ async function run(browser, ver, width) {
   const base = `http://localhost:80${ver}`, db = `odoo${ver}`;
   const ctx = await newContext(browser, width); const page = await ctx.newPage();
   await login(page, base, db);
-  const recs = await rpc(page, 'pan.probe.agent', 'search_read', [[['active', 'in', [true, false]]]],
-    { fields: ['name', 'state', 'active', 'run_count', 'last_run'] });
+  const recs = await rpc(page, 'pan.probe.agent', 'search_read', [[]],
+    { fields: ['name', 'state', 'enabled', 'run_count', 'last_run'] });
   const by = Object.fromEntries(recs.map(r => [r.name, r]));
   const sales = by['Sales Agent'], inv = by['Inventory Agent'];
   const w = width;
@@ -65,11 +65,15 @@ async function run(browser, ver, width) {
   await shot(page, ver, `task2-${w}`, await box(page, failRow, 'Lead Scorer row (Failing badge)'));
   await shot(page, ver, `task3-${w}`, await box(page, failRow, 'Lead Scorer row (opens the form with the error)'));
 
-  // Task 4: Sales Agent form, target = Run Now
+  // Task 4: Sales Agent form, target = Run Agent (opens the Run dialog; Run with New Records)
   await page.goto(`${base}/odoo/action-${ACT}/${sales.id}`); await page.waitForSelector('.o_form_view'); await settle(page);
-  await shot(page, ver, `task4-${w}`, await box(page, 'button[name=action_run]', 'Run Now'));
-  await page.locator('button[name=action_run]').first().click();
-  await page.waitForSelector('.o_notification', { timeout: 10000 }).catch(() => log.push(`${ver}/task4-after-${w}: no notification`));
+  await shot(page, ver, `task4-${w}`, await box(page, 'button[name=action_open_run]', 'Run Agent'));
+  await page.locator('button[name=action_open_run]').first().click();
+  await page.waitForSelector('.modal', { timeout: 10000 });
+  await page.waitForTimeout(800);
+  await shot(page, ver, `task4-dialog-${w}`);
+  await page.locator('.modal-footer button[name=action_run]').first().click();
+  await page.waitForSelector('.modal', { state: 'detached', timeout: 10000 }).catch(() => log.push(`${ver}/task4-after-${w}: dialog stayed`));
   await page.waitForTimeout(1500);
   await shot(page, ver, `task4-after-${w}`);
   // restore
@@ -87,7 +91,7 @@ async function run(browser, ver, width) {
   await holder.locator('.o_field_boolean_toggle input').first().click({ force: true });
   await page.waitForTimeout(2000); await settle(page, 500);
   await shot(page, ver, `task5-after-${w}`);
-  await rpc(page, 'pan.probe.agent', 'write', [[inv.id], { active: true, state: 'running' }]);
+  await rpc(page, 'pan.probe.agent', 'write', [[inv.id], { enabled: true, state: 'running' }]);
 
   // Task 6: Settings opened at our app, target = Agents May Write checkbox (+ its label)
   await page.goto(`${base}/odoo/action-pan_ui_probe.action_pan_probe_settings`);
@@ -102,15 +106,13 @@ async function run(browser, ver, width) {
   if (await discard.count()) { await discard.first().click(); await page.waitForTimeout(800); }
   else { await cb.click({ force: true }); }
 
-  // Task 7: Sales Agent form, target = Test (desktop) or the header overflow (phone)
+  // Task 7: Sales Agent form, target = Run Agent (its dialog offers One Quotation)
   await page.goto(`${base}/odoo/action-${ACT}/${sales.id}`); await page.waitForSelector('.o_form_view'); await settle(page);
-  const testBtn = page.locator('button[name=action_open_test]').filter({ visible: true });
-  if (await testBtn.count()) {
-    await shot(page, ver, `task7-${w}`, await box(page, testBtn, 'Test'));
-  } else {
-    const more = page.locator('.o_statusbar_buttons .dropdown-toggle, .o_statusbar_buttons .o-dropdown-caret, .o_statusbar_buttons button.dropdown-toggle-split').filter({ visible: true });
-    await shot(page, ver, `task7-${w}`, await box(page, more, 'Header overflow next to Run Now (holds Test)'));
-  }
+  await shot(page, ver, `task7-${w}`, await box(page, 'button[name=action_open_run]', 'Run Agent'));
+  await page.locator('button[name=action_open_run]').first().click();
+  await page.waitForSelector('.modal', { timeout: 10000 }); await page.waitForTimeout(800);
+  await shot(page, ver, `task7-dialog-${w}`);
+  await page.keyboard.press('Escape');
 
   await ctx.close();
 

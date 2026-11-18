@@ -38,7 +38,7 @@
     <record id="agent_counter" model="pan.probe.agent">
         <field name="name">Stock Counter</field>
         <field name="app">stock</field>
-        <field name="active" eval="False"/>
+        <field name="enabled" eval="False"/>
         <field name="state">off</field>
         <field name="user_id" ref="base.user_admin"/>
         <field name="last_run" eval="(DateTime.now() - relativedelta(days=12)).strftime('%Y-%m-%d %H:%M:%S')"/>

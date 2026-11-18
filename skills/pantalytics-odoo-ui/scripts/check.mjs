@@ -122,9 +122,15 @@ function measure() {
   });
   check("broken icons", broken.length, "0", broken.length === 0);
 
-  // No horizontal scroll.
+  // No horizontal scroll: not the page, and not a box inside it (a list on a phone).
   const sw = document.scrollingElement.scrollWidth;
   check("horizontal scroll", sw - innerWidth, "0", sw <= innerWidth);
+  const sideways = all(".o_action_manager *").filter((el) => {
+    const ox = getComputedStyle(el).overflowX;
+    return (ox === "auto" || ox === "scroll") && el.scrollWidth > el.clientWidth + 2
+      && !el.closest(".o_notebook, .o_statusbar_status, .o_control_panel, .o-mail-Chatter");
+  });
+  check("boxes that scroll sideways", sideways.length, "0", sideways.length === 0);
 
   // Our accent or font in the backend.
   const ours = all(".o_action_manager *").filter((el) => {

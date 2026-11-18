@@ -123,7 +123,7 @@ view if phone users touch it (the phone shows kanban first).
 | Menu (`t-name="menu"`) holds <= 3 items; destructive last | count |
 | No buttons on cards except the footer widgets; the card itself opens the record | grep `<button` in `card` |
 | Folded stages = done/cancelled only (`fold` on the stage) | data check |
-| Every kanban model has `sample="1"` and a one-line empty-state `help` | arch + action |
+| Every kanban model has a one-line empty-state `help`; no `sample="1"` | arch + action |
 | `card` template on every branch; no `kanban-box` anywhere | grep |
 
 Lazy user test: 390 px screenshot of the grouped kanban, task "Move this to Done". Passes if the user

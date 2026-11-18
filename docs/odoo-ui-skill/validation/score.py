@@ -5,8 +5,9 @@ Usage: python3 score.py screens/targets.json answers.json > results.md
 targets.json: {"<ver>/task<N>-<width>.png": {"label", "x", "y", "width", "height"}}
 answers.json: {"<same key>": {first_tap: {label, x, y}, confidence, considered,
                read, ignored, stands_out, feel, where}}
-A screen passes per agents/lazy-user.md: right target, "sure", one candidate
-(two if the second is native), labels only (<= 3, no sentence), calm.
+A screen passes per agents/lazy-user.md: right target, "sure", labels only
+(<= 3, no sentence). Extra candidates and "busy" are warnings: native Odoo
+(Sales quotations, the calibration screen) gets both too.
 """
 import json
 import sys
@@ -25,37 +26,37 @@ def is_sentence(text):
 
 
 def judge(answer, box):
-    fails = []
+    fails, warns = [], []
     if not hit(answer.get("first_tap", {}), box):
         fails.append("wrong tap")
     if answer.get("confidence") != "sure":
         fails.append(f"confidence {answer.get('confidence')}")
-    considered = answer.get("considered", [])
-    extra = [c for c in considered[1:] if not any(n in str(c).lower() for n in NATIVE)]
-    if extra:
-        fails.append(f"{len(considered)} candidates")
     read = answer.get("read", [])
     if len(read) > 3 or any(is_sentence(str(r)) for r in read):
         fails.append("had to read")
+    considered = answer.get("considered", [])
+    extra = [c for c in considered[1:] if not any(n in str(c).lower() for n in NATIVE)]
+    if extra:
+        warns.append(f"{len(considered)} candidates")
     if answer.get("feel") != "calm":
-        fails.append("busy")
-    return fails
+        warns.append("busy")
+    return fails, warns
 
 
 def main():
     targets = json.load(open(sys.argv[1]))
     answers = json.load(open(sys.argv[2]))
-    print("| Screen | Target | Tapped | Result |")
-    print("|---|---|---|---|")
+    print("| Screen | Target | Tapped | Result | Warnings |")
+    print("|---|---|---|---|---|")
     passed = 0
     for key in sorted(answers):
         if key not in targets:
             continue
         a, box = answers[key], targets[key]
-        fails = judge(a, box)
+        fails, warns = judge(a, box)
         passed += not fails
         tap = a.get("first_tap", {}).get("label", "?")
-        print(f"| {key} | {box['label']} | {tap} | {'pass' if not fails else ', '.join(fails)} |")
+        print(f"| {key} | {box['label']} | {tap} | {'pass' if not fails else ', '.join(fails)} | {', '.join(warns)} |")
     print(f"\n{passed} of {len([k for k in answers if k in targets])} pass.")
 
 

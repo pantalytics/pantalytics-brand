@@ -42,22 +42,22 @@
     "height": 40
   },
   "19/task4-1440.png": {
-    "label": "Run Now",
+    "label": "Run Agent",
     "x": 16,
     "y": 113,
-    "width": 82,
+    "width": 92,
     "height": 33
   },
   "19/task4-390.png": {
-    "label": "Run Now",
+    "label": "Run Agent",
     "x": 16,
     "y": 116,
-    "width": 90,
+    "width": 100,
     "height": 37
   },
   "19/task5-1440.png": {
     "label": "Inventory Agent on/off switch (list row)",
-    "x": 1214,
+    "x": 1323,
     "y": 193,
     "width": 35,
     "height": 21
@@ -84,17 +84,17 @@
     "height": 28
   },
   "19/task7-1440.png": {
-    "label": "Test",
-    "x": 102,
+    "label": "Run Agent",
+    "x": 16,
     "y": 113,
-    "width": 51,
+    "width": 92,
     "height": 33
   },
   "19/task7-390.png": {
-    "label": "Header overflow next to Run Now (holds Test)",
-    "x": 110,
+    "label": "Run Agent",
+    "x": 16,
     "y": 116,
-    "width": 40,
+    "width": 100,
     "height": 37
   },
   "19/task8-1440.png": {
@@ -154,22 +154,22 @@
     "height": 40
   },
   "20/task4-1440.png": {
-    "label": "Run Now",
+    "label": "Run Agent",
     "x": 16,
     "y": 108,
-    "width": 82,
+    "width": 92,
     "height": 33
   },
   "20/task4-390.png": {
-    "label": "Run Now",
+    "label": "Run Agent",
     "x": 16,
     "y": 107,
-    "width": 90,
+    "width": 100,
     "height": 37
   },
   "20/task5-1440.png": {
     "label": "Inventory Agent on/off switch (list row)",
-    "x": 1216,
+    "x": 1323,
     "y": 195,
     "width": 35,
     "height": 21
@@ -196,17 +196,17 @@
     "height": 28
   },
   "20/task7-1440.png": {
-    "label": "Test",
-    "x": 102,
+    "label": "Run Agent",
+    "x": 16,
     "y": 108,
-    "width": 51,
+    "width": 92,
     "height": 33
   },
   "20/task7-390.png": {
-    "label": "Header overflow next to Run Now (holds Test)",
-    "x": 109,
+    "label": "Run Agent",
+    "x": 16,
     "y": 107,
-    "width": 31,
+    "width": 100,
     "height": 37
   },
   "20/task8-1440.png": {

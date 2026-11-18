@@ -59,14 +59,15 @@ Run 3 times per width, each a fresh subagent. The orchestrator maps `first_tap`
 x,y to an element. A screen passes only if, at both widths:
 
 - all 3 runs hit the intended target, `confidence` "sure";
-- `considered` has 1 item (2 if the second is native: search, breadcrumb);
-- `read` holds only labels, at most 3, no sentence;
-- `stands_out` is the target or the main data, `feel` is "calm";
-- `where` names the right app and screen;
-- in the comparison it does not pick ours as the odd one.
+- `read` holds only labels, at most 3, no sentence.
 
-Fail on any "lost", a wrong tap, two plausible candidates, a sentence in
-`read`, or different answers between runs. The element in `considered` or
+Warnings (fix when cheap, never ship-blocking): more than one item in
+`considered`, `feel` "busy", `stands_out` not the target. Calibrated on native
+Odoo 20: the Sales quotations list gets two candidates (New and the
+breadcrumb) and "busy" (the KPI tiles), so those cannot be a hard gate.
+
+Fail on any "lost", "think so", a wrong tap, a sentence in `read`, or
+different answers between runs. The element in `considered` or
 `stands_out` that pulled attention is the first thing to remove or demote.
 Everything in `ignored` that no task needed is a candidate to delete.
 

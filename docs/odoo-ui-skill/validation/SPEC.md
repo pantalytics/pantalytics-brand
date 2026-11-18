@@ -40,13 +40,13 @@ Demo data: 6 agents, one in each state, at least one failing with an error.
 
 One line each, no other explanation.
 
-1. "Add an agent for Sales." (from the app menu)
+1. "Add a new agent." (from the app menu; round 1 said "for Sales", which pulled the eye to the Sales app)
 2. "Which agent is broken?" (from the list)
 3. "Why is it broken?" (from the list)
 4. "Run the Sales agent now."
 5. "Turn the Inventory agent off."
 6. "Let agents write in Odoo." (Settings)
-7. "Test an agent on a quotation."
+7. "Test an agent on a quotation." (round 2: Run and Test merged into one Run Agent button)
 8. "Start with agents." (empty database)
 
 Each at 1440 x 900 and 390 x 844, on Odoo 19 and 20.

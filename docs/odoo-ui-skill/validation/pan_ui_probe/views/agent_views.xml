@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- List: the default screen on desktop. One badge status column, one toggle for on/off. -->
+    <!-- List: the default screen on desktop. On/off is the switch, health is the badge
+         (empty when off), the problem is said on the row. No sample rows: they read as real. -->
     <record id="pan_probe_agent_view_list" model="ir.ui.view">
         <field name="name">pan.probe.agent.list</field>
         <field name="model">pan.probe.agent</field>
         <field name="arch" type="xml">
-            <list sample="1" decoration-muted="not active">
+            <list decoration-muted="not enabled">
                 <field name="name"/>
                 <field name="app"/>
-                <field name="state" widget="badge"
+                <field name="state" widget="badge" invisible="state == 'off'"
                        decoration-success="state == 'running'"
                        decoration-warning="state == 'needs_key'"
-                       decoration-danger="state == 'failing'"
-                       decoration-muted="state == 'off'"/>
+                       decoration-danger="state == 'failing'"/>
+                <field name="error" string="Problem" class="text-danger"/>
                 <field name="last_run"/>
                 <field name="user_id" widget="many2one_avatar_user" optional="hide"/>
                 <field name="run_count" optional="hide"/>
-                <field name="active" widget="boolean_toggle"/>
+                <field name="enabled" widget="boolean_toggle"/>
             </list>
         </field>
     </record>
@@ -26,18 +27,18 @@
         <field name="name">pan.probe.agent.kanban</field>
         <field name="model">pan.probe.agent</field>
         <field name="arch" type="xml">
-            <kanban sample="1" quick_create="false">
+            <kanban quick_create="false">
                 <templates>
                     <t t-name="card">
                         <field name="name" class="fw-bold"/>
                         <field name="app" class="text-muted"/>
+                        <field name="error" class="text-danger" invisible="state != 'failing'"/>
                         <footer>
-                            <field name="state" widget="badge"
+                            <field name="state" widget="badge" invisible="state == 'off'"
                                    decoration-success="state == 'running'"
                                    decoration-warning="state == 'needs_key'"
-                                   decoration-danger="state == 'failing'"
-                                   decoration-muted="state == 'off'"/>
-                            <field name="active" widget="boolean_toggle" class="ms-auto"/>
+                                   decoration-danger="state == 'failing'"/>
+                            <field name="enabled" widget="boolean_toggle" class="ms-auto"/>
                         </footer>
                     </t>
                 </templates>
@@ -52,10 +53,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_run" type="object" string="Run Now" class="btn-primary"
+                    <button name="action_open_run" type="object" string="Run Agent" class="btn-primary"
                             invisible="not id or state in ('needs_key', 'off')"/>
-                    <button name="action_open_test" type="object" string="Test"
-                            invisible="not id or app != 'sale' or state == 'off'"/>
                     <field name="state" widget="badge"
                            decoration-success="state == 'running'"
                            decoration-warning="state == 'needs_key'"
@@ -102,8 +101,8 @@
                 <filter name="failing" string="Failing" domain="[('state', '=', 'failing')]"/>
                 <filter name="needs_key" string="Needs Key" domain="[('state', '=', 'needs_key')]"/>
                 <separator/>
-                <filter name="on" string="On" domain="[('active', '=', True)]"/>
-                <filter name="off" string="Off" domain="[('active', '=', False)]"/>
+                <filter name="on" string="On" domain="[('enabled', '=', True)]"/>
+                <filter name="off" string="Off" domain="[('enabled', '=', False)]"/>
                 <group>
                     <filter name="by_app" string="App" context="{'group_by': 'app'}"/>
                     <filter name="by_state" string="Status" context="{'group_by': 'state'}"/>
@@ -117,7 +116,6 @@
         <field name="res_model">pan.probe.agent</field>
         <field name="view_mode">list,kanban,form</field>
         <field name="mobile_view_mode">kanban</field>
-        <field name="context">{'active_test': False}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Add your first agent</p>
         </field>

@@ -95,8 +95,8 @@ return {"effect": {"type": "rainbow_man", "message": _("First agent live"), "fad
 - Action help: exactly 1 paragraph, `o_view_nocontent_smiling_face`, verb + thing ("Add your first agent"),
   0 explanation of the feature (Odoo's habit of a second paragraph, 317 times, we drop). The New button
   is the one action; no button inside the help.
-- `sample="1"` on our list and kanban views that start empty, so the empty state shows the shape of what
-  is coming (ui.speed.2 spirit).
+- No `sample="1"` on our views. Phase 6 validation: the lazy user read the faded sample rows
+  (REF0001...) as real records and hesitated on the empty screen. Odoo uses it widely; we do not.
 - Notifications only when the result is not visible on screen: count per user action at most 1. Types:
   `success` done, `warning` needs the user, `danger` failed; never rely on the JS default `warning` for a
   success; 0 `info` toasts. `sticky` only for `danger` that needs action. No `title`.

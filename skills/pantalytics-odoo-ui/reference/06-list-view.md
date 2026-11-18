@@ -105,7 +105,7 @@ one status column.
 | Header buttons: <= 2, none `display="always"` unless it is the page's main non-create action | count |
 | No row button that just opens the record | grep `<button` with an "Open" title |
 | `editable` only for line-like records with <= 5 columns; otherwise open the form | count columns if editable |
-| `sample="1"` plus action `help` for the empty state, one line (see surface 12) | arch + action |
+| Action `help` for the empty state, one line; no `sample="1"` (validation: sample rows read as real) | arch + action |
 | `handle` only when order matters to the user | justify |
 | Version-matched widget names (`relative_date`, `badges_selection` on 20) | grep per branch |
 | Every action reachable on a phone also has a kanban card path | kanban exists for the model |

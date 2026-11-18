@@ -41,19 +41,20 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
 | Need | Use | Limit |
 |---|---|---|
 | The main action | `<header>` button with `class="btn-primary"`, **first** in the header | 1 per state; on a phone only the first is shown |
-| Other actions | `btn-secondary` in the header, or a bound server action in the cog | <= 3 visible header buttons; no duplicate of the same action anywhere |
+| Other actions | `btn-secondary` in the header, or a bound server action in the cog | <= 3 visible header buttons; no duplicate of the same action anywhere. Before you add a second button, check whether it is another way to do the first ("Run" and "Test on one record"): then it is one button with the choice in its dialog. On a phone a second button hides behind the caret, and the lazy user got lost there |
 | Row action | `<button icon=... class="btn-link">` in the list | only when it is not "open the record" |
-| Status | `statusbar` (lifecycle of 3-5 steps) in the form; one `widget="badge"` column in the list | one status per record |
+| Why it is broken | the error as a short column next to the status, empty when healthy; on the card a red line shown only when failing | the user must not open the record to learn why |
+| Status | A lifecycle of 3-5 steps: `statusbar` in the form header. A health state (Running, Failing): `widget="badge"` in the form `<header>`, where a statusbar would sit. One `badge` column in the list | one status per record, said once |
 | Status colour | `decoration-success` works, `-warning` needs the user, `-danger` broken, `-muted` off/draft/cancelled | never `info`, `primary`, inline colour |
-| On/off with immediate effect | `boolean_toggle` in list or kanban only | 0 toggles in forms, wizards, settings |
+| On/off with immediate effect | `boolean_toggle` on its own field (`enabled`), in list or kanban only | 0 toggles in forms, wizards, settings. Never on `active`: archived rows leave the list. On/off is the switch, health is the badge: the badge stays empty when off, so "off" is said once |
 | A choice saved later | plain `boolean` (checkbox); 2-4 options `radio`, 5+ selection | Odoo 20 shows checkboxes as switches on a phone: accept it |
 | Counts users act on | stat button, `invisible` when 0 | <= 4 |
-| One short step | wizard, `target="new"`, `medium` | <= 4 fields, 1 primary + Discard, 0 paragraphs |
+| One short step | wizard, `target="new"`, `medium` | <= 4 fields, 1 primary + Discard, 0 paragraphs. A wizard that shows a result shows it in the same dialog, footer then 1 primary "Done" |
 | A flow with checks | form, `target="current"`; the crumb is the back link | |
-| Feedback on an action | notification with a type (`success`/`warning`/`danger`) | only when the result is not visible; never `info` |
+| Feedback on an action | the changed value on the record where the eye is; a notification with a type (`success`/`warning`/`danger`) only when nothing visible changes | never `info`; an output worth reading is a field on the record, not a toast |
 | A problem with this record | inline `alert` with `invisible=` | gone when solved; <= 1 per form |
-| Empty | action help: one `o_view_nocontent_smiling_face` line, verb + thing; `sample="1"` on the view | no second paragraph, no button in it |
-| Settings | `<app>` > `<block>` > `<setting id=...>` | 1 app, <= 3 blocks, <= 6 settings per block, help <= 12 words |
+| Empty | action help: one `o_view_nocontent_smiling_face` line, verb + thing | no second paragraph, no button in it, no `sample="1"`: the lazy user read the faded sample rows as real records |
+| Settings | `<app>` > `<block>` > `<setting id=...>` | 1 app, <= 3 blocks, <= 6 settings per block, help <= 12 words. A block is named after what it controls ("Access"), never after the app |
 | An app that needs pairing | setup checklist inside `<block>`/`<setting>`: one row per step, status, one action | later steps hidden until earlier ones work |
 | Advanced options | last notebook page, `groups="base.group_no_one"`, or a small `priority=100` form | |
 | Search | search view: 2-6 `<field>`, <= 8 filters, <= 5 group-bys, status one of them | 0 custom search UI; <= 1 default filter |
@@ -66,7 +67,7 @@ The smallest set that follows the rules (Odoo 18, 19 and 20; icons differ, see V
 
 ```xml
 <!-- List: New is the one primary; one badge status; <= 6 columns -->
-<list sample="1">
+<list>
   <field name="name"/>
   <field name="app"/>
   <field name="last_run" widget="relative_date"/>   <!-- 18/19: remaining_days -->
@@ -97,7 +98,7 @@ The smallest set that follows the rules (Odoo 18, 19 and 20; icons differ, see V
 </form>
 
 <!-- Kanban: card template, <= 4 lines, one status, no buttons -->
-<kanban sample="1">
+<kanban>
   <templates>
     <t t-name="card">
       <field name="name" class="fw-bold"/>
@@ -143,10 +144,10 @@ the check.
 | Notebook pages | 0 or 2-3 |
 | Visible list columns at 1440 px | <= 6, rest `optional="hide"` |
 | Kanban card | <= 4 data lines, 1 status signal, 0 buttons |
-| Menu | 1 root menu per app, <= 5 sections, depth <= 2, Configuration last |
+| Menu | 1 root menu per app, <= 5 sections, depth <= 2, Configuration last. A one-model app opens its list from the root and has no section repeating the app name |
 | Systray items we add | 0 (at most 1 for state the user must act on now) |
 | Module SCSS | 0 hex, 0 `font-family`, 0 `box-shadow`, 0 `!important`, 0 redefined variables; > 30 lines means a widget is missing |
-| Horizontal scroll at 390 px | 0 |
+| Horizontal scroll at 390 px | 0, page and lists (a phone opens kanban; a list that scrolls sideways inside its box counts) |
 
 ## Bloat: remove unless the lazy user failed without it
 
@@ -176,6 +177,8 @@ after our product. Full list with checks: `reference/intuitive-beautiful.md`.
 - The phone opens kanban first: every model a phone user touches has a card
   view, and actions set `mobile_view_mode` or list kanban first.
 - The first `<header>` button is the only one shown; order buttons by importance.
+  A second task as frequent as the first does not go in the header: give it a
+  row action in the list or its own menu item.
 - Dropdowns become bottom sheets and 20 boxes every field: that is Odoo's, add nothing.
 - Detail: `reference/14-mobile.md`.
 
@@ -191,6 +194,7 @@ after our product. Full list with checks: `reference/intuitive-beautiful.md`.
 | Chatter beside the form | >= 1534 px | >= 1400 px | >= 1400 px |
 | Phone header | all buttons in the cog | primary + ⋮ | primary as split button |
 | Look | | | Enterprise: white outlined secondary buttons, 6 px radius, segmented statusbar, settings in cards |
+| Access rights | `ir.model.access.csv` | `ir.model.access.csv` | `ir.access` (operation `crud`); the 19 CSV breaks the install. One branch for both: create the rows in a `<function>` that checks which model exists |
 
 Write one view per version where syntax differs; never `fa-*` on 20. More:
 `reference/01` to `reference/14`, section "Versions".

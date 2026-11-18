@@ -179,7 +179,7 @@ docker run -d --name odoo19empty --network odoo-net $E -v odoo19-data:/var/lib/o
 # plus --http-interface=0.0.0.0
 ```
 
-Screenshots: `node docs/odoo-ui-skill/validation/shoot.js [19,20] [1440,390]`
+Screenshots: `node docs/odoo-ui-skill/validation/shoot.cjs [19,20] [1440,390]`
 writes `validation/screens/<ver>/task<N>-<width>.png`, the after-tap shots
 for tasks 4, 5 and 6, and `validation/screens/targets.json` (intended first
 tap per screenshot, from the DOM box, clipped to the viewport). It restores

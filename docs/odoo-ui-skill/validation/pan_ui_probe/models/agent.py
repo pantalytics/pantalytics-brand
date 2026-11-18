@@ -22,7 +22,7 @@ class PanProbeAgent(models.Model):
 
     name = fields.Char(required=True, tracking=True)
     app = fields.Selection(APPS, string="App", default="sale", required=True, tracking=True)
-    active = fields.Boolean(default=True, tracking=True)
+    enabled = fields.Boolean(string="On", default=True, tracking=True)
     state = fields.Selection(STATES, string="Status", default="running", required=True, tracking=True)
     user_id = fields.Many2one("res.users", string="Runs As", default=_default_user, tracking=True)
     instructions = fields.Text()
@@ -33,13 +33,13 @@ class PanProbeAgent(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
-            if vals.get("active") is False:
+            if vals.get("enabled") is False:
                 vals["state"] = "off"
         return super().create(vals_list)
 
     def write(self, vals):
-        if "active" in vals and "state" not in vals:
-            if not vals["active"]:
+        if "enabled" in vals and "state" not in vals:
+            if not vals["enabled"]:
                 vals["state"] = "off"
             else:
                 # Turning an agent back on: it runs again unless it was failing before.
@@ -63,17 +63,10 @@ class PanProbeAgent(models.Model):
             }
         self.write({"last_run": fields.Datetime.now(), "run_count": self.run_count + 1})
         self.message_post(body=_("Run finished."))
-        return {
-            "type": "ir.actions.client",
-            "tag": "display_notification",
-            "params": {
-                "type": "success",
-                "message": _("%s finished its run.", self.name),
-                "next": {"type": "ir.actions.client", "tag": "soft_reload"},
-            },
-        }
+        # Last Run and Runs change on the form: that is the feedback, no toast.
+        return {"type": "ir.actions.client", "tag": "soft_reload"}
 
-    def action_open_test(self):
+    def action_open_run(self):
         self.ensure_one()
         action = self.env["ir.actions.act_window"]._for_xml_id("pan_ui_probe.action_pan_probe_agent_test")
         action["context"] = {"default_agent_id": self.id, "dialog_size": "medium"}
