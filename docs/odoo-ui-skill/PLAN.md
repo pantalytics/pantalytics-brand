@@ -1,6 +1,6 @@
 # Plan: the Pantalytics way inside Odoo
 
-Status: approved 2026-11-18, executing. Owner: this branch. Updated: 2026-11-18.
+Status: done 2026-11-18. Results: `validation/RESULTS.md`. Owner: this branch. Updated: 2026-11-18.
 
 ## Goal
 

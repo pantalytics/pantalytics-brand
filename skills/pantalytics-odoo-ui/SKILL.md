@@ -41,11 +41,11 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
 | Need | Use | Limit |
 |---|---|---|
 | The main action | `<header>` button with `class="btn-primary"`, **first** in the header | 1 per state; on a phone only the first is shown |
-| Other actions | `btn-secondary` in the header, or a bound server action in the cog | <= 3 visible header buttons; no duplicate of the same action anywhere. Before you add a second button, check whether it is another way to do the first ("Run" and "Test on one record"): then it is one button with the choice in its dialog. On a phone a second button hides behind the caret, and the lazy user got lost there |
+| Other actions | `btn-secondary` in the header, or a bound server action in the cog | <= 3 visible header buttons; no duplicate of the same action anywhere. The user's word for a task must be on the screen where the task starts: a merged button that hides that word fails just like a button behind the caret (validation: "Test" merged into "Run Agent" was lost on all four screens). A task that starts from another record ("test on a quotation") belongs on that record, as a bound action in its ⋮ menu (`binding_model_id`) |
 | Row action | `<button icon=... class="btn-link">` in the list | only when it is not "open the record" |
 | Why it is broken | the error as a short column next to the status, empty when healthy; on the card a red line shown only when failing | the user must not open the record to learn why |
 | Status | A lifecycle of 3-5 steps: `statusbar` in the form header. A health state (Running, Failing): `widget="badge"` in the form `<header>`, where a statusbar would sit. One `badge` column in the list | one status per record, said once |
-| Status colour | `decoration-success` works, `-warning` needs the user, `-danger` broken, `-muted` off/draft/cancelled | never `info`, `primary`, inline colour |
+| Status colour | (Odoo 20 draws badges pale: Failing and Needs Key look alike on a phone, so the problem line, not the colour, must say what is wrong) `decoration-success` works, `-warning` needs the user, `-danger` broken, `-muted` off/draft/cancelled | never `info`, `primary`, inline colour |
 | On/off with immediate effect | `boolean_toggle` on its own field (`enabled`), in list or kanban only | 0 toggles in forms, wizards, settings. Never on `active`: archived rows leave the list. On/off is the switch, health is the badge: the badge stays empty when off, so "off" is said once |
 | A choice saved later | plain `boolean` (checkbox); 2-4 options `radio`, 5+ selection | Odoo 20 shows checkboxes as switches on a phone: accept it |
 | Counts users act on | stat button, `invisible` when 0 | <= 4 |
