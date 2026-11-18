@@ -59,22 +59,22 @@ async function run(browser, ver, width) {
   await page.goto(`${base}/odoo`); await page.waitForSelector('.o_home_menu'); await settle(page);
   await shot(page, ver, `task1-${w}`, await box(page, page.locator('.o_home_menu .o_app').filter({ hasText: /^\s*Agents\s*$/ }), 'Agents app tile'));
 
-  // Tasks 2 and 3: Agents list, target = Lead Scorer row (the red Failing badge)
-  await openAgents(page, base); await ensureList(page);
-  const failRow = page.locator('.o_data_row').filter({ hasText: 'Lead Scorer' });
-  await shot(page, ver, `task2-${w}`, await box(page, failRow, 'Lead Scorer row (Failing badge)'));
-  await shot(page, ver, `task3-${w}`, await box(page, failRow, 'Lead Scorer row (opens the form with the error)'));
+  // Tasks 2 and 3: the default view (list on desktop, kanban on a phone)
+  await openAgents(page, base);
+  const kb = await page.locator('.o_kanban_view').count() > 0;
+  const failRow = kb ? page.locator('.o_kanban_record').filter({ hasText: 'Lead Scorer' })
+                     : page.locator('.o_data_row').filter({ hasText: 'Lead Scorer' });
+  await shot(page, ver, `task2-${w}`, await box(page, failRow, `Lead Scorer ${kb ? 'card' : 'row'} (Failing)`));
+  // Task 3: the answer is read, not tapped: the problem text on the row or card
+  const why = failRow.locator('[name=error], .text-danger').filter({ hasText: 'Key' }).first();
+  const t3 = await box(page, why, 'Problem text of Lead Scorer');
+  await shot(page, ver, `task3-${w}`, { ...t3, read_ok: true });
 
-  // Task 4: Sales Agent form, target = Run Agent (opens the Run dialog; Run with New Records)
+  // Task 4: Sales Agent form, target = Run Agent (runs at once; Last Run and Runs change)
   await page.goto(`${base}/odoo/action-${ACT}/${sales.id}`); await page.waitForSelector('.o_form_view'); await settle(page);
-  await shot(page, ver, `task4-${w}`, await box(page, 'button[name=action_open_run]', 'Run Agent'));
-  await page.locator('button[name=action_open_run]').first().click();
-  await page.waitForSelector('.modal', { timeout: 10000 });
-  await page.waitForTimeout(800);
-  await shot(page, ver, `task4-dialog-${w}`);
-  await page.locator('.modal-footer button[name=action_run]').first().click();
-  await page.waitForSelector('.modal', { state: 'detached', timeout: 10000 }).catch(() => log.push(`${ver}/task4-after-${w}: dialog stayed`));
-  await page.waitForTimeout(1500);
+  await shot(page, ver, `task4-${w}`, await box(page, 'button[name=action_run]', 'Run Agent'));
+  await page.locator('button[name=action_run]').first().click();
+  await page.waitForTimeout(2500);
   await shot(page, ver, `task4-after-${w}`);
   // restore
   await rpc(page, 'pan.probe.agent', 'write', [[sales.id], { run_count: sales.run_count, last_run: sales.last_run }]);
@@ -106,14 +106,18 @@ async function run(browser, ver, width) {
   if (await discard.count()) { await discard.first().click(); await page.waitForTimeout(800); }
   else { await cb.click({ force: true }); }
 
-  // Task 7: Sales Agent form, target = Run Agent (its dialog offers One Quotation)
-  await page.goto(`${base}/odoo/action-${ACT}/${sales.id}`); await page.waitForSelector('.o_form_view'); await settle(page);
-  await shot(page, ver, `task7-${w}`, await box(page, 'button[name=action_open_run]', 'Run Agent'));
-  await page.locator('button[name=action_open_run]').first().click();
-  await page.waitForSelector('.modal', { timeout: 10000 }); await page.waitForTimeout(800);
-  await shot(page, ver, `task7-dialog-${w}`);
+  // Task 7: starts on a quotation. Test Agent is a bound action in its action menu (the dots).
+  const so = (await rpc(page, 'sale.order', 'search', [[['state', 'in', ['draft', 'sent']]]], { limit: 1 }))[0];
+  await page.goto(`${base}/odoo/action-sale.action_quotations_with_onboarding/${so}`);
+  await page.waitForSelector('.o_form_view'); await settle(page);
+  const dots = page.locator('.o_control_panel .o_cp_action_menus button.dropdown-toggle, .o_control_panel .o_cp_action_menus .o-dropdown').filter({ visible: true }).first();
+  await shot(page, ver, `task7-${w}`, await box(page, dots, 'Action menu (dots) on the quotation'));
+  await dots.click(); await page.waitForTimeout(800);
+  const item = page.locator('.o-dropdown--menu .dropdown-item, .o_bottom_sheet .dropdown-item, .dropdown-menu .dropdown-item').filter({ hasText: /^\s*Test Agent\s*$/ }).filter({ visible: true }).first();
+  await shot(page, ver, `task7-menu-${w}`, await box(page, item, 'Test Agent'));
+  await item.click(); await page.waitForSelector('.modal'); await page.waitForTimeout(800);
+  await shot(page, ver, `task7-dialog-${w}`, await box(page, '.modal-footer button[name=action_test]', 'Test'));
   await page.keyboard.press('Escape');
-
   await ctx.close();
 
   // Task 8: empty database, target = New

@@ -1,24 +1,33 @@
-from odoo import _, fields, models
+from odoo import _, api, fields, models
 
 
 class PanProbeAgentTest(models.TransientModel):
-    """Run an agent: on its new records, or on one quotation to see the answer."""
+    """Test an agent on one quotation. Opened from the quotation itself
+    (a bound action in its action menu): the task starts on that record."""
 
     _name = "pan.probe.agent.test"
-    _description = "Run Agent"
+    _description = "Test Agent"
 
-    agent_id = fields.Many2one("pan.probe.agent", string="Agent", required=True)
-    agent_app = fields.Selection(related="agent_id.app")
-    run_on = fields.Selection(
-        [("new", "New Records"), ("one", "One Quotation")],
-        string="Run On", default="new", required=True)
-    order_id = fields.Many2one("sale.order", string="Quotation")
+    agent_id = fields.Many2one(
+        "pan.probe.agent", string="Agent", required=True,
+        domain="[('app', '=', 'sale'), ('enabled', '=', True)]")
+    order_id = fields.Many2one("sale.order", string="Quotation", required=True)
     answer = fields.Text(readonly=True)
 
-    def action_run(self):
+    @api.model
+    def default_get(self, fields_list):
+        res = super().default_get(fields_list)
+        ctx = self.env.context
+        if ctx.get("active_model") == "sale.order" and ctx.get("active_id"):
+            res.setdefault("order_id", ctx["active_id"])
+        if "agent_id" not in res:
+            agent = self.env["pan.probe.agent"].search(
+                [("app", "=", "sale"), ("enabled", "=", True), ("state", "=", "running")], limit=1)
+            res["agent_id"] = agent.id
+        return res
+
+    def action_test(self):
         self.ensure_one()
-        if self.run_on == "new":
-            return self.agent_id.action_run()
         order = self.order_id
         self.answer = _(
             "%(order)s for %(customer)s: %(lines)s lines, %(total)s %(currency)s. "
@@ -32,6 +41,6 @@ class PanProbeAgentTest(models.TransientModel):
             "res_id": self.id,
             "view_mode": "form",
             "target": "new",
-            "name": _("Run Agent"),
+            "name": _("Test Agent"),
             "context": {"dialog_size": "medium"},
         }

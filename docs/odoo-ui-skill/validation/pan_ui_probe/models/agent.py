@@ -66,12 +66,6 @@ class PanProbeAgent(models.Model):
         # Last Run and Runs change on the form: that is the feedback, no toast.
         return {"type": "ir.actions.client", "tag": "soft_reload"}
 
-    def action_open_run(self):
-        self.ensure_one()
-        action = self.env["ir.actions.act_window"]._for_xml_id("pan_ui_probe.action_pan_probe_agent_test")
-        action["context"] = {"default_agent_id": self.id, "dialog_size": "medium"}
-        return action
-
     @api.model
     def _pan_setup_access(self):
         """Grant internal users full access, on 19 (ir.model.access) and 20 (ir.access)."""

@@ -6,7 +6,7 @@ targets.json: {"<ver>/task<N>-<width>.png": {"label", "x", "y", "width", "height
 answers.json: {"<same key>": {first_tap: {label, x, y}, confidence, considered,
                read, ignored, stands_out, feel, where}}
 A screen passes per agents/lazy-user.md: right target, "sure", labels only
-(<= 3, no sentence). Extra candidates and "busy" are warnings: native Odoo
+(<= 3, no sentence), unless the target is text to read ("read_ok", task 3). Extra candidates and "busy" are warnings: native Odoo
 (Sales quotations, the calibration screen) gets both too.
 """
 import json
@@ -32,7 +32,7 @@ def judge(answer, box):
     if answer.get("confidence") != "sure":
         fails.append(f"confidence {answer.get('confidence')}")
     read = answer.get("read", [])
-    if len(read) > 3 or any(is_sentence(str(r)) for r in read):
+    if not box.get("read_ok") and (len(read) > 3 or any(is_sentence(str(r)) for r in read)):
         fails.append("had to read")
     considered = answer.get("considered", [])
     extra = [c for c in considered[1:] if not any(n in str(c).lower() for n in NATIVE)]

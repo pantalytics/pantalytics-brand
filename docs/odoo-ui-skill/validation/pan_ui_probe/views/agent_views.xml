@@ -53,7 +53,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_open_run" type="object" string="Run Agent" class="btn-primary"
+                    <button name="action_run" type="object" string="Run Agent" class="btn-primary"
                             invisible="not id or state in ('needs_key', 'off')"/>
                     <field name="state" widget="badge"
                            decoration-success="state == 'running'"

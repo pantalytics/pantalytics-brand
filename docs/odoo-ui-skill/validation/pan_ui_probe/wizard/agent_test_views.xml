@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- One action, two ways (ui.rule.9): run on new records, or on one quotation.
-         Once the answer is there, the only button left is Done. -->
+    <!-- Test an agent on this quotation: opened from the quotation's action menu,
+         where the task starts. Once the answer is there, the only button left is Done. -->
     <record id="pan_probe_agent_test_view_form" model="ir.ui.view">
         <field name="name">pan.probe.agent.test.form</field>
         <field name="model">pan.probe.agent.test</field>
         <field name="arch" type="xml">
             <form>
                 <group invisible="answer">
-                    <field name="agent_id" invisible="1"/>
-                    <field name="agent_app" invisible="1"/>
-                    <field name="run_on" widget="radio" invisible="agent_app != 'sale'"/>
-                    <field name="order_id" options="{'no_create': True}"
-                           invisible="run_on != 'one'" required="run_on == 'one'"/>
+                    <field name="agent_id" options="{'no_create': True, 'no_open': True}"/>
+                    <field name="order_id" invisible="1"/>
                 </group>
                 <group invisible="not answer">
                     <field name="answer" nolabel="1" colspan="2"/>
                 </group>
                 <footer>
-                    <button name="action_run" type="object" string="Run" class="btn-primary"
+                    <button name="action_test" type="object" string="Test" class="btn-primary"
                             data-hotkey="q" invisible="answer"/>
                     <button special="cancel" string="Discard" class="btn-secondary" invisible="answer"/>
                     <button special="cancel" string="Done" class="btn-primary" invisible="not answer"/>
@@ -28,10 +25,12 @@
     </record>
 
     <record id="action_pan_probe_agent_test" model="ir.actions.act_window">
-        <field name="name">Run Agent</field>
+        <field name="name">Test Agent</field>
         <field name="res_model">pan.probe.agent.test</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
         <field name="context">{'dialog_size': 'medium'}</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_view_types">form</field>
     </record>
 </odoo>
