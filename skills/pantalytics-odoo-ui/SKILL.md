@@ -60,6 +60,78 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
 
 Snippets and per-version syntax: `reference/05` to `reference/12`.
 
+## Skeleton
+
+The smallest set that follows the rules (Odoo 18, 19 and 20; icons differ, see Versions):
+
+```xml
+<!-- List: New is the one primary; one badge status; <= 6 columns -->
+<list sample="1">
+  <field name="name"/>
+  <field name="app"/>
+  <field name="last_run" widget="relative_date"/>   <!-- 18/19: remaining_days -->
+  <field name="state" widget="badge"
+         decoration-success="state == 'running'" decoration-warning="state == 'needs_key'"
+         decoration-danger="state == 'failing'" decoration-muted="state == 'off'"/>
+  <field name="instructions" optional="hide"/>
+</list>
+
+<!-- Form: primary first in the header, statusbar right, title alone, then fields -->
+<form>
+  <header>
+    <button name="action_run" type="object" string="Run Now" class="btn-primary"
+            invisible="state == 'off'"/>
+    <field name="state" widget="statusbar" statusbar_visible="running,failing,off"/>
+  </header>
+  <sheet>
+    <div class="oe_title"><h1><field name="name" placeholder="Name"/></h1></div>
+    <group>
+      <group><field name="app"/><field name="user_id"/></group>
+      <group><field name="last_run"/></group>
+    </group>
+    <div class="alert alert-danger" role="alert" invisible="state != 'failing'">
+      <field name="error"/>
+    </div>
+  </sheet>
+  <chatter/>   <!-- 18, 19 and 20 -->
+</form>
+
+<!-- Kanban: card template, <= 4 lines, one status, no buttons -->
+<kanban sample="1">
+  <templates>
+    <t t-name="card">
+      <field name="name" class="fw-bold"/>
+      <field name="app" class="text-muted"/>
+      <footer><field name="state" widget="badge" class="ms-auto"/></footer>
+    </t>
+  </templates>
+</kanban>
+
+<!-- Empty state: one line, verb + thing -->
+<field name="help" type="html">
+  <p class="o_view_nocontent_smiling_face">Add your first agent</p>
+</field>
+```
+
+Settings: `reference/08-settings.md`. Wizard: `reference/11-dialogs-wizards.md`.
+
+## Verify with Playwright
+
+Never judge a screen from the XML. Install the module, open it, measure:
+
+```bash
+node scripts/check.mjs http://localhost:8020/odoo/action-<module>.<action> --out shots
+```
+
+`scripts/check.mjs` logs in, opens each URL at 1440 and 390 px, checks the
+counts below (one primary, primary first, sentences above the fold, columns,
+badge colours, buttons on cards, fields above tabs, alerts, smart buttons,
+broken icons, horizontal scroll, our accent or font) and saves the
+screenshots. Exit code 1 on a failure. Then give those screenshots to the
+lazy user. Native Odoo screens fail some checks (Sales has 8 columns and blue
+badges): that is the difference between Odoo and our restraint, not a bug in
+the check.
+
 ## Counts per screen
 
 | Check | Limit |
@@ -129,7 +201,7 @@ Write one view per version where syntax differs; never `fa-*` on 20. More:
 2. Every element is the Odoo widget from the table; the counts hold.
 3. Colour only for status, with our four meanings; nothing in our accent.
 4. The bloat list is empty; copy is Title Case labels, verb + thing, fixed terms.
-5. Every touched action clicked at 1440 and 390 px on each supported version.
+5. `scripts/check.mjs` passes, and every touched action is clicked at 1440 and 390 px on each supported version.
 6. Side by side with a native Sales or CRM screen, nobody can point at ours as
    the odd one.
 7. The lazy user passes every task (`agents/lazy-user.md`).
@@ -141,3 +213,4 @@ Write one view per version where syntax differs; never `fa-*` on 20. More:
 - `reference/intuitive-beautiful.md`: the checkable rules behind "intuitive"
   and "beautiful", the full bloat list.
 - `agents/lazy-user.md`: the gate.
+- `scripts/check.mjs`: the counts, measured with Playwright on a running Odoo.
