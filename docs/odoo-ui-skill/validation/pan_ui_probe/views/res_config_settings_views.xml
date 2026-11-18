@@ -8,7 +8,7 @@
             <xpath expr="//form" position="inside">
                 <app string="Agents" name="pan_ui_probe">
                     <block title="Access" name="pan_probe_agents_block">
-                        <setting id="pan_probe_may_write" help="Agents can create and change records, not only read them.">
+                        <setting id="pan_probe_may_write" help="Agents can create and change records.">
                             <field name="pan_probe_may_write"/>
                         </setting>
                         <setting id="pan_probe_default_user" string="Default User" help="New agents run as this user.">

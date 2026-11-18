@@ -29,6 +29,7 @@ class PanProbeAgent(models.Model):
     last_run = fields.Datetime(readonly=True)
     run_count = fields.Integer(string="Runs", readonly=True)
     error = fields.Char(readonly=True)
+    problem = fields.Char(readonly=True, help="The error in a few words, for the list and the card.")
 
     @api.model_create_multi
     def create(self, vals_list):

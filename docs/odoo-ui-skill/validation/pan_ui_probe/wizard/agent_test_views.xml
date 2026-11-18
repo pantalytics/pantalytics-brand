@@ -9,10 +9,10 @@
             <form>
                 <group invisible="answer">
                     <field name="agent_count" invisible="1"/>
-                    <!-- one choice is no choice: the field only shows when there are two or more -->
+                    <!-- one choice is no choice: read-only, but shown, so the dialog says what Test will do -->
                     <field name="agent_id" options="{'no_create': True, 'no_open': True}"
-                           invisible="agent_count &lt; 2"/>
-                    <field name="order_id" invisible="1"/>
+                           readonly="agent_count &lt; 2"/>
+                    <field name="order_id" readonly="1" options="{'no_open': True}"/>
                 </group>
                 <group invisible="not answer">
                     <field name="answer" nolabel="1" colspan="2"/>

@@ -13,7 +13,7 @@
                        decoration-success="state == 'running'"
                        decoration-warning="state == 'needs_key'"
                        decoration-danger="state == 'failing'"/>
-                <field name="error" string="Problem" class="text-danger"/>
+                <field name="problem" string="Problem" class="text-danger"/>
                 <field name="last_run"/>
                 <field name="user_id" widget="many2one_avatar_user" optional="hide"/>
                 <field name="run_count" optional="hide"/>
@@ -33,7 +33,7 @@
                         <field name="name" class="fw-bold"/>
                         <field name="app" class="text-muted"/>
                         <div class="text-danger" invisible="state != 'failing'">
-                            <span class="fw-bold">Problem: </span><field name="error"/>
+                            <span class="fw-bold">Problem: </span><field name="problem"/>
                         </div>
                         <footer>
                             <field name="state" widget="badge" invisible="state == 'off'"

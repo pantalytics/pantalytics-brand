@@ -66,7 +66,7 @@ async function run(browser, ver, width) {
                      : page.locator('.o_data_row').filter({ hasText: 'Lead Scorer' });
   await shot(page, ver, `task2-${w}`, await box(page, failRow, `Lead Scorer ${kb ? 'card' : 'row'} (Failing)`));
   // Task 3: the answer is read, not tapped: the problem text on the row or card
-  const why = failRow.locator('[name=error], .text-danger').filter({ hasText: 'Key' }).first();
+  const why = failRow.locator('[name=problem], .text-danger').filter({ hasText: 'Key refused' }).first();
   const t3 = await box(page, why, 'Problem text of Lead Scorer');
   await shot(page, ver, `task3-${w}`, { ...t3, read_ok: true });
 
