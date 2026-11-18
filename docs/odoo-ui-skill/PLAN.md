@@ -1,6 +1,6 @@
 # Plan: the Pantalytics way inside Odoo
 
-Status: plan, waiting for go. Owner: this branch. Updated: 2026-11-18.
+Status: approved 2026-11-18, executing. Owner: this branch. Updated: 2026-11-18.
 
 ## Goal
 
@@ -40,6 +40,17 @@ one-line task ("Turn on the AI agent"). It says what it taps first. If it
 hesitates, names two options, or has to read more than a label, the screen
 fails. Our AI reads everything at once and always knows where to click; this
 agent is there to not know.
+
+## Phase 0 -- What makes an app intuitive and beautiful, as rules
+
+"Intuitive" and "beautiful" are opinions until they are checkable. Research
+online what the field already measures: Nielsen's heuristics, Krug's "Don't
+make me think", Apple HIG, Laws of UX (Hick, Fitts, Miller, Jakob, Tesler,
+aesthetic-usability), Gestalt, Dieter Rams, Refactoring UI, first-click and
+five-second testing, cognitive walkthrough, and what is known about AI-built
+UI bloat. Output: `docs/odoo-ui-skill/rules-intuitive-beautiful.md`, every rule
+written so either a number (count, size, contrast, ratio) or the lazy user can
+check it. A rule nobody can check is dropped.
 
 ## Phase 1 -- Read the source (18.0, 19.0, 20.0)
 
