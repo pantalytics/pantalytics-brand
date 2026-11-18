@@ -73,7 +73,8 @@ Phone (< 768 px):
   `records_draggable`, `groups_draggable`, `group_create`, `group_edit`, `group_delete`, `archivable`,
   `limit`, `count_limit`, `examples` (column templates in the "Add column" dialog), `sample`.
 - `<progressbar>`: `field`, `colors` (JSON, value -> `success|warning|danger|info|muted|200`), `sum_field`, `help`.
-- `<header><button .../></header>`: buttons shown when cards are selected (19+).
+- `<header><button .../></header>`: `display="always"` buttons sit next to `New` (18+); the others show
+  only when cards are selected, which needs selection (19+).
 - Card helpers: `o_kanban_aside_full` + `o_kanban_image_fill` for an edge-to-edge image; `text-muted`,
   `fw-bold`, `ms-auto`; `<a type="open|edit|delete|archive|action|object">` in the menu.
 - Root `class`: `o_kanban_small_column` (narrow columns), `o_kanban_mobile` (truncate labels).

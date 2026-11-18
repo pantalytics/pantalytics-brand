@@ -91,7 +91,7 @@ Also 20: header buttons accept `iconClass`; offline mode greys cog items not
 - Tick rows in a list: bulk actions appear where the search bar was; cog = Actions.
 - Cog / vertical dots: Export, Import, Archive, Duplicate, Delete. Never the main action.
 - Stat buttons on a form (smart buttons) show a count and open the related list.
-- Pager and view icons top right; list then kanban order; last view used per action.
+- Pager and view icons top right, in the action's `view_mode` order.
 - Phone: one button, one search toggle, one view toggle. Nothing wraps to two lines.
 
 ## Pantalytics verdict: Native frame, Restrained content
