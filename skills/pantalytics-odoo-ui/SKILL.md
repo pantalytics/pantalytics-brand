@@ -56,7 +56,7 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
 | Feedback on an action | the changed value on the record where the eye is; a notification with a type (`success`/`warning`/`danger`) only when nothing visible changes | never `info`; an output worth reading is a field on the record, not a toast |
 | A problem with this record | inline `alert` with `invisible=` | gone when solved; <= 1 per form |
 | Empty | action help: the state, then where the action is: `<p>No agents yet</p><p>Add one with New.</p>` | no illustration, no imperative that looks like a button ("Add your first agent" was taken for one), no `sample="1"` (sample rows read as real records) |
-| Settings | `<app>` > `<block>` > `<setting id=...>` | 1 app, <= 3 blocks, <= 6 settings per block, help <= 12 words. A block is named after what it controls ("Access"), never after the app |
+| Settings | `<app>` > `<block>` > `<setting id=...>` | 1 app, <= 3 blocks, <= 6 settings per block, help <= 12 words. A block is named after what it controls ("Access"), never after the app; an app with a single block leaves the title out (the app tab already names it, and the header was one more label to read) |
 | An app that needs pairing | setup checklist inside `<block>`/`<setting>`: one row per step, status, one action | later steps hidden until earlier ones work |
 | Advanced options | last notebook page, `groups="base.group_no_one"`, or a small `priority=100` form | |
 | Search | search view: 2-6 `<field>`, <= 8 filters, <= 5 group-bys, status one of them | 0 custom search UI; <= 1 default filter |

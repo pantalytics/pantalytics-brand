@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//form" position="inside">
                 <app string="Agents" name="pan_ui_probe">
-                    <block title="Access" name="pan_probe_agents_block">
+                    <block name="pan_probe_agents_block">
                         <setting id="pan_probe_may_write" help="Agents can create and change records.">
                             <field name="pan_probe_may_write"/>
                         </setting>
