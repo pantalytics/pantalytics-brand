@@ -131,3 +131,57 @@ root menu>`; on a phone `?view_type=list` is ignored (kanban wins), so it
 switches through the view-switcher dropdown; the search bar is hidden behind
 a magnifier button; list rows are selected by long-press (touch events), the
 checkboxes are hidden.
+
+## Phase 6: pan_ui_probe (exact commands used)
+
+The probe module lives in `docs/odoo-ui-skill/validation/pan_ui_probe/`; its
+parent folder is mounted read-only on `/mnt/probe` and put first on the
+addons path. Demo agents are in the manifest's `demo` key, so they load into
+`odoo19`/`odoo20` (demo on) and not into the empty databases.
+
+```bash
+E="-e HOST=odoo-db -e USER=odoo -e PASSWORD=odoo"
+P=/home/user/pantalytics-brand/docs/odoo-ui-skill/validation
+AP=--addons-path=/mnt/probe,/mnt/enterprise,/usr/lib/python3/dist-packages/odoo/addons
+docker rm -f odoo19 odoo20
+
+# install (one-shot); use -u pan_ui_probe for later changes
+docker run --rm --network odoo-net $E -v odoo19-data:/var/lib/odoo \
+  -v /home/user/ent-full-19.0:/mnt/enterprise:ro -v $P:/mnt/probe:ro \
+  odoo:19 odoo $AP -d odoo19 -i pan_ui_probe --stop-after-init
+docker run --rm --network odoo-net $E -v odoo20-data:/var/lib/odoo \
+  -v /home/user/ent-full-20.0:/mnt/enterprise:ro -v $P:/mnt/probe:ro \
+  odoo:20 odoo $AP -d odoo20 -i pan_ui_probe --stop-after-init
+
+# servers
+docker run -d --name odoo19 --network odoo-net $E -v odoo19-data:/var/lib/odoo -p 8019:8069 \
+  -v /home/user/ent-full-19.0:/mnt/enterprise:ro -v $P:/mnt/probe:ro \
+  odoo:19 odoo $AP -d odoo19 --db-filter='^odoo19$'
+docker run -d --name odoo20 --network odoo-net $E -v odoo20-data:/var/lib/odoo -p 8020:8069 \
+  -v /home/user/ent-full-20.0:/mnt/enterprise:ro -v $P:/mnt/probe:ro \
+  odoo:20 odoo $AP -d odoo20 --db-filter='^odoo20$' --http-interface=0.0.0.0
+until curl -sf -o /dev/null http://localhost:8019/web/login; do sleep 3; done
+until curl -sf -o /dev/null http://localhost:8020/web/login; do sleep 3; done
+```
+
+Empty state (task 8): a fresh database per version with only `web_enterprise`
+and `pan_ui_probe` (19 and 20 load no demo data unless `--with-demo`), served
+by its own container because the main ones filter on one database:
+
+```bash
+docker run --rm --network odoo-net $E -v odoo19-data:/var/lib/odoo \
+  -v /home/user/ent-full-19.0:/mnt/enterprise:ro -v $P:/mnt/probe:ro \
+  odoo:19 odoo $AP -d odoo19_empty -i web_enterprise,pan_ui_probe --stop-after-init
+docker run -d --name odoo19empty --network odoo-net $E -v odoo19-data:/var/lib/odoo -p 8029:8069 \
+  -v /home/user/ent-full-19.0:/mnt/enterprise:ro -v $P:/mnt/probe:ro \
+  odoo:19 odoo $AP -d odoo19_empty --db-filter='^odoo19_empty$'
+# same for 20: odoo20_empty, container odoo20empty, port 8030, odoo:20, ent-full-20.0,
+# plus --http-interface=0.0.0.0
+```
+
+Screenshots: `node docs/odoo-ui-skill/validation/shoot.js [19,20] [1440,390]`
+writes `validation/screens/<ver>/task<N>-<width>.png`, the after-tap shots
+for tasks 4, 5 and 6, and `validation/screens/targets.json` (intended first
+tap per screenshot, from the DOM box, clipped to the viewport). It restores
+the records it changes (run count, chatter line, Inventory Agent switch) and
+discards the Settings change.

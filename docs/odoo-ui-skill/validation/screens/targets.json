@@ -24,7 +24,7 @@
     "label": "Lead Scorer row (Failing badge)",
     "x": 0,
     "y": 268,
-    "width": 607,
+    "width": 390,
     "height": 40
   },
   "19/task3-1440.png": {
@@ -38,7 +38,7 @@
     "label": "Lead Scorer row (opens the form with the error)",
     "x": 0,
     "y": 268,
-    "width": 607,
+    "width": 390,
     "height": 40
   },
   "19/task4-1440.png": {
@@ -59,7 +59,7 @@
     "label": "Inventory Agent on/off switch (list row)",
     "x": 1214,
     "y": 193,
-    "width": 189,
+    "width": 35,
     "height": 21
   },
   "19/task5-390.png": {
@@ -136,7 +136,7 @@
     "label": "Lead Scorer row (Failing badge)",
     "x": 0,
     "y": 266,
-    "width": 667,
+    "width": 390,
     "height": 40
   },
   "20/task3-1440.png": {
@@ -150,7 +150,7 @@
     "label": "Lead Scorer row (opens the form with the error)",
     "x": 0,
     "y": 266,
-    "width": 667,
+    "width": 390,
     "height": 40
   },
   "20/task4-1440.png": {
@@ -171,7 +171,7 @@
     "label": "Inventory Agent on/off switch (list row)",
     "x": 1216,
     "y": 195,
-    "width": 187,
+    "width": 35,
     "height": 21
   },
   "20/task5-390.png": {
