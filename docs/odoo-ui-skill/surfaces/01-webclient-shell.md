@@ -16,7 +16,8 @@ Left to right:
    messaging (25), activities (20), company switcher (1), user menu (0, far right). 20 adds an
    offline indicator (1000) that only appears when offline or calls are queued.
 5. User menu (avatar): Help, Shortcuts, separator, My Preferences, Install App, Log out.
-   Enterprise adds dark mode toggle. Debug mode shows the db name under the avatar.
+   Enterprise 19 adds "Share URL" (20: community). Dark mode is a user preference
+   (`web_enterprise/.../color_scheme/`), not a menu item. Debug mode shows the db name under the avatar.
 6. Company switcher: active company name (lg), building icon (md), checkboxes per company,
    Alt+Shift+U. Disabled when the user has one company.
 
