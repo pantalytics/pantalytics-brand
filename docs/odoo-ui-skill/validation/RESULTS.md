@@ -25,11 +25,11 @@ the action menu; see round 3). Lost in every run, as expected.
 
 ## Score per round
 
-| Round | Runs per screen | Screens passing | Lost | Wrong first taps |
+| Round | Runs per screen | Screens passing | Screens with "lost" | Screens with a wrong first tap |
 |---|---|---|---|---|
 | 1 | 1 | 11 of 32 | 2 | 0 |
 | 2 | 1 | 22 of 34 | 4 | 0 |
-| 3 | 3 | 21 of 40 | 12 (task 7 start) | 3 |
+| 3 | 3 | 21 of 40 | 4 (task 7 start) | 1 |
 | 4 | 3 | 19 of 36 | 0 | 0 |
 | 5 | 3 | 29 of 36 | 0 | 0 |
 | 6 | 3 | 30 of 36 | 0 | 0 |
