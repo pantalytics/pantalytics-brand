@@ -12,6 +12,7 @@ Official brand identity guide for [Pantalytics](https://www.pantalytics.com).
 - Tone of voice guidelines
 - Design philosophy
 - Product UI standard: how our products look, behave and talk
+- `skills/pantalytics-odoo-ui`: the AI skill for building screens inside Odoo 18, 19 and 20
 - Downloadable brand assets
 
 ## Development
