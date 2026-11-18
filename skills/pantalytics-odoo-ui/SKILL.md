@@ -21,6 +21,11 @@ tap?" in one glance, and the answer is an action.
 | **Restrained** | Form, list, kanban, wizards, fields, buttons, badges, settings content, action help | Odoo's widgets, our rules below. |
 | **Ours** | Client actions where Odoo has no pattern (an inbox, a setup checklist) | `target="current"` inside Odoo's `Layout`, built from Odoo parts (`SearchBar`, `Dropdown`, `.btn`, `$o-*` variables). Never `fullscreen`. |
 
+One validated exception: on Odoo 19 an unchecked settings checkbox is too faint
+for a lazy user. A module whose settings page matters may darken only that
+border: `.o_setting_left_pane .form-check:not(.form-switch)
+.form-check-input:not(:checked) { border-color: $o-gray-600; }`.
+
 Not in the backend: our accent #9b99ff, Murecho, our no-shadow look, shadcn
 components. Odoo's colours, font, elevation and widgets stay (proof:
 `reference/13-theme-tokens.md`).

@@ -5,27 +5,27 @@ and 20 Enterprise. A blind lazy-user agent judged 8 tasks per version at 1440
 and 390 px. Scores: `results-round1.md` to `results-round7.md`; raw answers
 next to them.
 
-## Final state (round 8)
+## Final state (round 9): the plan's original gate is met
 
-**36 of 36 gated screens pass all three fresh runs** (right first tap, "sure",
-own labels only), on Odoo 19 and 20, desktop and phone. Each screen is judged
-by its latest three-run round after its last change: 28 in round 6, the 4
-dialog screens in round 7, the 4 settings screens in round 8. Per screen:
-`results-final.md`.
+**36 of 36 gated screens pass all three fresh runs on the original, strict
+gate**: right first tap, "sure", at most three labels read (Odoo's chrome
+included), no sentence, in every run; on Odoo 19 and 20, desktop and phone.
+Each screen is judged by its latest three-run round after its last change:
+28 in round 6, the 4 dialog screens in round 7, the 4 settings screens in
+round 9. Per screen: `results-final.md` (`score.py --strict`).
 
-Two scoring decisions, taken with the owner after round 8, because the
-remaining failures came from Odoo itself and Odoo's own Sales settings failed
-the same checks:
+How the last screen got there:
 
-- Labels from Odoo's frame (Settings, Save, Discard, app tabs, breadcrumb)
-  do not count toward the three labels: a module cannot remove them.
-- Odoo 19's unchecked settings checkbox is drawn so faintly that a run taps
-  its label and says "think so". On those two screens "think so" is a
-  warning; a wrong tap or "lost" still fails.
+- Round 8 dropped the title of the lone settings block (one label less).
+- Round 9 added the one approved exception to "never restyle Odoo": Odoo 19
+  draws an unchecked settings checkbox so faintly that runs tapped its label
+  and said "think so". The test module darkens only that border, with Odoo's
+  own `$o-gray-600` (`pan_ui_probe/static/src/scss/settings_checkbox.scss`).
+  All three runs: "sure", on 19 and 20, desktop and phone.
 
-Every round is rescored with these rules and with the target boxes of its own
-time (`targets-by-round/`), so earlier numbers below differ slightly from the
-first reports.
+After round 8 a looser scoring (Odoo chrome labels not counted, the faint
+checkbox as a warning) was agreed and is kept in `score.py` as the default;
+the final result above does not need it.
 
 Not gated: the first step of "test an agent on a quotation" (a rare task in
 the action menu; see round 3). Lost in every run, as expected.
@@ -41,7 +41,8 @@ the action menu; see round 3). Lost in every run, as expected.
 | 5 | 3 | 30 of 36 | 0 | 0 |
 | 6 | 3 | 32 of 36 | 0 | 0 |
 | 7 (6 screens) | 3 | 6 of 6 | 0 | 0 |
-| 8 (4 screens) | 3 | 4 of 4 | 0 | 0 |
+| 8 (4 screens) | 3 | 4 of 4 (1 of 4 strict) | 0 | 0 |
+| 9 (4 screens) | 3 | 4 of 4 strict | 0 | 0 |
 
 Gate: right first tap, "sure", labels only (at most three, no sentence), in
 every run. Extra candidates and "busy" are warnings: native Odoo gets them too.
@@ -64,6 +65,7 @@ their strict verdict.
 | 5 | Full error sentence on the card was read | Short problem phrase ("Key refused"); full message on the record |
 | 6 | Read-only labelled fields: four labels to read | One line: "Sales Agent on S00003" |
 | 7 | A lone settings block repeats the app as a header | No title on a single block |
+| 8 | Odoo 19's unchecked settings checkbox too faint | Approved exception: darker border with `$o-gray-600` |
 
 All of these are rules in `skills/pantalytics-odoo-ui/SKILL.md` now.
 
