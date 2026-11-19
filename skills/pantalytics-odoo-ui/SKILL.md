@@ -27,7 +27,7 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
 
 ## Deviations: what Odoo does not have
 
-Everything else here is Odoo as it ships. These three are ours, on purpose. No
+Everything else here is Odoo as it ships. These five are ours, on purpose. No
 Odoo user knows them yet, so add one only when nothing in Odoo does the job,
 and list it here.
 
@@ -41,6 +41,16 @@ and list it here.
    among 2-5 a pop-up menu in the row, technical rows under a folded
    Advanced, a preview as a smart button. Apple's HIG; only on a drill-down
    page. `reference/15-drill-down.md`, Settings in a row.
+4. **A sync line** on top of a drill-down card that moves data between two
+   systems: Odoo's name left, the other system's right, one line per
+   direction with an arrow towards where the data goes. On: Odoo's success
+   colour, solid; off: grey, dashed. Moving dots only while the sync really
+   runs, never for a setting. First in Connector Pro (a connector's object
+   and field pages).
+5. **Deeper than three levels** where a record is set up in parts that have
+   parts of their own (Connector Pro: Connectors / Shopify / Recipe / Orders
+   / Fields / Payment Journal / Mapping). Fewer buttons per page beats fewer
+   clicks; the breadcrumb names every level.
 
 ## Build order
 
