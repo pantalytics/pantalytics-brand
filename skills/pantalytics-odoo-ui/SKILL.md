@@ -19,23 +19,31 @@ tap?" in one glance, and the answer is an action.
 |---|---|---|
 | **Native** | Navbar, app menu, systray, breadcrumbs, control panel, search, chatter, settings layout, notifications, dialogs frame, theme, mobile shell | Never restyle, patch or replace. 0 SCSS, 0 templates, 0 JS patches on it. |
 | **Restrained** | Form, list, kanban, wizards, fields, buttons, badges, settings content, action help | Odoo's widgets, our rules below. |
-| **Ours** | Client actions where Odoo has no pattern (an inbox, a setup checklist), the drill-down rows | `target="current"` inside Odoo's `Layout`, built from Odoo parts (`SearchBar`, `Dropdown`, `.btn`, `$o-*` variables). Never `fullscreen`. |
-
-One validated exception: on Odoo 19 an unchecked settings checkbox is too faint
-for a lazy user. A module whose settings page matters may darken only that
-border: `.o_setting_left_pane .form-check:not(.form-switch)
-.form-check-input:not(:checked) { border-color: $o-gray-600; }`.
+| **Ours** | Client actions where Odoo has no pattern (an inbox, a setup checklist) and the deviations below | `target="current"` inside Odoo's `Layout`, built from Odoo parts (`SearchBar`, `Dropdown`, `.btn`, `$o-*` variables). Never `fullscreen`. |
 
 Not in the backend: our accent #9b99ff, Murecho, our no-shadow look, shadcn
 components. Odoo's colours, font, elevation and widgets stay (proof:
 `reference/13-theme-tokens.md`).
 
+## Deviations: what Odoo does not have
+
+Everything else here is Odoo as it ships. These two are ours, on purpose. No
+Odoo user knows them yet, so add one only when nothing in Odoo does the job,
+and list it here.
+
+1. **Settings checkbox border** (Odoo 19): an unchecked checkbox is too faint
+   for a lazy user. A module whose settings page matters may darken only that
+   border: `.o_setting_left_pane .form-check:not(.form-switch)
+   .form-check-input:not(:checked) { border-color: $o-gray-600; }`.
+2. **Drill-down rows**: a record whose parts each open their own level, as
+   iPhone Settings. `reference/15-drill-down.md`.
+
 ## Build order
 
 1. Pick the page type: **List** (list view), **Overview** (form of one record),
    **Settings** (`res.config.settings`), **Flow** (form with
-   `target="current"`), **Drill-down** (a form whose parts are rows that
-   open their own level, as iPhone Settings; `reference/15-drill-down.md`),
+   `target="current"`), **Drill-down** (a deviation: a form whose parts are
+   rows that open their own level, as iPhone Settings; `reference/15-drill-down.md`),
    **Empty** (action help). One type per screen.
 2. Use the Odoo widget for every element (table below). Hand-made HTML or
    CSS for something Odoo has is a bug.
@@ -228,6 +236,6 @@ runs on Owl 3: `props = useProps(...)` instead of `static props`, `this.` in tem
   to build it, version changes and verdict per surface.
 - `reference/intuitive-beautiful.md`: the checkable rules behind "intuitive"
   and "beautiful", the full bloat list.
-- `reference/15-drill-down.md`: the drill-down rows, ours, with the widget.
+- `reference/15-drill-down.md`: the drill-down rows, a deviation, with the widget.
 - `agents/lazy-user.md`: the gate.
 - `scripts/check.mjs`: the counts, measured with Playwright on a running Odoo.

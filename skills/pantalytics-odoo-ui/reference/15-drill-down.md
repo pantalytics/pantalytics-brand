@@ -1,8 +1,9 @@
-# Drill-down (ours)
+# Drill-down (deviation)
 
-Odoo has lists of records and a form per record. It has no screen for a record
-whose parts each need their own screen: iPhone Settings > Wi-Fi > a network.
-This is that screen, built from Odoo's parts. Zone: **Ours**.
+Not in Odoo. Odoo has lists of records and a form per record; it has no screen
+for a record whose parts each need their own screen. iPhone does: Settings >
+Wi-Fi > a network. This deviation is that screen, on purpose, built from
+Odoo's parts. Zone: **Ours**.
 
 Validated on Odoo 20 Community in the probe module
 (`docs/odoo-ui-skill/validation/pan_ui_probe`, action
