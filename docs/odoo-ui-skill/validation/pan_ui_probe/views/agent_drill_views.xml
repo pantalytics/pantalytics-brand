@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Drill-down page type (skill reference/15-drill-down.md): the record's
+         sections as rows; each opens its own level, the breadcrumb is the way back. -->
+    <record id="pan_probe_agent_view_form_drill" model="ir.ui.view">
+        <field name="name">pan.probe.agent.form.drill</field>
+        <field name="model">pan.probe.agent</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_run" type="object" string="Run Agent" class="btn-primary"
+                            invisible="not id or state in ('needs_key', 'off')"/>
+                    <field name="state" widget="badge"
+                           decoration-success="state == 'running'"
+                           decoration-warning="state == 'needs_key'"
+                           decoration-danger="state == 'failing'"
+                           decoration-muted="state == 'off'"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="e.g. Quote Follow-up"/></h1>
+                    </div>
+                    <field name="rows" widget="drill_rows" nolabel="1" readonly="1"/>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- The levels: one section of the same record each, a few fields.
+         create="0": New on a level would make a new agent, not a new key. -->
+    <record id="pan_probe_agent_view_form_key" model="ir.ui.view">
+        <field name="name">pan.probe.agent.form.key</field>
+        <field name="model">pan.probe.agent</field>
+        <field name="priority">91</field>
+        <field name="arch" type="xml">
+            <form create="0" delete="0" duplicate="0">
+                <sheet>
+                    <group><field name="key" password="True" placeholder="Paste the Key"/></group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="pan_probe_agent_view_form_instructions" model="ir.ui.view">
+        <field name="name">pan.probe.agent.form.instructions</field>
+        <field name="model">pan.probe.agent</field>
+        <field name="priority">92</field>
+        <field name="arch" type="xml">
+            <form create="0" delete="0" duplicate="0">
+                <sheet>
+                    <field name="instructions" nolabel="1" placeholder="e.g. Draft a follow-up for quotations older than a week."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="pan_probe_agent_view_form_user" model="ir.ui.view">
+        <field name="name">pan.probe.agent.form.user</field>
+        <field name="model">pan.probe.agent</field>
+        <field name="priority">93</field>
+        <field name="arch" type="xml">
+            <form create="0" delete="0" duplicate="0">
+                <sheet>
+                    <group><field name="user_id" widget="many2one_avatar_user"/></group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="pan_probe_agent_view_form_schedule" model="ir.ui.view">
+        <field name="name">pan.probe.agent.form.schedule</field>
+        <field name="model">pan.probe.agent</field>
+        <field name="priority">94</field>
+        <field name="arch" type="xml">
+            <form create="0" delete="0" duplicate="0">
+                <sheet>
+                    <group><field name="schedule" widget="radio"/></group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pan_probe_agent_drill" model="ir.actions.act_window">
+        <field name="name">Agents</field>
+        <field name="res_model">pan.probe.agent</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('pan_probe_agent_view_list')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('pan_probe_agent_view_form_drill')})]"/>
+    </record>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="pan_ui_probe.DrillRows">
+        <div class="list-group o_drill_rows" role="list">
+            <button t-foreach="this.rows" t-as="row" t-key="row.key" type="button" role="listitem"
+                    class="list-group-item list-group-item-action d-flex align-items-center gap-3"
+                    t-att-class="{ 'text-muted': row.disabled }"
+                    t-att-disabled="row.disabled"
+                    t-att-data-tooltip="row.disabled ? row.reason : undefined"
+                    t-on-click="() => this.open(row)">
+                <span class="flex-grow-1 text-truncate" t-esc="row.label"/>
+                <span t-att-class="row.tone === 'danger' and !row.disabled ? 'text-danger' : 'text-muted'"
+                      t-esc="row.disabled ? row.reason : row.value"/>
+                <span t-if="row.count and !row.disabled" class="badge rounded-pill text-bg-danger" t-esc="row.count"/>
+                <t t-if="!row.disabled">
+                    <!-- 20: Material Symbols; 18 and 19: Font Awesome -->
+                    <i t-if="this.material" class="oi text-muted" t-att-data-icon="row.external ? 'open_in_new' : 'chevron_forward'" aria-hidden="true"/>
+                    <i t-else="" t-attf-class="fa {{ row.external ? 'fa-external-link' : 'fa-chevron-right' }} text-muted" aria-hidden="true"/>
+                </t>
+            </button>
+        </div>
+    </t>
+</templates>
