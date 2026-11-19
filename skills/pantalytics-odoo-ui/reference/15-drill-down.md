@@ -52,10 +52,33 @@ a stat button to it. Single values never become rows: a row for "Runs As" is a f
 - A level's crumb names the part ("Agents / Lead Scorer / Instructions"), not the record a second time.
 - Depth: <= 3 levels under the record. Deeper means the record is too big: split it.
 - A level form has `create="0" delete="0" duplicate="0"`: New there would make a new record, not a new key.
-- No switches or fields on a row. Dropped case: iPhone's switch inside a row. A value you change sits on
-  its level, or in a `<group>` above the card when it is the record's own.
+- A setting sits in its row, as in Apple's HIG (toggles, pop-up buttons): on/off is Odoo's toggle in the
+  row, a choice among 2-5 is a pop-up menu in the row with a check at the chosen one. No chevron on those
+  rows: you change them where you see them. A chevron only where a level opens. More than five options, or
+  a choice that needs explaining: its own level. No text fields on a row.
+- Progressive disclosure: the card holds what most people touch. Technical rows go into a second group,
+  **Advanced**, folded with Odoo's caret; it opens by itself when a row in it waits, and then carries the
+  summed red count on its title. At most one Advanced per page.
+- A result to look at is not a setting: a preview, a sample, a log is Odoo's smart button
+  (`oe_button_box`) at the top of the sheet, never a row in the card.
 - The header keeps its rules: one `btn-primary`, the health badge right. The count says where, the badge
   says whether.
+
+## Settings in a row
+
+Added 19-11-2026, first in Connector Pro (a connector's object and field pages: Incoming and Outgoing in the
+row, Matching or Mapping under Advanced, Sample as a smart button). Not yet in the probe module.
+
+| Row | Looks like | Writes |
+|---|---|---|
+| Toggle | label left, Odoo's `form-switch` right, no chevron | a boolean on the record, saved at once |
+| Pop-up menu | label left, the chosen value with an up/down caret right; a click opens Odoo's `Dropdown` with a check at the chosen one | a selection on the record, saved at once |
+| Advanced | a caret and "Advanced" under the card, then a second card | nothing; it only folds |
+
+The row's JSON gets two keys: `control` (`"toggle"` with `field`, or `"select"` with `field` and
+`options: [[value, label], ...]`) and `section` (`"main"` or `"advanced"`). The widget writes with
+`record.update({[field]: value})` and saves; `action_open_row` is not called for those rows. A setting that
+can't be changed is an off row with its reason, as any other.
 
 ## How to build it
 

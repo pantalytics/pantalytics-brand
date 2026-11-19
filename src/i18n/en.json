@@ -685,7 +685,7 @@
   "odoo.drill.5.desc": "Grey with the reason. Never hidden.",
   "odoo.drill.6.name": "Back",
   "odoo.drill.6.desc": "Odoo's breadcrumb, on a phone the back arrow. It names the part, not the record again.",
-  "odoo.drill.rule": "Only when at least two parts of the record are more than one value or can be wrong on their own; otherwise the form. One card of at most seven rows, in the order of the work. A row that is right says nothing more. At most three levels, no switches on a row.",
+  "odoo.drill.rule": "Only when at least two parts of the record are more than one value or can be wrong on their own; otherwise the form. One card of at most seven rows, in the order of the work. A row that is right says nothing more. At most three levels. A setting sits in its row: a switch for on/off, a menu for a few choices. Technical rows go under a folded Advanced that opens when something in it waits.",
   "odoo.empty.title": "Empty",
   "odoo.empty.desc": "When a view has no records, Odoo shows the action's help in the middle. New stays the way to start.",
   "odoo.empty.1.name": "Help",
