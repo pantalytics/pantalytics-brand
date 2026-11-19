@@ -453,6 +453,7 @@
   "ui.rule.7": "One kind of thing has one list component, reused wherever it is listed.",
   "ui.rule.8": "Done means clicked: do every action you touched and judge the screen right after the click, on desktop and on a phone.",
   "ui.rule.9": "Several ways to do one action (connect an existing one or create a new one) are a menu on the action's button, never a page that only asks which way. A way that is not available stays in the menu, disabled, with the reason.",
+  "ui.rule.10": "Call every part of a screen by its standard UI/UX name: Odoo's first (stat button, breadcrumb, badge, wizard), else Apple's or Material's (toggle, pop-up menu, chevron). Never invent a name for a part that has one.",
   "ui.speed.title": "Speed",
   "ui.speed.desc": "A screen feels right when it answers at once. These numbers are the limit, measured on a mid-range phone (4x CPU slowdown, slow 4G).",
   "ui.speed.1": "Every click answers visibly within 100 ms: the button presses, the row highlights, the dialog opens. The next frame is on screen within 200 ms (INP).",

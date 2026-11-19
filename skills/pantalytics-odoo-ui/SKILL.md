@@ -195,6 +195,16 @@ undoable action; a toast for what is already visible; "Note:", "Tip:", "This
 will..."; marketing copy; an About or licence block in settings; tabs named
 after our product. Full list with checks: `reference/intuitive-beautiful.md`.
 
+## Names
+
+Call every part of the screen by its standard UI/UX name, in specs, code
+(widget, CSS class, JSON key), commits and talk. Odoo's name first (form,
+list, kanban, control panel, breadcrumb, stat button, statusbar, badge,
+wizard, chatter), else Apple's HIG or Material (toggle, pop-up menu,
+disclosure, chevron, sheet, segmented control). Never invent a name for a
+part that has one: "the thing with the arrow" is a chevron, "the on/off
+row" is a toggle row.
+
 ## Copy inside Odoo
 
 - **Title Case for labels** (menus, buttons, fields, filters, tabs, setting

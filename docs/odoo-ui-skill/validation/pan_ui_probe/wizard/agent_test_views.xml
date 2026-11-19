@@ -10,9 +10,12 @@
                 <!-- One line says what Test will do; a picker only when there is a real choice -->
                 <div invisible="answer">
                     <field name="agent_count" invisible="1"/>
-                    <field name="order_id" invisible="1"/>
-                    <field name="summary" class="fs-5" invisible="agent_count &gt; 1"/>
-                    <group invisible="agent_count &lt; 2">
+                    <field name="pick_order" invisible="1"/>
+                    <field name="summary" class="fs-5" invisible="agent_count &gt; 1 or pick_order"/>
+                    <group invisible="not pick_order">
+                        <field name="order_id" options="{'no_create': True, 'no_open': True}"/>
+                    </group>
+                    <group invisible="agent_count &lt; 2 or pick_order">
                         <field name="agent_id" options="{'no_create': True, 'no_open': True}"/>
                     </group>
                 </div>
