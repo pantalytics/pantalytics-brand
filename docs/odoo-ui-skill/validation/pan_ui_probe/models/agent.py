@@ -39,21 +39,30 @@ class PanProbeAgent(models.Model):
     # The drill-down rows (reference/15-drill-down.md), JSON for the drill_rows widget.
     rows = fields.Text(compute="_compute_rows")
 
-    @api.depends("state", "key", "instructions", "user_id", "schedule")
+    @api.depends("state", "key", "instructions", "user_id", "schedule", "app", "enabled")
     def _compute_rows(self):
-        schedules = dict(self._fields["schedule"].selection)
+        # A level row opens a page (chevron); a setting row changes in place
+        # ("control": toggle or select, no chevron). Section "advanced" folds.
+        apps = self._fields["app"].selection
+        schedules = self._fields["schedule"].selection
         for agent in self:
             key_bad = agent.state in ("needs_key", "failing")
             lines = len((agent.instructions or "").splitlines())
             agent.rows = json.dumps([
+                {"key": "app", "label": _("App"), "control": "select", "field": "app",
+                 "options": [[v, str(label)] for v, label in apps]},
                 {"key": "key", "label": _("Key"),
                  "value": {"needs_key": _("Needs Key"), "failing": _("Refused")}.get(agent.state, _("Connected")),
                  "tone": "danger" if key_bad else "", "count": 1 if key_bad else 0},
                 {"key": "instructions", "label": _("Instructions"),
                  "value": _("%s lines", lines) if lines > 1 else (_("1 line") if lines else _("Empty"))},
-                {"key": "user", "label": _("Runs As"), "value": agent.user_id.name or ""},
-                {"key": "schedule", "label": _("Schedule"), "value": schedules[agent.schedule],
+                {"key": "schedule", "label": _("Schedule"), "control": "select", "field": "schedule",
+                 "options": [[v, str(label)] for v, label in schedules],
                  "disabled": key_bad, "reason": _("Add a Key first")},
+                {"key": "enabled", "label": _("On"), "control": "toggle", "field": "enabled"},
+                {"key": "user", "label": _("Runs As"), "section": "advanced",
+                 "value": agent.user_id.name or _("Nobody"),
+                 "tone": "" if agent.user_id else "danger", "count": 0 if agent.user_id else 1},
             ])
 
     @api.depends_context("pan_drill_title")
@@ -71,7 +80,6 @@ class PanProbeAgent(models.Model):
             "key": ("pan_ui_probe.pan_probe_agent_view_form_key", _("Key")),
             "instructions": ("pan_ui_probe.pan_probe_agent_view_form_instructions", _("Instructions")),
             "user": ("pan_ui_probe.pan_probe_agent_view_form_user", _("Runs As")),
-            "schedule": ("pan_ui_probe.pan_probe_agent_view_form_schedule", _("Schedule")),
         }
         view, name = views[key]
         return {
@@ -83,6 +91,13 @@ class PanProbeAgent(models.Model):
             "target": "current",
             "context": {"pan_drill_title": name},
         }
+
+    def action_test(self):
+        """The Test smart button: a preview is a result to look at, not a setting."""
+        self.ensure_one()
+        action = self.env["ir.actions.act_window"]._for_xml_id("pan_ui_probe.action_pan_probe_agent_test")
+        action["context"] = {"dialog_size": "medium", "default_agent_id": self.id}
+        return action
 
     @api.model_create_multi
     def create(self, vals_list):

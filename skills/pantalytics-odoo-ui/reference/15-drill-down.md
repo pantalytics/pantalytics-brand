@@ -7,8 +7,9 @@ Odoo's parts. Zone: **Ours**.
 
 Validated on Odoo 20 Community in the probe module
 (`docs/odoo-ui-skill/validation/pan_ui_probe`, action
-`action_pan_probe_agent_drill`), desktop and 390 px. In production:
-Connector Pro's connector screen (`pan_rows`, rows Connections, Recipe, Sync).
+`action_pan_probe_agent_drill`), desktop and 390 px. Settings in a row too: App and Schedule are pop-up menus, On a toggle, Runs As under
+Advanced, Test a smart button. In production: Connector Pro's connector screen (`pan_rows`,
+rows Connections, Recipe, Sync).
 
 ## When: form or drill-down
 
@@ -67,13 +68,14 @@ a stat button to it. Single values never become rows: a row for "Runs As" is a f
 ## Settings in a row
 
 Added 19-11-2026, first in Connector Pro (a connector's object and field pages: Incoming and Outgoing in the
-row, Matching or Mapping under Advanced, Sample as a smart button). Not yet in the probe module.
+row, Matching or Mapping under Advanced, Sample as a smart button). Validated in the probe module on Odoo 20,
+desktop and 390 px: a menu or a toggle saves at once, Advanced opens by itself when Runs As is empty.
 
 | Row | Looks like | Writes |
 |---|---|---|
 | Toggle | label left, Odoo's `form-switch` right, no chevron | a boolean on the record, saved at once |
-| Pop-up menu | label left, the chosen value with an up/down caret right; a click opens Odoo's `Dropdown` with a check at the chosen one | a selection on the record, saved at once |
-| Advanced | a caret and "Advanced" under the card, then a second card | nothing; it only folds |
+| Pop-up menu | label left, the chosen value and Odoo's down chevron right (`expand_more`; 18/19 `fa-chevron-down`); a click opens Odoo's `Dropdown` with a check at the chosen one | a selection on the record, saved at once |
+| Advanced | Odoo's group caret (`arrow_right` / `arrow_drop_down`; 18/19 `fa-caret-*`) and "Advanced" under the card, then a second card | nothing; it only folds |
 
 The row's JSON gets two keys: `control` (`"toggle"` with `field`, or `"select"` with `field` and
 `options: [[value, label], ...]`) and `section` (`"main"` or `"advanced"`). The widget writes with

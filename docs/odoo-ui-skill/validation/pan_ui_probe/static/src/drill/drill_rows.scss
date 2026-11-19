@@ -11,3 +11,12 @@
     pointer-events: auto; // the reason shows as a tooltip
     cursor: default;
 }
+// A pop-up menu row: the Dropdown wraps the row's button, so the row keeps
+// the list-group's borders.
+.o_drill_rows .list-group > .o-dropdown,
+.o_drill_rows .list-group > button.dropdown-toggle {
+    width: 100%;
+}
+.o_drill_rows .list-group-item .form-switch .form-check-input {
+    cursor: pointer;
+}

@@ -15,6 +15,8 @@ class PanProbeAgentTest(models.TransientModel):
     agent_count = fields.Integer(compute="_compute_agent_count")
     summary = fields.Char(compute="_compute_summary")
     answer = fields.Text(readonly=True)
+    # Opened from the agent (its Test smart button): the quotation is the choice.
+    pick_order = fields.Boolean()
 
     def _compute_agent_count(self):
         count = self.env["pan.probe.agent"].search_count([("app", "=", "sale"), ("enabled", "=", True)])
@@ -32,6 +34,8 @@ class PanProbeAgentTest(models.TransientModel):
         ctx = self.env.context
         if ctx.get("active_model") == "sale.order" and ctx.get("active_id"):
             res.setdefault("order_id", ctx["active_id"])
+        else:
+            res["pick_order"] = True
         if "agent_id" not in res:
             agent = self.env["pan.probe.agent"].search(
                 [("app", "=", "sale"), ("enabled", "=", True), ("state", "=", "running")], limit=1)

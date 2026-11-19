@@ -453,6 +453,7 @@
   "ui.rule.7": "Eén soort ding heeft één lijstcomponent, overal hergebruikt.",
   "ui.rule.8": "Klaar betekent geklikt: voer elke gewijzigde actie uit en beoordeel het scherm direct na de klik, op desktop en op telefoon.",
   "ui.rule.9": "Meerdere manieren voor één actie (een bestaande koppelen of een nieuwe maken) zijn een menu op de knop van die actie, nooit een pagina die alleen vraagt welke manier. Een manier die niet beschikbaar is, blijft in het menu staan, uitgeschakeld, met de reden.",
+  "ui.rule.10": "Noem elk deel van een scherm bij zijn standaard UI/UX-naam: eerst die van Odoo (stat button, breadcrumb, badge, wizard), anders die van Apple of Material (toggle, pop-up menu, chevron). Verzin nooit een naam voor een deel dat er al een heeft.",
   "ui.speed.title": "Snelheid",
   "ui.speed.desc": "Een scherm voelt goed als het direct reageert. Deze getallen zijn de grens, gemeten op een telefoon uit het middensegment (4x CPU-vertraging, trage 4G).",
   "ui.speed.1": "Elke klik geeft binnen 100 ms zichtbaar antwoord: de knop drukt in, de rij licht op, de dialoog opent. Het volgende beeld staat er binnen 200 ms (INP).",
