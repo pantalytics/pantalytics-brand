@@ -27,7 +27,7 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
 
 ## Deviations: what Odoo does not have
 
-Everything else here is Odoo as it ships. These two are ours, on purpose. No
+Everything else here is Odoo as it ships. These three are ours, on purpose. No
 Odoo user knows them yet, so add one only when nothing in Odoo does the job,
 and list it here.
 
@@ -37,6 +37,10 @@ and list it here.
    .form-check-input:not(:checked) { border-color: $o-gray-600; }`.
 2. **Drill-down rows**: a record whose parts each open their own level, as
    iPhone Settings. `reference/15-drill-down.md`.
+3. **Settings in a row**: on/off is a toggle in the drill-down row, a choice
+   among 2-5 a pop-up menu in the row, technical rows under a folded
+   Advanced, a preview as a smart button. Apple's HIG; only on a drill-down
+   page. `reference/15-drill-down.md`, Settings in a row.
 
 ## Build order
 
@@ -63,7 +67,7 @@ and list it here.
 | Why it is broken | a short problem phrase (<= 3 words, "Key refused") as a "Problem" column next to the status, empty when healthy; on the card a red line "Problem: Key refused" shown only when failing. The full message (what happened, what to do) lives on the record | without the label phone users missed it as the answer; a full sentence on the card was read where a glance should do | the user must not open the record to learn why |
 | Status | A lifecycle of 3-5 steps: `statusbar` in the form header. A health state (Running, Failing): `widget="badge"` in the form `<header>`, where a statusbar would sit. One `badge` column in the list | one status per record, said once |
 | Status colour | (Odoo 20 draws badges pale: Failing and Needs Key look alike on a phone, so the problem line, not the colour, must say what is wrong) `decoration-success` works, `-warning` needs the user, `-danger` broken, `-muted` off/draft/cancelled | never `info`, `primary`, inline colour |
-| On/off with immediate effect | `boolean_toggle` on its own field (`enabled`), in list or kanban only | 0 toggles in forms, wizards, settings. Never on `active`: archived rows leave the list. On/off is the switch, health is the badge: the badge stays empty when off, so "off" is said once |
+| On/off with immediate effect | `boolean_toggle` on its own field (`enabled`), in list or kanban only, or in a drill-down row (deviation 3) | 0 toggles in other forms, wizards, settings. Never on `active`: archived rows leave the list. On/off is the switch, health is the badge: the badge stays empty when off, so "off" is said once |
 | A choice saved later | plain `boolean` (checkbox); 2-4 options `radio`, 5+ selection | Odoo 20 shows checkboxes as switches on a phone: accept it |
 | Counts users act on | stat button, `invisible` when 0 | <= 4 |
 | One short step | wizard, `target="new"`, `medium` | <= 4 fields; a confirming dialog says in one line what the button will do ("Sales Agent on S00003"); a picker only when there is a real choice (an empty dialog left users unsure, labelled read-only fields made them read four labels), 1 primary + Discard, 0 paragraphs. A wizard that shows a result shows it in the same dialog, footer then 1 primary "Done" |
@@ -73,7 +77,7 @@ and list it here.
 | Empty | action help: the state, then where the action is: `<p>No agents yet</p><p>Add one with New.</p>` | no illustration, no imperative that looks like a button ("Add your first agent" was taken for one), no `sample="1"` (sample rows read as real records) |
 | Settings | `<app>` > `<block>` > `<setting id=...>` | 1 app, <= 3 blocks, <= 6 settings per block, help <= 12 words. A block is named after what it controls ("Access"), never after the app; an app with a single block leaves the title out (the app tab already names it, and the header was one more label to read) |
 | An app that needs pairing | setup checklist inside `<block>`/`<setting>`: one row per step, status, one action | later steps hidden until earlier ones work |
-| A record set up in parts (Key, Instructions, Schedule) | Drill-down: one card of rows (label, grey value, red count, chevron), each opening its level with `target="current"`; the crumb is the way back | <= 7 rows, <= 3 levels deep; a right row says nothing more; an off row is grey with its reason, never hidden; no switches on a row (`reference/15-drill-down.md`) |
+| A record set up in parts (Key, Instructions, Schedule) | Drill-down: one card of rows (label, grey value, red count, chevron), each opening its level with `target="current"`; the crumb is the way back | <= 7 rows, <= 3 levels deep; a right row says nothing more; an off row is grey with its reason, never hidden; a setting is a toggle or pop-up menu in its row, technical rows under a folded Advanced (`reference/15-drill-down.md`) |
 | Advanced options | last notebook page, `groups="base.group_no_one"`, or a small `priority=100` form | |
 | Search | search view: 2-6 `<field>`, <= 8 filters, <= 5 group-bys, status one of them | 0 custom search UI; <= 1 default filter |
 
