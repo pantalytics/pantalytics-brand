@@ -17,6 +17,10 @@ The form (detail view) is the default. One test per part of the record:
 > Is it more than one value, or can it be right or wrong on its own (a key that is refused, a recipe with
 > open questions)? Then it is a row. Otherwise it is a field on the form.
 
+Tabs or rows: tabs (a Contact's Sales & Purchase, Accounting) are more fields of the same record, you
+fill them in. A row is a part with its own status, you check it and fix it. Fill in: form, tabs when
+it is long. Check and fix: drill-down.
+
 Drill-down only when at least two parts pass the test. One part that passes stays a form with a link or
 a stat button to it. Single values never become rows: a row for "Runs As" is a field that costs a click.
 
