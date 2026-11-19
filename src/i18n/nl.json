@@ -685,7 +685,7 @@
   "odoo.drill.5.desc": "Grijs met de reden. Nooit verborgen.",
   "odoo.drill.6.name": "Terug",
   "odoo.drill.6.desc": "Odoo's breadcrumb, op een telefoon de terugpijl. Die noemt het deel, niet nog eens het record.",
-  "odoo.drill.rule": "Eén kaart van hooguit zeven rijen, in de volgorde van het werk. Een rij die klopt zegt verder niets. Hooguit drie niveaus, geen schakelaars op een rij.",
+  "odoo.drill.rule": "Alleen als minstens twee delen van het record meer dan één waarde zijn of zelf fout kunnen zijn; anders het formulier. Eén kaart van hooguit zeven rijen, in de volgorde van het werk. Een rij die klopt zegt verder niets. Hooguit drie niveaus, geen schakelaars op een rij.",
   "odoo.empty.title": "Leeg",
   "odoo.empty.desc": "Als een view geen records heeft, toont Odoo de uitleg van de actie in het midden. Nieuw blijft de manier om te beginnen.",
   "odoo.empty.1.name": "Uitleg",
