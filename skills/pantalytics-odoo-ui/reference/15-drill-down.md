@@ -10,7 +10,15 @@ Validated on Odoo 20 Community in the probe module
 `action_pan_probe_agent_drill`), desktop and 390 px. In production:
 Connector Pro's connector screen (`pan_rows`, rows Connections, Recipe, Sync).
 
-## When
+## When: form or drill-down
+
+The form (detail view) is the default. One test per part of the record:
+
+> Is it more than one value, or can it be right or wrong on its own (a key that is refused, a recipe with
+> open questions)? Then it is a row. Otherwise it is a field on the form.
+
+Drill-down only when at least two parts pass the test. One part that passes stays a form with a link or
+a stat button to it. Single values never become rows: a row for "Runs As" is a field that costs a click.
 
 | Use it | Not for |
 |---|---|
