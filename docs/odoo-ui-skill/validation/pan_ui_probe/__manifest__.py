@@ -9,13 +9,17 @@
     "data": [
         "security/access.xml",
         "views/agent_views.xml",
+        "views/agent_drill_views.xml",
         "wizard/agent_test_views.xml",
         "views/res_config_settings_views.xml",
         "views/menus.xml",
     ],
     "demo": ["demo/agent_demo.xml"],
     "assets": {
-        "web.assets_backend": ["pan_ui_probe/static/src/scss/settings_checkbox.scss"],
+        "web.assets_backend": [
+            "pan_ui_probe/static/src/scss/settings_checkbox.scss",
+            "pan_ui_probe/static/src/drill/*",
+        ],
     },
     "application": True,
     "installable": True,

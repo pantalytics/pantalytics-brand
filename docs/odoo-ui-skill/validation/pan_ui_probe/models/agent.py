@@ -1,3 +1,5 @@
+import json
+
 from odoo import _, api, fields, models
 
 APPS = [("sale", "Sales"), ("crm", "CRM"), ("stock", "Inventory")]
@@ -30,6 +32,57 @@ class PanProbeAgent(models.Model):
     run_count = fields.Integer(string="Runs", readonly=True)
     error = fields.Char(readonly=True)
     problem = fields.Char(readonly=True, help="The error in a few words, for the list and the card.")
+    key = fields.Char(string="Key")
+    schedule = fields.Selection(
+        [("hour", "Every Hour"), ("day", "Every Day"), ("manual", "Manual")],
+        default="hour", required=True)
+    # The drill-down rows (reference/15-drill-down.md), JSON for the drill_rows widget.
+    rows = fields.Text(compute="_compute_rows")
+
+    @api.depends("state", "key", "instructions", "user_id", "schedule")
+    def _compute_rows(self):
+        schedules = dict(self._fields["schedule"].selection)
+        for agent in self:
+            key_bad = agent.state in ("needs_key", "failing")
+            lines = len((agent.instructions or "").splitlines())
+            agent.rows = json.dumps([
+                {"key": "key", "label": _("Key"),
+                 "value": {"needs_key": _("Needs Key"), "failing": _("Refused")}.get(agent.state, _("Connected")),
+                 "tone": "danger" if key_bad else "", "count": 1 if key_bad else 0},
+                {"key": "instructions", "label": _("Instructions"),
+                 "value": _("%s lines", lines) if lines > 1 else (_("1 line") if lines else _("Empty"))},
+                {"key": "user", "label": _("Runs As"), "value": agent.user_id.name or ""},
+                {"key": "schedule", "label": _("Schedule"), "value": schedules[agent.schedule],
+                 "disabled": key_bad, "reason": _("Add a Key first")},
+            ])
+
+    @api.depends_context("pan_drill_title")
+    def _compute_display_name(self):
+        # A level's crumb names the section (Agents / Lead Scorer / Instructions),
+        # not the record a second time.
+        title = self.env.context.get("pan_drill_title")
+        for agent in self:
+            agent.display_name = title or agent.name
+
+    def action_open_row(self, key):
+        """The next level of a drill-down row: this record, one section of it."""
+        self.ensure_one()
+        views = {
+            "key": ("pan_ui_probe.pan_probe_agent_view_form_key", _("Key")),
+            "instructions": ("pan_ui_probe.pan_probe_agent_view_form_instructions", _("Instructions")),
+            "user": ("pan_ui_probe.pan_probe_agent_view_form_user", _("Runs As")),
+            "schedule": ("pan_ui_probe.pan_probe_agent_view_form_schedule", _("Schedule")),
+        }
+        view, name = views[key]
+        return {
+            "type": "ir.actions.act_window",
+            "name": name,
+            "res_model": self._name,
+            "res_id": self.id,
+            "views": [(self.env.ref(view).id, "form")],
+            "target": "current",
+            "context": {"pan_drill_title": name},
+        }
 
     @api.model_create_multi
     def create(self, vals_list):

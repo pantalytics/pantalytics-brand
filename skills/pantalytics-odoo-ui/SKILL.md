@@ -19,22 +19,32 @@ tap?" in one glance, and the answer is an action.
 |---|---|---|
 | **Native** | Navbar, app menu, systray, breadcrumbs, control panel, search, chatter, settings layout, notifications, dialogs frame, theme, mobile shell | Never restyle, patch or replace. 0 SCSS, 0 templates, 0 JS patches on it. |
 | **Restrained** | Form, list, kanban, wizards, fields, buttons, badges, settings content, action help | Odoo's widgets, our rules below. |
-| **Ours** | Client actions where Odoo has no pattern (an inbox, a setup checklist) | `target="current"` inside Odoo's `Layout`, built from Odoo parts (`SearchBar`, `Dropdown`, `.btn`, `$o-*` variables). Never `fullscreen`. |
-
-One validated exception: on Odoo 19 an unchecked settings checkbox is too faint
-for a lazy user. A module whose settings page matters may darken only that
-border: `.o_setting_left_pane .form-check:not(.form-switch)
-.form-check-input:not(:checked) { border-color: $o-gray-600; }`.
+| **Ours** | Client actions where Odoo has no pattern (an inbox, a setup checklist) and the deviations below | `target="current"` inside Odoo's `Layout`, built from Odoo parts (`SearchBar`, `Dropdown`, `.btn`, `$o-*` variables). Never `fullscreen`. |
 
 Not in the backend: our accent #9b99ff, Murecho, our no-shadow look, shadcn
 components. Odoo's colours, font, elevation and widgets stay (proof:
 `reference/13-theme-tokens.md`).
 
+## Deviations: what Odoo does not have
+
+Everything else here is Odoo as it ships. These two are ours, on purpose. No
+Odoo user knows them yet, so add one only when nothing in Odoo does the job,
+and list it here.
+
+1. **Settings checkbox border** (Odoo 19): an unchecked checkbox is too faint
+   for a lazy user. A module whose settings page matters may darken only that
+   border: `.o_setting_left_pane .form-check:not(.form-switch)
+   .form-check-input:not(:checked) { border-color: $o-gray-600; }`.
+2. **Drill-down rows**: a record whose parts each open their own level, as
+   iPhone Settings. `reference/15-drill-down.md`.
+
 ## Build order
 
 1. Pick the page type: **List** (list view), **Overview** (form of one record),
    **Settings** (`res.config.settings`), **Flow** (form with
-   `target="current"`), **Empty** (action help). One type per screen.
+   `target="current"`), **Drill-down** (a deviation: a form whose parts are
+   rows that open their own level, as iPhone Settings; `reference/15-drill-down.md`),
+   **Empty** (action help). One type per screen.
 2. Use the Odoo widget for every element (table below). Hand-made HTML or
    CSS for something Odoo has is a bug.
 3. Cut: run the bloat list.
@@ -63,6 +73,7 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
 | Empty | action help: the state, then where the action is: `<p>No agents yet</p><p>Add one with New.</p>` | no illustration, no imperative that looks like a button ("Add your first agent" was taken for one), no `sample="1"` (sample rows read as real records) |
 | Settings | `<app>` > `<block>` > `<setting id=...>` | 1 app, <= 3 blocks, <= 6 settings per block, help <= 12 words. A block is named after what it controls ("Access"), never after the app; an app with a single block leaves the title out (the app tab already names it, and the header was one more label to read) |
 | An app that needs pairing | setup checklist inside `<block>`/`<setting>`: one row per step, status, one action | later steps hidden until earlier ones work |
+| A record set up in parts (Key, Instructions, Schedule) | Drill-down: one card of rows (label, grey value, red count, chevron), each opening its level with `target="current"`; the crumb is the way back | <= 7 rows, <= 3 levels deep; a right row says nothing more; an off row is grey with its reason, never hidden; no switches on a row (`reference/15-drill-down.md`) |
 | Advanced options | last notebook page, `groups="base.group_no_one"`, or a small `priority=100` form | |
 | Search | search view: 2-6 `<field>`, <= 8 filters, <= 5 group-bys, status one of them | 0 custom search UI; <= 1 default filter |
 
@@ -205,7 +216,8 @@ after our product. Full list with checks: `reference/intuitive-beautiful.md`.
 | Access rights | `ir.model.access.csv` | `ir.model.access.csv` | `ir.access` (operation `crud`); the 19 CSV breaks the install. One branch for both: create the rows in a `<function>` that checks which model exists |
 
 Write one view per version where syntax differs; never `fa-*` on 20. More:
-`reference/01` to `reference/14`, section "Versions".
+`reference/01` to `reference/15`, section "Versions". A widget of our own on 20
+runs on Owl 3: `props = useProps(...)` instead of `static props`, `this.` in templates.
 
 ## Before you ship
 
@@ -224,5 +236,6 @@ Write one view per version where syntax differs; never `fa-*` on 20. More:
   to build it, version changes and verdict per surface.
 - `reference/intuitive-beautiful.md`: the checkable rules behind "intuitive"
   and "beautiful", the full bloat list.
+- `reference/15-drill-down.md`: the drill-down rows, a deviation, with the widget.
 - `agents/lazy-user.md`: the gate.
 - `scripts/check.mjs`: the counts, measured with Playwright on a running Odoo.

@@ -1,0 +1,13 @@
+// The card takes the sheet's width.
+.o_field_drill_rows {
+    display: block;
+    width: 100%;
+}
+// Apple's row height: a finger hits it on a phone.
+.o_drill_rows .list-group-item {
+    min-height: 3rem;
+}
+.o_drill_rows .list-group-item:disabled {
+    pointer-events: auto; // the reason shows as a tooltip
+    cursor: default;
+}

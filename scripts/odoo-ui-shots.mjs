@@ -3,6 +3,8 @@
 // demo data, see docs/odoo-ui-skill/screens/HOWTO.md). Numbers are drawn into
 // the page as DOM overlays, so they sit exactly on the element they name.
 //   node scripts/odoo-ui-shots.mjs [baseUrl] [outDir]
+// ONLY=drill shoots only the drill-down (10-*): Odoo has no such screen, so it
+// is our probe module (docs/odoo-ui-skill/validation/pan_ui_probe) installed with demo data.
 import { createRequire } from "node:module";
 const { chromium } = createRequire(import.meta.url)("playwright");
 
@@ -85,9 +87,11 @@ async function session(viewport, scale) {
   return p;
 }
 
+const ONLY = process.env.ONLY;
 const d = await session({ width: 1440, height: 900 }, 2);
 const go = async (path) => { await d.goto(BASE + path); await wait(d, 2500); };
 
+if (!ONLY) {
 // 1. Home menu
 await d.setViewportSize({ width: 1440, height: 470 });
 await go("/odoo");
@@ -235,5 +239,49 @@ await mark(m, [
 ]);
 await m.screenshot({ path: `${OUT}/09-phone-form.jpg`, type: "jpeg", quality: 82 });
 console.log("saved 09-phone");
+}
+
+// 10. Drill-down (ours, in the probe module): the record's sections as rows.
+const probe = async (p) => {
+  const id = await p.evaluate(async () => {
+    const r = await fetch("/web/dataset/call_kw/pan.probe.agent/search_read", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ jsonrpc: "2.0", method: "call", params: {
+        model: "pan.probe.agent", method: "search_read",
+        args: [[["name", "=", "Lead Scorer"]], ["id"]], kwargs: { limit: 1 } } }) });
+    return (await r.json()).result[0].id;
+  });
+  await p.goto(`${BASE}/odoo/action-pan_ui_probe.action_pan_probe_agent_drill/${id}`);
+  await wait(p, 2500);
+};
+const appMenu = (p) => p.evaluate(() => {
+  const menus = odoo.__WOWL_DEBUG__.root.env.services.menu;
+  const root = menus.getAll().find((x) => x.xmlid === "pan_ui_probe.menu_pan_probe_root");
+  if (root) menus.setCurrentMenu(root.id);
+});
+if (!ONLY || ONLY === "drill") {
+  await d.setViewportSize({ width: 1440, height: 470 });
+  await probe(d);
+  await appMenu(d);
+  await mark(d, [
+    { n: 1, sel: ".o_drill_rows .list-group-item", nth: 1, at: "left" },
+    { n: 2, sel: ".o_drill_rows .list-group-item .text-muted", nth: 1, at: "right" },
+    { n: 3, sel: ".o_drill_rows .badge", nth: 0 },
+    { n: 4, sel: ".o_drill_rows .list-group-item .oi, .o_drill_rows .list-group-item .fa", nth: 0, at: "right" },
+    { n: 5, sel: ".o_drill_rows .list-group-item:disabled", nth: 0, at: "left" },
+  ]);
+  await shot(d, "10-drill-down");
+
+  const dm = await session({ width: 390, height: 844 }, 2);
+  await probe(dm);
+  await appMenu(dm);
+  await dm.evaluate(() => document.querySelectorAll(".pan-mark").forEach((e) => e.remove()));
+  await dm.screenshot({ path: `${OUT}/10-drill-phone-1.jpg`, type: "jpeg", quality: 82 });
+  await dm.locator(".o_drill_rows .list-group-item").filter({ hasText: "Instructions" }).click();
+  await wait(dm, 2000);
+  await mark(dm, [{ n: 6, sel: ".o_breadcrumb, .o_back_button", nth: 0, at: "below" }]);
+  await dm.screenshot({ path: `${OUT}/10-drill-phone-2.jpg`, type: "jpeg", quality: 82 });
+  console.log("saved 10-drill");
+}
 
 await browser.close();

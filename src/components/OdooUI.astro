@@ -4,6 +4,7 @@
 // numbered legend below it. Shared by the NL and EN pages; words in src/i18n.
 import type { Locale } from "@/i18n/config";
 import { useTranslations } from "@/i18n/utils";
+import OdooSection from "./OdooSection.astro";
 
 interface Props { lang: Locale }
 const { lang } = Astro.props;
@@ -22,6 +23,9 @@ const size: Record<string, [number, number]> = {
   "08-empty": [2880, 1600],
   "09-phone-list": [780, 1688],
   "09-phone-form": [780, 1688],
+  "10-drill-down": [2880, 940],
+  "10-drill-phone-1": [780, 1688],
+  "10-drill-phone-2": [780, 1688],
 };
 
 const sections = [
@@ -34,6 +38,10 @@ const sections = [
   { key: "wizard", count: 4, images: ["07-wizard"] },
   { key: "empty", count: 2, images: ["08-empty"] },
   { key: "phone", count: 8, images: ["09-phone-list", "09-phone-form"], phone: true },
+];
+// Not in Odoo: patterns we add ourselves, shown after Odoo's own screens.
+const deviations = [
+  { key: "drill", count: 6, images: ["10-drill-down"], phones: ["10-drill-phone-1", "10-drill-phone-2"] },
 ];
 const productUi = lang === "nl" ? "/product-ui" : "/en/product-ui";
 ---
@@ -53,35 +61,7 @@ const productUi = lang === "nl" ? "/product-ui" : "/en/product-ui";
   ))}
 </div>
 
-{sections.map((s) => (
-  <section class="odoo-section" id={s.key}>
-    <h2>{t(`odoo.${s.key}.title`)}</h2>
-    <p>{t(`odoo.${s.key}.desc`)}</p>
-    <div class:list={["odoo-shots", { phone: s.phone }]}>
-      {s.images.map((name) => (
-        <a href={img(name)} class="odoo-shot">
-          <img
-            src={img(name)}
-            alt={t(`odoo.${s.key}.title`)}
-            width={size[name][0]}
-            height={size[name][1]}
-            loading="lazy"
-            decoding="async"
-          />
-        </a>
-      ))}
-    </div>
-    <ol class="odoo-legend">
-      {range(s.count).map((i) => (
-        <li>
-          <strong>{t(`odoo.${s.key}.${i}.name`)}</strong>
-          <span>{t(`odoo.${s.key}.${i}.desc`)}</span>
-        </li>
-      ))}
-    </ol>
-    <p class="odoo-rule"><strong>{t("odoo.rule.label")}</strong> {t(`odoo.${s.key}.rule`)}</p>
-  </section>
-))}
+{sections.map((s) => <OdooSection lang={lang} s={s} size={size} label={t("odoo.rule.label")} />)}
 
 <h2>{t("odoo.versions.title")}</h2>
 <p>{t("odoo.versions.desc")}</p>
@@ -111,6 +91,10 @@ const productUi = lang === "nl" ? "/product-ui" : "/en/product-ui";
 <h2>{t("odoo.us.title")}</h2>
 <p>{t("odoo.us.desc")}</p>
 <p><a href={productUi + "#inside-odoo"}>{t("odoo.us.link")}</a></p>
+
+<h2 id="deviations">{t("odoo.dev.title")}</h2>
+<p>{t("odoo.dev.desc")}</p>
+{deviations.map((s) => <OdooSection lang={lang} s={s} size={size} label={t("odoo.dev.label")} sub />)}
 
 <style>
   .odoo-source {
