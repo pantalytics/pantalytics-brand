@@ -57,7 +57,9 @@ and list it here.
 1. Pick the page type: **List** (list view), **Overview** (form of one record),
    **Settings** (`res.config.settings`), **Flow** (form with
    `target="current"`), **Drill-down** (a deviation: a form whose parts are
-   rows that open their own level, as iPhone Settings; `reference/15-drill-down.md`),
+   rows that open their own level, as iPhone Settings; `reference/15-drill-down.md`;
+   only when at least two parts are more than one value or can be wrong on
+   their own, otherwise the form),
    **Empty** (action help). One type per screen.
 2. Use the Odoo widget for every element (table below). Hand-made HTML or
    CSS for something Odoo has is a bug.
