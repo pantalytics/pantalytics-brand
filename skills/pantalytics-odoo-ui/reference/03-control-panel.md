@@ -85,6 +85,32 @@ actions become a dropdown.
 Also 20: header buttons accept `iconClass`; offline mode greys cog items not
 `availableOffline` and swaps in `OfflineSearchBar`.
 
+## Top bar (embedded actions), checked on 19
+
+Verified in `odoo/odoo` 19.0 `web/static/src/search/control_panel/control_panel.{js,xml}`
+and on a 19 Enterprise database (23-11-2026).
+
+- **What ships.** `project.project` has a bar on both project actions (Tasks and Dashboard):
+  Tasks, Dashboard, Milestones, Timesheets, Documents, Sales Orders, Invoices, Purchase Orders,
+  Vendor Bills, From WH, To WH, Stock Moves, Bills of Materials, Manufacturing Orders, Analytic
+  Items; each appears only when its app is installed. Documents has accounting shortcuts.
+- **Hidden by default.** The bar shows only after the user clicks the `fa-sliders` button
+  (`name="embedded_actions"`, next to the view switcher). The sliders dropdown picks which
+  buttons show and saves the current search as a new button ("Save View", "Shared" checkbox).
+- **Per user, per record.** Visibility, chosen buttons and order live in
+  `res.users.settings` (`embedded_actions_config_ids`), keyed `parentActionId+activeId`: each
+  user sets it per project. There is no setting that turns it on for everyone.
+- **Phone.** No bar; one dropdown with the current action.
+- **Model.** `ir.embedded.actions`: `name`, `parent_action_id`, `parent_res_model`,
+  `parent_res_id`, `action_id` or `python_method`, `domain` (per-record visibility, e.g. no
+  Timesheets on a project without timesheets), `context`, `groups_ids`, `sequence`,
+  `default_view_mode`, `user_id` (set on a user's saved button), `filter_ids`, `is_deletable`,
+  `is_visible`.
+
+Verdict: use it where Odoo ships it and teach it; build none of our own. Because it starts
+hidden and is set per user per record, a lazy user will not find it. A task users do daily
+still needs a button that is visible without the bar (stat button, header button, menu item).
+
 ## What the user expects
 
 - **New** is always top left, same spot in every app, Alt+C. On a form it is still there.
@@ -104,7 +130,7 @@ Also 20: header buttons accept `iconClass`; offline mode greys cog items not
 | Same action reachable from header + cog + stat button | 0 duplicates |
 | Stat buttons on a form | only counts the user clicks for a task; <= 4 |
 | Views in `view_mode` | only those used; <= 3 multi-record views |
-| Embedded actions | 0 unless the action has real sub-documents users switch between daily |
+| Embedded actions (top bar) | only Odoo's own (Project, Documents); 0 of our own; never the only route to a main task |
 | Custom CSS / template inheritance on the control panel | 0 |
 | Label of an added button | verb + thing ("Sync now", "Add agent"), <= 3 words |
 
