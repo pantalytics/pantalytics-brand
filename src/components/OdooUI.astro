@@ -63,6 +63,18 @@ const productUi = lang === "nl" ? "/product-ui" : "/en/product-ui";
 
 {sections.map((s) => <OdooSection lang={lang} s={s} size={size} label={t("odoo.rule.label")} />)}
 
+<h2 id="top-bar">{t("odoo.topbar.title")}</h2>
+<p>{t("odoo.topbar.desc")}</p>
+<div class="values-grid">
+  {range(3).map((i) => (
+    <div class="value-card">
+      <h4>{t(`odoo.topbar.${i}.name`)}</h4>
+      <p>{t(`odoo.topbar.${i}.desc`)}</p>
+    </div>
+  ))}
+</div>
+<p><strong>{t("odoo.rule.label")}:</strong> {t("odoo.topbar.rule")}</p>
+
 <h2>{t("odoo.versions.title")}</h2>
 <p>{t("odoo.versions.desc")}</p>
 <div class="odoo-table-wrap">
