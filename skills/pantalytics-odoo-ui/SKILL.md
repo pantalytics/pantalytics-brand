@@ -27,9 +27,11 @@ components. Odoo's colours, font, elevation and widgets stay (proof:
 
 ## Deviations: what Odoo does not have
 
-Everything else here is Odoo as it ships. These five are ours, on purpose. No
-Odoo user knows them yet, so add one only when nothing in Odoo does the job,
-and list it here.
+The rules here are the default, not a law. Where Odoo's standard UI cannot
+do the job, build the better control from Odoo's parts and list it below. A
+custom control that already works in a module is deliberate until proven
+otherwise: keep it, and ask the owner before replacing it with an Odoo widget.
+These are ours, on purpose; no Odoo user knows them yet.
 
 1. **Settings checkbox border** (Odoo 19): an unchecked checkbox is too faint
    for a lazy user. A module whose settings page matters may darken only that
@@ -51,6 +53,11 @@ and list it here.
    parts of their own (Connector Pro: Connectors / Shopify / Recipe / Orders
    / Fields / Payment Journal / Mapping). Fewer buttons per page beats fewer
    clicks; the breadcrumb names every level.
+6. **A level as a slider with its effect beside it** where a setting is one
+   choice on a scale and the user has to see what each step does (Mail Pro:
+   the sync level, a slider with a checkmark table of what comes into Odoo).
+   A plain selection hides the consequence; this shows it. Give it a page of
+   its own, opened from a drill-down row.
 
 ## Build order
 
